@@ -1,11 +1,107 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
+import { FiUsers } from "react-icons/fi";
+import { FaSwimmer } from "react-icons/fa";
+
 
 const ClassHome = () => {
-  return (
-    <div>
-        
-    </div>
-  )
+    return (
+        <div>
+            <div className="container class-home">
+                <div className="row">
+                    
+                    <div className="col-md-12 text-center text-white my-5">
+                        <h5 className='font-italic'>لنري ما هو متاح</h5>
+                        <h2 className='mt-3'>ماذا تريد ان تري</h2>
+                    </div>
+
+                    <div className="col-md-4 text-white">
+                        <Link to='/' className='text-decoration-none'>
+                            <div className='box px-4'>
+                                <h4 className='text-info'>
+                                    بحث عن الصف
+                                </h4>
+                                <div>
+                                    <FiUsers size={60} className='icon' />
+                                </div>
+                            </div>
+                        </Link>
+                    </div>
+
+                    <div className="col-md-4 text-white">
+                        <Link to='/' className='text-decoration-none'>
+                            <div className='box px-4'>
+                                <h4 className='text-info'>
+                                    الصيف مايو <br /> 1-12-2024
+                                </h4>
+                                <div>
+                                    <FaSwimmer size={60} className='icon' />
+                                </div>
+                            </div>
+                        </Link>
+                    </div>
+
+                    <div className="col-md-4 text-white">
+                        <Link to='/' className='text-decoration-none'>
+                            <div className='box px-4'>
+                                <h4 className='text-info'>
+                                    الصيف مايو <br /> 1-12-2024
+                                </h4>
+                                <div>
+                                    <FaSwimmer size={60} className='icon' />
+                                </div>
+                            </div>
+                        </Link>
+                    </div>
+
+                    <div className="col-md-4 text-white">
+                        <Link to='/' className='text-decoration-none'>
+                            <div className='box px-4'>
+                                <h4 className='text-info'>
+                                    الصيف مايو <br /> 1-12-2024
+                                </h4>
+                                <div>
+                                    <FaSwimmer size={60} className='icon' />
+                                </div>
+                            </div>
+                        </Link>
+                    </div>
+
+                    <div className="col-md-4 text-white">
+                        <Link to='/' className='text-decoration-none'>
+                            <div className='box px-4'>
+                                <h4 className='text-info'>
+                                    الصيف مايو <br /> 1-12-2024
+                                </h4>
+                                <div>
+                                    <FaSwimmer size={60} className='icon' />
+                                </div>
+                            </div>
+                        </Link>
+                    </div>
+
+                    <div className="col-md-4 text-white">
+                        <Link to='/' className='text-decoration-none'>
+                            <div className='box px-4'>
+                                <h4 className='text-info'>
+                                    الصيف مايو <br /> 1-12-2024
+                                </h4>
+                                <div>
+                                    <FaSwimmer size={60} className='icon' />
+                                </div>
+                            </div>
+                        </Link>
+                    </div>
+
+
+
+
+                </div>
+
+                {/* </div> */}
+            </div>
+        </div>
+    )
 }
 
 export default ClassHome
