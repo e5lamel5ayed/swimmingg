@@ -12,7 +12,7 @@ const Navbar = () => {
       <Col lg={12} md={12} sm={12} className="header2">
         <div className="navbar2" >
           <Link className="menu_barss" >
-            <MenuIcon className='menu_bars-menuIcon' onClick={showSidebar} /> </Link><Link onClick={showSidebar}></Link>
+            <MenuIcon className='menu_bars-menuIcon' onClick={showSidebar}  /> </Link><Link onClick={showSidebar}></Link>
         </div>
         <nav className={sidebar ? 'nav-menu active' : 'nav-menu'}>
           <ul className='nav-menu-atems' >
