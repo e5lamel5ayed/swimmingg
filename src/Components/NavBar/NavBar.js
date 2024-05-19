@@ -39,7 +39,7 @@ const NavBar = () => {
             </ul>
           </nav>
 
-          <div className='col-md-6 d-flex'>
+          <div className='col-md-6 d-flex navtext'>
             <Link class="navbar-brand pl-5 text-white" to="#">حجز</Link>
 
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -48,7 +48,7 @@ const NavBar = () => {
             <div class="collapse navbar-collapse d-flex" id="navbarNavDropdown">
               <ul class="navbar-nav">
                 <li class="nav-item active">
-                  <Link class="nav-link pl-5 text-white" to="#">حسابي <span class="sr-only">(current)</span></Link>
+                  <Link class="nav-link pl-5 text-white" to="/MyAcount">حسابي <span class="sr-only">(current)</span></Link>
                 </li>
                 <li class="nav-item active">
                   <Link class="nav-link pl-5 text-white" to="#">اخبار <span class="sr-only">(current)</span></Link>
