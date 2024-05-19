@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import NavBar from '../../Components/NavBar/NavBar'
-import Students from './Studente'
+import Student from './Student'
 import { Tab, Tabs } from '@mui/material';
 
 export const MyAcount = () => {
@@ -24,11 +24,9 @@ export const MyAcount = () => {
                                 style={{
                                     direction: "rtl", textAlign: "right",
                                     color: "#005476", padding: ".5%",
-                                    
-                                    
                                 }}>
 
-                                <Tabs className='tabs' sx={{borderBottom: "1px #00000052 solid"}} value={tabValue} onChange={handleTabChange}>
+                                <Tabs className='tabs' sx={{ borderBottom: "1px #00000052 solid" }} value={tabValue} onChange={handleTabChange}>
                                     <Tab style={{ fontSize: "20px", fontWeight: "600" }} label="الطلاب" />
                                     <Tab style={{ fontSize: "20px", fontWeight: "600" }} label="الدفع" />
                                     <Tab style={{ fontSize: "20px", fontWeight: "600" }} label="تاريخ المعاملات" />
@@ -40,12 +38,11 @@ export const MyAcount = () => {
 
                             {tabValue === 0 && (
                                 <div>
-                                    <Students/>
+                                    <Student />
                                 </div>
                             )}
                             {tabValue === 1 && (
                                 <div>
-
                                 </div>
                             )}
                             {tabValue === 2 && (

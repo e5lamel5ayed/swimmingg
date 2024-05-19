@@ -12,12 +12,11 @@ export default function MultiActionAreaCard() {
     return (
         <div className='container'>
             <div className='row mt-4 mt-5'>
-                <div className='col-md-6 mt-5'>
-                            <div className='student_name'>
-                                <h6 className='subName' >م م</h6>
-
-                            </div>
-                    <Card sx={{ maxWidth: 345 , position:"relative" }}>
+                <div className='col-md-6 mt-5 position-relative'>
+                    <div className='student_name'>
+                        <h6 className='subName' >م م</h6>
+                    </div>
+                    <Card sx={{ maxWidth: 345, position: "relative" }}>
                         <CardActionArea>
                             <CardContent>
                                 <Typography className='text-center mt-5' gutterBottom variant="h5" component="div">
@@ -27,38 +26,38 @@ export default function MultiActionAreaCard() {
                                     <div className='row'>
                                         <div></div>
                                         <div
-                                        style={{
-                                            borderBottom:" 0.5px #000 solid",
-                                            borderLeft: ".5px #000 solid",
-                                        }}
-                                        className='col-md-6 mt-2 text-center'>
-                                            <GroupIcon/>
+                                            style={{
+                                                borderBottom: " 0.5px #000 solid",
+                                                borderLeft: ".5px #000 solid",
+                                            }}
+                                            className='col-md-6 mt-2 text-center'>
+                                            <GroupIcon />
                                             <p>hs</p>
 
                                         </div>
                                         <div
-                                        style={{
-                                            borderBottom:" .5px #000 solid",
-                                        }}
-                                        className='col-md-6 mt-2 text-center'>
-                                            <StarIcon/>
+                                            style={{
+                                                borderBottom: " .5px #000 solid",
+                                            }}
+                                            className='col-md-6 mt-2 text-center'>
+                                            <StarIcon />
                                             <p>hs</p>
 
                                         </div>
                                         <div
-                                        style={{
-                                            borderLeft: ".5px #000 solid",
-                                        }}
-                                        className='col-md-6 text-center'>
-                                            <CheckIcon className='mt-3'/>
+                                            style={{
+                                                borderLeft: ".5px #000 solid",
+                                            }}
+                                            className='col-md-6 text-center'>
+                                            <CheckIcon className='mt-3' />
                                             <p>hs</p>
 
                                         </div>
                                         <div
-                                        style={{
-                                        }}
-                                        className='col-md-6 text-center'>
-                                            <HighlightOffIcon  className='mt-3'/>
+                                            style={{
+                                            }}
+                                            className='col-md-6 text-center'>
+                                            <HighlightOffIcon className='mt-3' />
                                             <p >hs</p>
 
                                         </div>
@@ -70,11 +69,11 @@ export default function MultiActionAreaCard() {
                         </CardActionArea>
                         <CardActions>
                             <Button
-                            style={{
-                                backgroundColor: "#F9F9F9",
-                                color: "#000",
-                            }}
-                            className='btn bun-block w-100 mb-2 ' size="" color="primary">
+                                style={{
+                                    backgroundColor: "#F9F9F9",
+                                    color: "#000",
+                                }}
+                                className='btn bun-block w-100 mb-2 ' size="" color="primary">
                                 تعديل الطالب
                             </Button>
                         </CardActions>

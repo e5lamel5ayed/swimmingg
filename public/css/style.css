@@ -10,8 +10,8 @@ body {
     direction: rtl !important;
     font-family: "Noto Kufi Arabic", sans-serif;
     font-optical-sizing: auto;
-    background-color: #00B3C5;
     font-style: normal;
+    background-color: #00B3C5;
     background: linear-gradient(to right, #00405eb7, #00405eb7), url('../images/body-image.jpg');
     background-size: cover;
     background-position: top;
@@ -39,7 +39,6 @@ a {
 
 /* start login  */
 .all-login {
-
     background: linear-gradient(to right, #00405eb7, #00405eb7), url('../images/Login-Background.jpg');
     background-size: cover;
     background-position: top;
@@ -81,7 +80,7 @@ a {
     padding: 5px;
     width: 40px !important;
     height: 40px !important;
-    margin-top: 20px;
+    margin-top: 10px;
 }
 
 ol {
@@ -130,7 +129,6 @@ ol {
     overflow-x: hidden;
 }
 
-
 .nav-menu.active {
     right: 0;
     transition: all .5s ease;
@@ -149,7 +147,6 @@ ol {
     width: 100%;
 }
 
-
 span {
     margin-right: 16px;
 }
@@ -165,7 +162,6 @@ span {
     align-items: center;
     margin-top: 15px;
     padding: 0 16px;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 .header2 {
@@ -173,60 +169,75 @@ span {
     align-items: center;
     width: 100%;
 }
-
-/*end media querry */
+@media(max-width:576px){
+    
+.nav-menu {
+    width: 100%;
+}
+.navbar-toggle {
+    right: 190px;
+}
+}
+/*start media querry */
 
 @media only screen and (max-width:992px) {
-    .nav-menu {
-        width: 250px;
-        height: 100%;
-    }
 
     .navbar-toggle {
         left: 170px
     }
-    .navtext{
+
+    .navtext {
         display: none !important;
     }
-    .subName{
+
+    .subName {
         font-size: 1.5rem !important;
     }
 }
 
 /*end media querry */
+
 /* End side bar  */
 
-.myacount{
-    height: 90vh;
+/* start my account  */
+.myacount {
+    height: auto;
     background-color: #f9f9f9;
+    padding-bottom: 100px;
 }
-.title{
+
+.title {
     background-color: #004C6D;
     padding: 10px;
     border-top: 5px #fff solid;
     color: #fff;
 }
-.tabs{
-    overflow:"auto" !important;
+
+.tabs {
+    overflow: "auto" !important;
 }
-.student_name{
+
+.student_name {
     width: 27%;
     border-radius: 50%;
     padding: 28px;
     position: absolute;
     top: -72px;
-    left: 48%;
+    left: 50%;
     z-index: 99;
     background-color: #94f0ff;
     color: #000;
 
 }
-.subName{
+
+.subName {
     font-size: 2.5rem;
 }
 
-/* start class-home  */
-.class-home .box {
+/* End my account  */
+
+/* start booking  */
+.booking .box {
     height: 180px;
     border-radius: 20px;
     background-color: rgba(221, 219, 219, 0.726);
@@ -234,19 +245,21 @@ span {
     justify-content: space-between;
     align-items: center;
     transition: all .3s ease;
-    margin: 20px;
+    margin-bottom: 30px;
+    margin-left: 10px;
 }
-.class-home .box:hover {
+
+.booking .box:hover {
     background-color: #fff;
     transform: scale(1.1);
 }
 
-.class-home .box h4{
+.booking .box h4 {
     font-size: 30px;
     font-weight: 600;
 }
 
-.class-home .box .icon{
+.booking .box .icon {
     background-color: #94F0FF;
     border-radius: 100%;
     color: #000;
@@ -254,4 +267,62 @@ span {
 
 }
 
-/* End class-home  */
+/* End booking  */
+
+/* start home  */
+.home {
+    padding-bottom: 30px;
+}
+
+.home .box {
+    position: relative;
+}
+
+.home .box,
+.home .box h4 {
+    border-radius: 20px;
+}
+
+.home .box h6 {
+    position: absolute;
+    bottom: 15px;
+    right: 10px;
+}
+
+.home .home-login {
+    border-radius: 10px;
+    background-color: #004C6D;
+    padding: 0 !important;
+}
+
+.home .home-login .fa-user,
+.home .home-login .fa-credit-card {
+    font-size: 30px;
+    padding: 25px;
+    border-bottom-left-radius: 20px;
+    background-color: #94F0FF;
+    transition: all .3s ease !important;
+}
+
+.home .home-login .fa-angle-right {
+    color: white;
+    transition: all .3s ease !important;
+    margin-left: 10px !important;
+}
+
+.home .home-login:hover .fa-angle-right {
+    margin-left: 20px !important;
+}
+
+.home .home-login:hover .fa-user,
+.home .home-login:hover .fa-credit-card {
+    background-color: #fff;
+}
+
+/* End home  */
+/* start classes  */
+.classes .css-1aquho2-MuiTabs-indicator {
+    display: none !important;
+}
+
+/* End classes  */

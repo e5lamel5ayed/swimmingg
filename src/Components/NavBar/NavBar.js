@@ -40,7 +40,7 @@ const NavBar = () => {
           </nav>
 
           <div className='col-md-6 d-flex navtext'>
-            <Link class="navbar-brand pl-5 text-white" to="/HomePage">حجز</Link>
+            <Link class="navbar-brand pl-5 text-white" to="/booking">حجز</Link>
 
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
