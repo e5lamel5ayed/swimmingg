@@ -1,12 +1,10 @@
 import './App.css';
+import Login from './Login/Login';
 
 function App() {
   return (
-    <div className="App">
-      <div className="text-center text-danger">
-      Eslam
-
-    </div>
+    <div>
+      <Login />
     </div>
   );
 }
