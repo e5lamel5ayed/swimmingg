@@ -1,10 +1,10 @@
 import React from 'react'
-import NavBar from '../../Components/NavBar'
+import SideBar from '../../Components/SideBar/SideBar'
 
 const HomePage = () => {
     return (
         <div>
-            <NavBar />
+            <SideBar/>
         </div>
     )
 }
