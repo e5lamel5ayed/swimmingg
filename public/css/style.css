@@ -30,5 +30,33 @@ a {
 /* End global  */
 
 /* start login  */
+.all-login {
+
+    background: linear-gradient(to right, #00405eb7, #00405eb7), url('../images/Login-Background.jpg');
+    background-size: cover;
+    background-position: top;
+}
+
+.btn-submit {
+    background-color: #94F0FF !important;
+    color: black !important;
+    font-weight: 900;
+}
+
+.btn-submit-disable {
+    background-color: #0c7a8b;
+    color: #fff !important;
+    font-weight: 900;
+}
+
+.all-login input {
+    border: none !important;
+    outline: none !important;
+}
+
+.all-login input:focus {
+    border: none !important;
+    outline: none !important;
+}
 
 /* End login  */
