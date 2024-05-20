@@ -2,8 +2,7 @@ import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
-import { SidebarData } from '../SideBar/SideBarData';
-import { Col } from 'react-bootstrap'
+import { SidebarData } from '../../../SideBar/SideBarData';
 
 const NavBar = () => {
   const [sidebar, setSidebar] = useState(false)

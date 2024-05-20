@@ -3,21 +3,22 @@ import { createRoot } from "react-dom/client";
 import { createBrowserRouter, RouterProvider, } from "react-router-dom";
 import MyAcount from "./Employee/Pages/MyAcount/MyAcount";
 import Booking from "./Employee/Pages/Booking";
-import Login from "./Login/Login";
+import Classes from "./Employee/Pages/Classes/Classes";
 import Emploee from "./Employee/Empolee";
+import Login from "./Login/Login";
 import Register from "./Login/Register";
 import App from "./App";
-import Classes from "./Employee/Pages/Classes/Classes";
+
+
 import Father from "./Father/Father";
+import MyAcountFather from "./Father/Pages/MyAcount/MyAcountFather";
+import BookingFather from "./Father/Pages/BookingFather";
+import ClassesFather from "./Father/Pages/Classes/ClassesFather";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
-  },
-  {
-    path: "/MyAcount",
-    element: <MyAcount />,
   },
   {
     path: "/login",
@@ -26,6 +27,10 @@ const router = createBrowserRouter([
   {
     path: "/register",
     element: <Register />,
+  },
+  {
+    path: "/MyAcount",
+    element: <MyAcount />,
   },
   {
     path: "/booking",
@@ -42,6 +47,18 @@ const router = createBrowserRouter([
   {
     path: "/Father",
     element: <Father />,
+  },
+  {
+    path: "/MyAcountFather",
+    element: <MyAcountFather />,
+  },
+  {
+    path: "/bookingFather",
+    element: <BookingFather />,
+  },
+  {
+    path: "/classesFather",
+    element: <ClassesFather />,
   },
 ]);
 

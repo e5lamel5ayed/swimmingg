@@ -1,5 +1,5 @@
 import React from 'react'
-import NavBar from '../Father/Components/NavBar/NavBar'
+import NavBar from '../Father/Components/NavBar/NavBarFather'
 import { Link } from 'react-router-dom';
 
 const Father = () => {

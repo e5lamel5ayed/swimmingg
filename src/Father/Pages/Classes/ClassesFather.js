@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 import { Tab, Tabs } from '@mui/material';
-import NavBar from '../../Components/NavBar/NavBar';
-import Student from '../MyAcount/Student';
-import AllClasses from './AllClasses';
+import NavBar from '../../Components/NavBar/NavBarFather';
+import Student from '../MyAcount/StudentFather';
+import AllClasses from './AllClassesFather';
 
 export const Classes = () => {
     const [tabValue, setTabValue] = useState(0);
@@ -24,7 +24,7 @@ export const Classes = () => {
                             <div
                                 style={{
                                     direction: "rtl",
-                                    color: "#005476", paddingTop: "10px", paddingBottom: "10px",marginBottom:"20px"
+                                    color: "#005476", paddingTop: "10px", paddingBottom: "10px", marginBottom: "20px"
                                 }}>
 
                                 <Tabs className='tabs' value={tabValue} onChange={handleTabChange}>

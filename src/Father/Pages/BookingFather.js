@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { FiUsers } from "react-icons/fi";
 import { FaSwimmer } from "react-icons/fa";
-import NavBar from '../Components/NavBar/NavBar';
+import NavBar from '../Components/NavBar/NavBarFather';
 
 
 const ClassHome = () => {
@@ -18,7 +18,7 @@ const ClassHome = () => {
                     </div>
 
                     <div className="col-md-4 text-white">
-                        <Link to='/classes' className='text-decoration-none'>
+                        <Link to='/classesFather' className='text-decoration-none'>
                             <div className='box px-4'>
                                 <h4 className='text-info'>
                                     بحث عن الصف

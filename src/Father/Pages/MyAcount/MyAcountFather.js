@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
-import NavBar from '../../Components/NavBar/NavBar'
-import Student from './Student'
+import NavBar from '../../Components/NavBar/NavBarFather'
+import Student from './StudentFather'
 import { Tab, Tabs } from '@mui/material';
 
 export const MyAcount = () => {

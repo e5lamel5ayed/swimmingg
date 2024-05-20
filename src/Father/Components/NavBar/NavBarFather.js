@@ -2,9 +2,9 @@ import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
-import { SidebarData } from '../SideBar/SideBarData';
+import { SideBarData } from '../../../SideBar/SideBarData';
 
-const NavBar = () => {
+const NavBarFather = () => {
   const [sidebar, setSidebar] = useState(false)
   const showSidebar = () => setSidebar(!sidebar)
   return (
@@ -24,7 +24,7 @@ const NavBar = () => {
                   <CloseIcon />
                 </Link>
               </li>
-              {SidebarData.map((item, index) => {
+              {SideBarData.map((item, index) => {
                 return (
                   <li key={index} className={item.cName}   >
                     <Link to={item.path}>
@@ -76,4 +76,4 @@ const NavBar = () => {
   )
 }
 
-export default NavBar
+export default NavBarFather
