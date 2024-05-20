@@ -1,13 +1,16 @@
 import * as React from "react";
 import { createRoot } from "react-dom/client";
 import { createBrowserRouter, RouterProvider, } from "react-router-dom";
+
+import Login from "./Login/Login";
+import Register from "./Login/Register";
+import App from "./App";
+
+
 import MyAcount from "./Employee/Pages/MyAcount/MyAcount";
 import Booking from "./Employee/Pages/Booking";
 import Classes from "./Employee/Pages/Classes/Classes";
 import Emploee from "./Employee/Empolee";
-import Login from "./Login/Login";
-import Register from "./Login/Register";
-import App from "./App";
 
 
 import Father from "./Father/Father";

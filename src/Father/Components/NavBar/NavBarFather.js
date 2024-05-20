@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
-import { SideBarData } from '../../../SideBar/SideBarData';
+import { SidebarDataFather } from './../SideBar/SideBarData';
 
 const NavBarFather = () => {
   const [sidebar, setSidebar] = useState(false)
@@ -24,7 +24,7 @@ const NavBarFather = () => {
                   <CloseIcon />
                 </Link>
               </li>
-              {SideBarData.map((item, index) => {
+              {SidebarDataFather.map((item, index) => {
                 return (
                   <li key={index} className={item.cName}   >
                     <Link to={item.path}>
@@ -39,7 +39,7 @@ const NavBarFather = () => {
           </nav>
 
           <div className='col-md-6 d-flex navtext'>
-            <Link class="navbar-brand pl-5 text-white" to="/booking">حجز</Link>
+            <Link class="navbar-brand pl-5 text-white" to="/bookingFather">حجز</Link>
 
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
@@ -47,7 +47,7 @@ const NavBarFather = () => {
             <div class="collapse navbar-collapse d-flex" id="navbarNavDropdown">
               <ul class="navbar-nav">
                 <li class="nav-item active">
-                  <Link class="nav-link pl-5 text-white" to="/MyAcount">حسابي <span class="sr-only">(current)</span></Link>
+                  <Link class="nav-link pl-5 text-white" to="/MyAcountFather">حسابي <span class="sr-only">(current)</span></Link>
                 </li>
                 <li class="nav-item active">
                   <Link class="nav-link pl-5 text-white" to="#">اخبار <span class="sr-only">(current)</span></Link>
