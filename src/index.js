@@ -17,6 +17,7 @@ import Father from "./Father/Father";
 import MyAcountFather from "./Father/Pages/MyAcount/MyAcountFather";
 import BookingFather from "./Father/Pages/BookingFather";
 import ClassesFather from "./Father/Pages/Classes/ClassesFather";
+import ChoseClass from "./Father/Pages/Classes/ChoseClass";
 
 const router = createBrowserRouter([
   {
@@ -63,6 +64,11 @@ const router = createBrowserRouter([
     path: "/classesFather",
     element: <ClassesFather />,
   },
+  {
+    path: "/ChoseClass",
+    element: <ChoseClass />,
+  },
+    
 ]);
 
 createRoot(document.getElementById("root")).render(

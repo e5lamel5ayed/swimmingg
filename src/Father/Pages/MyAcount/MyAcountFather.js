@@ -2,6 +2,9 @@ import React, { useState } from 'react'
 import NavBar from '../../Components/NavBar/NavBarFather'
 import Student from './StudentFather'
 import { Tab, Tabs } from '@mui/material';
+import { Link } from 'react-router-dom';
+import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
+
 
 export const MyAcount = () => {
     const [tabValue, setTabValue] = useState(0);
@@ -14,8 +17,16 @@ export const MyAcount = () => {
         <div>
             <NavBar />
             <div className='myacount'>
-                <div className='title'>
-                    <h2 className='text-center text-white'>حسابي</h2>
+            <div className='title d-flex'>
+                    <div className='col-md-5 d-flex'style={{alignItems:"center"}} >
+                        <Link to="/bookingFather">
+                    <ArrowForwardIcon sx={{color:"#fff",fontSize:"38px"}}/>
+                        </Link>
+                    </div>
+                    <div className='col-md-7 ml-1 d-flex' style={{justifyContent:"flex-start"}}>
+
+                    <h2 className='text-center text-white mr-5'>حسابي</h2>
+                    </div>
                 </div>
                 <div className='container'>
                     <div className='row'>

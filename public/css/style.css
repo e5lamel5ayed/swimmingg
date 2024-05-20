@@ -147,9 +147,9 @@ ol {
     width: 100%;
 }
 
-span {
+/* span {
     margin-right: 16px;
-}
+} */
 
 .nav-text a {
     color: #fff;
@@ -352,3 +352,19 @@ span {
 }
 
 /* End classes  */
+
+.btn-edit{
+    background-color: #004C6D !important;
+    color: #fff !important;
+    padding: 9px 75px !important;
+    font-size: 20px !important;
+    border-radius: 27px !important;
+}
+
+.btn-edit2{
+    background-color: rgb(237 236 236) !important;
+    color: #000 !important;
+    padding: 9px 85px !important;
+    font-size: 20px !important;
+    border-radius: 27px !important;
+}

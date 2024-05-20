@@ -18,7 +18,7 @@ const ClassHome = () => {
                     </div>
 
                     <div className="col-md-4 text-white">
-                        <Link to='/classesFather' className='text-decoration-none'>
+                        <Link to='/ChoseClass' className='text-decoration-none'>
                             <div className='box px-4'>
                                 <h4 className='text-info'>
                                     بحث عن الصف

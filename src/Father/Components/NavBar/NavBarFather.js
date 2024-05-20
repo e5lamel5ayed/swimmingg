@@ -52,10 +52,7 @@ const NavBarFather = () => {
                 <li class="nav-item active">
                   <Link class="nav-link pl-5 text-white" to="#">اخبار <span class="sr-only">(current)</span></Link>
                 </li>
-                <li class="nav-item active">
-                  <Link class="nav-link pl-5 text-white" to="#">حسابي <span class="sr-only">(current)</span></Link>
-                </li>
-
+                
                 <li class="nav-item dropdown">
                   <Link class="nav-link dropdown-toggle text-white" to="#" role="button" data-toggle="dropdown" aria-expanded="false">
                     المزيد
