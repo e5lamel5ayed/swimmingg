@@ -267,6 +267,29 @@ span {
 
 }
 
+/* Add this CSS to your stylesheet */
+.box_hover {
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.box_hover:hover {
+    filter: blur() !important;
+    transform: scale(1.05) ;
+    
+}
+.login_hover:hover {
+    background-color: #4494e9 !important; /* Example color, adjust as needed */
+
+}
+.box_hover h6 {
+    transition: font-weight 0.3s ease;
+}
+
+.box_hover:hover h6 {
+    font-weight: bold;
+}
+
+
 /* End booking  */
 
 /* start home  */
