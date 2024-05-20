@@ -23,8 +23,8 @@ export const Classes = () => {
                         <div className='col-md-12'>
                             <div
                                 style={{
-                                    direction: "ltr",
-                                    color: "#005476", paddingTop: "10px", paddingBottom: "10px"
+                                    direction: "rtl",
+                                    color: "#005476", paddingTop: "10px", paddingBottom: "10px",marginBottom:"20px"
                                 }}>
 
                                 <Tabs className='tabs' value={tabValue} onChange={handleTabChange}>
