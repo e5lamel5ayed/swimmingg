@@ -34,7 +34,7 @@ export default function MediaCard() {
                                     </Typography>
 
                                     <Typography variant="body2" color="text.secondary" className='mt-3'>
-                                        <Link>
+                                        <Link className='allclasses-watch text-info'>
                                             مشاهدة العروض المتاحة
                                         </Link>
                                     </Typography>
@@ -44,25 +44,25 @@ export default function MediaCard() {
                                     </div>
                                     <hr className='text-muted' />
                                     <Link className='text-decoration-none text-info'>
-                                        <span >s</span>
+                                        <span className='mr-2'>s</span>
                                     </Link>
                                     <Link>
-                                        <span className='text-muted'>m</span>
+                                        <span className='text-muted mr-2'>m</span>
                                     </Link>
                                     <Link>
-                                        <span className='text-muted'>t</span>
+                                        <span className='text-muted mr-2'>t</span>
                                     </Link>
                                     <Link>
-                                        <span className='text-muted'>w</span>
+                                        <span className='text-muted mr-2'>w</span>
                                     </Link>
                                     <Link>
-                                        <span className='text-muted'>t</span>
+                                        <span className='text-muted mr-2'>t</span>
                                     </Link>
                                     <Link>
-                                        <span className='text-muted'>s</span>
+                                        <span className='text-muted mr-2'>s</span>
                                     </Link>
                                     <Link>
-                                        <span className='text-muted'>f</span>
+                                        <span className='text-muted mr-2'>f</span>
                                     </Link>
                                 </CardContent>
 
@@ -89,7 +89,7 @@ export default function MediaCard() {
                                     </Typography>
 
                                     <Typography variant="body2" color="text.secondary" className='mt-3'>
-                                        <Link>
+                                        <Link className='allclasses-watch text-info'>
                                             مشاهدة العروض المتاحة
                                         </Link>
                                     </Typography>
@@ -99,25 +99,25 @@ export default function MediaCard() {
                                     </div>
                                     <hr className='text-muted' />
                                     <Link className='text-decoration-none text-info'>
-                                        <span >s</span>
+                                        <span className='mr-2'>s</span>
                                     </Link>
                                     <Link>
-                                        <span className='text-muted'>m</span>
+                                        <span className='text-muted mr-2'>m</span>
                                     </Link>
                                     <Link>
-                                        <span className='text-muted'>t</span>
+                                        <span className='text-muted mr-2'>t</span>
                                     </Link>
                                     <Link>
-                                        <span className='text-muted'>w</span>
+                                        <span className='text-muted mr-2'>w</span>
                                     </Link>
                                     <Link>
-                                        <span className='text-muted'>t</span>
+                                        <span className='text-muted mr-2'>t</span>
                                     </Link>
                                     <Link>
-                                        <span className='text-muted'>s</span>
+                                        <span className='text-muted mr-2'>s</span>
                                     </Link>
                                     <Link>
-                                        <span className='text-muted'>f</span>
+                                        <span className='text-muted mr-2'>f</span>
                                     </Link>
                                 </CardContent>
 
@@ -144,7 +144,7 @@ export default function MediaCard() {
                                     </Typography>
 
                                     <Typography variant="body2" color="text.secondary" className='mt-3'>
-                                        <Link>
+                                        <Link className='allclasses-watch text-info'>
                                             مشاهدة العروض المتاحة
                                         </Link>
                                     </Typography>
@@ -154,25 +154,25 @@ export default function MediaCard() {
                                     </div>
                                     <hr className='text-muted' />
                                     <Link className='text-decoration-none text-info'>
-                                        <span >s</span>
+                                        <span className='mr-2'>s</span>
                                     </Link>
                                     <Link>
-                                        <span className='text-muted'>m</span>
+                                        <span className='text-muted mr-2'>m</span>
                                     </Link>
                                     <Link>
-                                        <span className='text-muted'>t</span>
+                                        <span className='text-muted mr-2'>t</span>
                                     </Link>
                                     <Link>
-                                        <span className='text-muted'>w</span>
+                                        <span className='text-muted mr-2'>w</span>
                                     </Link>
                                     <Link>
-                                        <span className='text-muted'>t</span>
+                                        <span className='text-muted mr-2'>t</span>
                                     </Link>
                                     <Link>
-                                        <span className='text-muted'>s</span>
+                                        <span className='text-muted mr-2'>s</span>
                                     </Link>
                                     <Link>
-                                        <span className='text-muted'>f</span>
+                                        <span className='text-muted mr-2'>f</span>
                                     </Link>
                                 </CardContent>
 
@@ -199,7 +199,7 @@ export default function MediaCard() {
                                     </Typography>
 
                                     <Typography variant="body2" color="text.secondary" className='mt-3'>
-                                        <Link>
+                                        <Link className='allclasses-watch text-info'>
                                             مشاهدة العروض المتاحة
                                         </Link>
                                     </Typography>
@@ -209,25 +209,25 @@ export default function MediaCard() {
                                     </div>
                                     <hr className='text-muted' />
                                     <Link className='text-decoration-none text-info'>
-                                        <span >s</span>
+                                        <span className='mr-2'>s</span>
                                     </Link>
                                     <Link>
-                                        <span className='text-muted'>m</span>
+                                        <span className='text-muted mr-2'>m</span>
                                     </Link>
                                     <Link>
-                                        <span className='text-muted'>t</span>
+                                        <span className='text-muted mr-2'>t</span>
                                     </Link>
                                     <Link>
-                                        <span className='text-muted'>w</span>
+                                        <span className='text-muted mr-2'>w</span>
                                     </Link>
                                     <Link>
-                                        <span className='text-muted'>t</span>
+                                        <span className='text-muted mr-2'>t</span>
                                     </Link>
                                     <Link>
-                                        <span className='text-muted'>s</span>
+                                        <span className='text-muted mr-2'>s</span>
                                     </Link>
                                     <Link>
-                                        <span className='text-muted'>f</span>
+                                        <span className='text-muted mr-2'>f</span>
                                     </Link>
                                 </CardContent>
 
@@ -254,7 +254,7 @@ export default function MediaCard() {
                                     </Typography>
 
                                     <Typography variant="body2" color="text.secondary" className='mt-3'>
-                                        <Link>
+                                        <Link className='allclasses-watch text-info'>
                                             مشاهدة العروض المتاحة
                                         </Link>
                                     </Typography>
@@ -264,25 +264,25 @@ export default function MediaCard() {
                                     </div>
                                     <hr className='text-muted' />
                                     <Link className='text-decoration-none text-info'>
-                                        <span >s</span>
+                                        <span className='mr-2'>s</span>
                                     </Link>
                                     <Link>
-                                        <span className='text-muted'>m</span>
+                                        <span className='text-muted mr-2'>m</span>
                                     </Link>
                                     <Link>
-                                        <span className='text-muted'>t</span>
+                                        <span className='text-muted mr-2'>t</span>
                                     </Link>
                                     <Link>
-                                        <span className='text-muted'>w</span>
+                                        <span className='text-muted mr-2'>w</span>
                                     </Link>
                                     <Link>
-                                        <span className='text-muted'>t</span>
+                                        <span className='text-muted mr-2'>t</span>
                                     </Link>
                                     <Link>
-                                        <span className='text-muted'>s</span>
+                                        <span className='text-muted mr-2'>s</span>
                                     </Link>
                                     <Link>
-                                        <span className='text-muted'>f</span>
+                                        <span className='text-muted mr-2'>f</span>
                                     </Link>
                                 </CardContent>
 
@@ -309,7 +309,7 @@ export default function MediaCard() {
                                     </Typography>
 
                                     <Typography variant="body2" color="text.secondary" className='mt-3'>
-                                        <Link>
+                                        <Link className='allclasses-watch text-info'>
                                             مشاهدة العروض المتاحة
                                         </Link>
                                     </Typography>
@@ -319,25 +319,25 @@ export default function MediaCard() {
                                     </div>
                                     <hr className='text-muted' />
                                     <Link className='text-decoration-none text-info'>
-                                        <span >s</span>
+                                        <span className='mr-2'>s</span>
                                     </Link>
                                     <Link>
-                                        <span className='text-muted'>m</span>
+                                        <span className='text-muted mr-2'>m</span>
                                     </Link>
                                     <Link>
-                                        <span className='text-muted'>t</span>
+                                        <span className='text-muted mr-2'>t</span>
                                     </Link>
                                     <Link>
-                                        <span className='text-muted'>w</span>
+                                        <span className='text-muted mr-2'>w</span>
                                     </Link>
                                     <Link>
-                                        <span className='text-muted'>t</span>
+                                        <span className='text-muted mr-2'>t</span>
                                     </Link>
                                     <Link>
-                                        <span className='text-muted'>s</span>
+                                        <span className='text-muted mr-2'>s</span>
                                     </Link>
                                     <Link>
-                                        <span className='text-muted'>f</span>
+                                        <span className='text-muted mr-2'>f</span>
                                     </Link>
                                 </CardContent>
 

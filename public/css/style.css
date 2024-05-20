@@ -147,10 +147,6 @@ ol {
     width: 100%;
 }
 
-/* span {
-    margin-right: 16px;
-} */
-
 .nav-text a {
     color: #fff;
     text-decoration: none;
@@ -230,7 +226,6 @@ ol {
     z-index: 99;
     background-color: #94f0ff;
     color: #000;
-
 }
 
 .subName {
@@ -267,7 +262,6 @@ ol {
     border-radius: 100%;
     color: #000;
     padding: 10px;
-
 }
 
 /* Add this CSS to your stylesheet */
@@ -294,7 +288,6 @@ ol {
 .box_hover:hover h6 {
     font-weight: bold;
 }
-
 
 /* End booking  */
 
@@ -338,7 +331,6 @@ ol {
     transition: all .3s ease !important;
     margin-left: 10px !important;
 }
-
 .home .home-login:hover .fa-angle-right {
     margin-left: 20px !important;
 }
@@ -349,13 +341,10 @@ ol {
 }
 
 /* End home  */
+
 /* start classes  */
 .classes .css-1aquho2-MuiTabs-indicator {
     display: none !important;
-}
-
-.css-1jzq0dw-MuiChip-label {
-    padding-right: 0 !important;
 }
 
 /* End classes  */
@@ -383,7 +372,7 @@ ol {
 .allclasses-open {
     font-size: 9px;
     top: 27px;
-    left: 23px;
+    left: 25px;
 }
 
 .white-div {
@@ -402,10 +391,13 @@ ol {
 }
 
 .allclasses-card {
-    box-shadow: none !important;
     border-top-left-radius: 0px !important;
     border-top-right-radius: 0px !important;
     transition: all .5s ease !important;
+}
+
+.allclasses-watch:hover {
+    text-decoration: underline !important;
 }
 
 @media(max-width:567px) {
@@ -418,7 +410,8 @@ ol {
 
 /* End allclasses  */
 
-.btn-edit{
+/* start chose clases  */
+.btn-edit {
     background-color: #004C6D !important;
     color: #fff !important;
     padding: 9px 75px !important;
@@ -426,10 +419,12 @@ ol {
     border-radius: 27px !important;
 }
 
-.btn-edit2{
+.btn-edit2 {
     background-color: rgb(237 236 236) !important;
     color: #000 !important;
     padding: 9px 85px !important;
     font-size: 20px !important;
     border-radius: 27px !important;
 }
+
+/* End chose clases  */

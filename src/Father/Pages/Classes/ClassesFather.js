@@ -1,72 +1,76 @@
-import React, { useState } from 'react'
-import { Tab, Tabs } from '@mui/material';
-import NavBar from '../../Components/NavBar/NavBarFather';
-import Student from '../MyAcount/StudentFather';
-import AllClasses from './AllClassesFather';
+import React from 'react'
+import { Chip, Stack } from '@mui/material';
+import NavBar from '../../../Father/Components/NavBar/NavBarFather';
 
-export const Classes = () => {
-    const [tabValue, setTabValue] = useState(0);
-
-    const handleTabChange = (event, newValue) => {
-        setTabValue(newValue);
-    };
-
+export const ClassesFather = () => {
     return (
         <div>
             <NavBar />
-            <div className='classes bg-white'>
+            <div className='classes pb-5'>
                 <div className='title'>
                     <h2 className='text-center text-white'>الصفوف</h2>
                 </div>
-                <div className='container'>
-                    <div className='row'>
-                        <div className='col-md-12'>
-                            <div
-                                style={{
-                                    direction: "rtl",
-                                    color: "#005476", paddingTop: "10px", paddingBottom: "10px", marginBottom: "20px"
-                                }}>
 
-                                <Tabs className='tabs' value={tabValue} onChange={handleTabChange}>
-                                    <Tab style={{ fontSize: "16px", fontWeight: "600", border: "1px solid", borderRadius: "20px", padding: "5px", marginRight: "10px" }} label="الكل" />
-                                    <Tab style={{ fontSize: "16px", fontWeight: "600", border: "1px solid", borderRadius: "20px", padding: "5px", marginRight: "10px" }} label="العمر" />
-                                    <Tab style={{ fontSize: "16px", fontWeight: "600", border: "1px solid", borderRadius: "20px", padding: "5px", marginRight: "10px" }} label="البرامج" />
-                                    <Tab style={{ fontSize: "16px", fontWeight: "600", border: "1px solid", borderRadius: "20px", padding: "5px", marginRight: "10px" }} label=" الايام" />
-                                    <Tab style={{ fontSize: "16px", fontWeight: "600", border: "1px solid", borderRadius: "20px", padding: "5px", marginRight: "10px" }} label=" المدربين" />
-                                    <Tab style={{ fontSize: "16px", fontWeight: "600", border: "1px solid", borderRadius: "20px", padding: "5px", marginRight: "10px" }} label="المتاح " />
-                                </Tabs>
-                            </div>
+                <Stack direction="row" spacing={1} className='m-2'>
 
-                            {tabValue === 0 && (
-                                <div>
-                                    <AllClasses />
+                    <Chip
+                        className='m-1'
+                        label="الكل"
+                        component="a"
+                        href="#basic-chip"
+                        variant="outlined"
+                        clickable
+                    />
 
-                                </div>
-                            )}
-                            {tabValue === 1 && (
-                                <div>
-                                    <Student />
+                    <Chip
+                        className='m-1'
+                        label="العمر"
+                        component="a"
+                        href="#basic-chip"
+                        variant="outlined"
+                        clickable
+                    />
 
-                                </div>
-                            )}
-                            {tabValue === 2 && (
-                                <div>
+                    <Chip
+                        className='m-1'
+                        label="البرامج"
+                        component="a"
+                        href="#basic-chip"
+                        variant="outlined"
+                        clickable
+                    />
 
-                                </div>
-                            )}
-                            {tabValue === 3 && (
-                                <div>
+                    <Chip
+                        className='m-1'
+                        label="الايام"
+                        component="a"
+                        href="#basic-chip"
+                        variant="outlined"
+                        clickable
+                    />
 
-                                </div>
-                            )}
-                        </div>
-                    </div>
+                    <Chip
+                        className='m-1'
+                        label="المدربين"
+                        component="a"
+                        href="#basic-chip"
+                        variant="outlined"
+                        clickable
+                    />
 
+                    <Chip
+                        className='m-1'
+                        label="المتاح"
+                        component="a"
+                        href="#basic-chip"
+                        variant="outlined"
+                        clickable
+                    />
 
-                </div>
+                </Stack>
 
             </div>
         </div>
     )
 }
-export default Classes
+export default ClassesFather

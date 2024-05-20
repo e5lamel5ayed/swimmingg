@@ -50,7 +50,7 @@ export default function Login() {
                                 <div>
                                     {/* Disable the link when the fields are empty */}
                                     {linkEnabled ? (
-                                        <Link to="/HomePage" className='text-decoration'>
+                                        <Link to="/Father" className='text-decoration'>
                                             <button type="submit" class="btn-submit-disable btn btn-block text-center mb-2">دخول</button>
                                         </Link>
                                     ) : (
