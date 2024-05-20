@@ -3,14 +3,14 @@ import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
-import Classes from './Classes';
+import ClassesFather from './ClassesFather';
 import { Link } from 'react-router-dom';
 import { CircularProgress } from '@mui/material';
 
 export default function MediaCard() {
     return (
         <div className=''>
-            <Classes />
+            <ClassesFather />
             <div className="container-fluid allclasses">
                 <div className="row">
 
