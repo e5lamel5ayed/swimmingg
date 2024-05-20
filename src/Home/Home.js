@@ -1,5 +1,5 @@
 import React from 'react'
-import NavBar from '../../Components/NavBar/NavBar'
+import NavBar from '../Employee/Components/NavBar/NavBar'
 import { Link } from 'react-router-dom';
 
 const Home = () => {
@@ -16,7 +16,7 @@ const Home = () => {
 
                     <div className="col-md-4 mb-4">
                         <Link to='' className='text-decoration-none'>
-                            <div className="box text-white border bg-white text-center">
+                            <div className="box box_hover text-white border bg-white text-center">
                                 <h4 className='bg-white text-info text-center py-2'>الاخبار</h4>
                                 <img className='img-fluid' src="/images/home/speaker.jpg" alt="" />
                                 <h6 className='text-white'>لمشاهده الجدول والتسجيل</h6>
@@ -27,7 +27,7 @@ const Home = () => {
 
                     <div className="col-md-4 mb-4">
                         <Link to='/MyAcount' className='text-decoration-none'>
-                            <div className="box text-white border bg-white text-center">
+                            <div className="box box_hover text-white border bg-white text-center">
                                 <h4 className='bg-white text-info text-center py-2'>حسابي</h4>
                                 <img className='img-fluid' src="/images/home/my-account.png" alt="" />
                                 <h6 className='text-white'>لمشاهده الجدول والتسجيل</h6>
@@ -38,7 +38,7 @@ const Home = () => {
 
                     <div className="col-md-4 mb-4">
                         <Link to='/booking' className='text-decoration-none'>
-                            <div className="box text-white border bg-white text-center">
+                            <div className="box box_hover text-white border bg-white text-center">
                                 <h4 className='bg-white text-info text-center py-2'>الحجز</h4>
                                 <img className='img-fluid' src="/images/home/booking.png" alt="" />
                                 <h6 className='text-white'>لمشاهده الجدول والتسجيل</h6>
@@ -47,9 +47,9 @@ const Home = () => {
                         </Link>
                     </div>
 
-                    <div className="col-md 6 text-white home-login ml-3 mb-4">
+                    <div className="col-md 6 text-white home-login ml-4 mb-4">
                         <Link to='/login' className='text-decoration-none'>
-                            <div className='d-flex justify-content-between align-items-center'>
+                            <div className='box box_hover login_hover d-flex justify-content-between align-items-center'>
                                 <i className='fa fa-user text-dark'></i>
                                 <div className='d-flex align-items-center justify-content-center'>
                                     <i className='fas fa-angle-right pb-2'></i>
@@ -61,7 +61,7 @@ const Home = () => {
 
                     <div className="col-md 6 text-white home-login mb-4">
                         <Link to='/register' className='text-decoration-none'>
-                            <div className='d-flex justify-content-between align-items-center'>
+                            <div className='box box_hover login_hover d-flex justify-content-between align-items-center'>
                                 <i class="fa-solid fa-credit-card text-dark"></i>
                                 <div className='d-flex align-items-center justify-content-center'>
                                     <i className='fas fa-angle-right pb-2'></i>
@@ -70,9 +70,6 @@ const Home = () => {
                             </div>
                         </Link>
                     </div>
-
-
-
                 </div>
             </div>
         </div>

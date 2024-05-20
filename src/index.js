@@ -1,12 +1,14 @@
 import * as React from "react";
 import { createRoot } from "react-dom/client";
 import { createBrowserRouter, RouterProvider, } from "react-router-dom";
-import MyAcount from "./Pages/MyAcount/MyAcount";
-import Booking from "./Pages/Booking";
+import MyAcount from "./Employee/Pages/MyAcount/MyAcount";
+import Booking from "./Employee/Pages/Booking";
 import Login from "./Login/Login";
+import Emploee from "./Employee/Empolee";
 import Register from "./Login/Register";
 import App from "./App";
-import Classes from "./Pages/Classes/Classes";
+import Classes from "./Employee/Pages/Classes/Classes";
+import Father from "./Father/Father";
 
 const router = createBrowserRouter([
   {
@@ -32,6 +34,14 @@ const router = createBrowserRouter([
   {
     path: "/classes",
     element: <Classes />,
+  },
+  {
+    path: "/Emploee",
+    element: <Emploee />,
+  },
+  {
+    path: "/Father",
+    element: <Father />,
   },
 ]);
 

@@ -19,7 +19,7 @@ export const SidebarData = [
     },
     {
         title: "موظف",
-        path: "/",
+        path: "/Emploee",
         cName: "nav-text"
     },
     

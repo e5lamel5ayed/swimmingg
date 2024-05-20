@@ -14,12 +14,12 @@ export const SidebarData = [
     },
     {
         title: "ولي امر",
-        path: "/",
+        path: "/Father",
         cName: "nav-text"
     },
     {
         title: "موظف",
-        path: "/",
+        path: "/Emploee",
         cName: "nav-text"
     },
     
