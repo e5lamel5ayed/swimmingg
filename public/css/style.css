@@ -22,7 +22,7 @@ li {
 }
 
 a {
-    text-decoration: none;
+    text-decoration: none !important;
 }
 
 .text-info {
@@ -277,13 +277,16 @@ span {
 
 .box_hover:hover {
     filter: blur() !important;
-    transform: scale(1.05) ;
-    
-}
-.login_hover:hover {
-    background-color: #4494e9 !important; /* Example color, adjust as needed */
+    transform: scale(1.05);
 
 }
+
+.login_hover:hover {
+    background-color: #4494e9 !important;
+    /* Example color, adjust as needed */
+
+}
+
 .box_hover h6 {
     transition: font-weight 0.3s ease;
 }
@@ -351,4 +354,66 @@ span {
     display: none !important;
 }
 
+.css-1jzq0dw-MuiChip-label {
+    padding-right: 0 !important;
+}
+
 /* End classes  */
+
+/* start allclasses  */
+.allclasses,
+.classes {
+    background-color: #F9F9F9 !important;
+}
+
+.allclasses {
+    padding-right: 100px;
+    padding-left: 100px;
+    padding-bottom: 30px;
+}
+
+.allclasses-img {
+    background-image: url('../images/swim-logo.png');
+    background-position: center;
+    background-size: 50% !important;
+    background-color: #94F0FF;
+    height: 200px !important;
+}
+
+.allclasses-open {
+    font-size: 9px;
+    top: 27px;
+    left: 23px;
+}
+
+.white-div {
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    transition: all .5s ease;
+}
+
+.all-classes-col:hover .white-div {
+    background-color: #94F0FF !important;
+    transform: scale(1.05);
+}
+
+.allclasses-card:hover {
+    transform: scale(1.05);
+}
+
+.allclasses-card {
+    box-shadow: none !important;
+    border-top-left-radius: 0px !important;
+    border-top-right-radius: 0px !important;
+    transition: all .5s ease !important;
+}
+
+@media(max-width:567px) {
+    .allclasses {
+        padding-right: 20px;
+        padding-left: 20px;
+        padding-bottom: 10px;
+    }
+}
+
+/* End allclasses  */

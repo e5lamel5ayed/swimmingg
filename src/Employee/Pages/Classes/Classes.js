@@ -1,24 +1,25 @@
 import React, { useState } from 'react'
-import { Tab, Tabs } from '@mui/material';
+import { Chip, Stack, Tab, Tabs } from '@mui/material';
 import NavBar from '../../Components/NavBar/NavBar';
-import Student from '../MyAcount/Student';
-import AllClasses from './AllClasses';
+// import Student from '../MyAcount/Student';
+// import AllClasses from './AllClasses';
 
 export const Classes = () => {
-    const [tabValue, setTabValue] = useState(0);
+    // const [tabValue, setTabValue] = useState(0);
 
-    const handleTabChange = (event, newValue) => {
-        setTabValue(newValue);
-    };
+    // const handleTabChange = (event, newValue) => {
+    //     setTabValue(newValue);
+    // };
 
     return (
         <div>
             <NavBar />
-            <div className='classes bg-white'>
+            <div className='classes pb-5'>
                 <div className='title'>
                     <h2 className='text-center text-white'>الصفوف</h2>
                 </div>
-                <div className='container'>
+
+                {/* <div className='container'>
                     <div className='row'>
                         <div className='col-md-12'>
                             <div
@@ -63,7 +64,65 @@ export const Classes = () => {
                     </div>
 
 
-                </div>
+                </div> */}
+
+                <Stack direction="row" spacing={1} className='m-2'>
+
+                    <Chip
+                        className='m-1'
+                        label="الكل"
+                        component="a"
+                        href="#basic-chip"
+                        variant="outlined"
+                        clickable
+                    />
+
+                    <Chip
+                        className='m-1'
+                        label="العمر"
+                        component="a"
+                        href="#basic-chip"
+                        variant="outlined"
+                        clickable
+                    />
+
+                    <Chip
+                        className='m-1'
+                        label="البرامج"
+                        component="a"
+                        href="#basic-chip"
+                        variant="outlined"
+                        clickable
+                    />
+
+                    <Chip
+                        className='m-1'
+                        label="الايام"
+                        component="a"
+                        href="#basic-chip"
+                        variant="outlined"
+                        clickable
+                    />
+
+                    <Chip
+                        className='m-1'
+                        label="المدربين"
+                        component="a"
+                        href="#basic-chip"
+                        variant="outlined"
+                        clickable
+                    />
+
+                    <Chip
+                        className='m-1'
+                        label="المتاح"
+                        component="a"
+                        href="#basic-chip"
+                        variant="outlined"
+                        clickable
+                    />
+
+                </Stack>
 
             </div>
         </div>
