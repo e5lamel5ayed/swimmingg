@@ -9,7 +9,7 @@ import App from "./App";
 
 import MyAcount from "./Employee/Pages/MyAcount/MyAcount";
 import Booking from "./Employee/Pages/Booking";
-import Classes from "./Employee/Pages/Classes/Classes";
+import AllClasses from "./Employee/Pages/Classes/AllClasses";
 import Emploee from "./Employee/Empolee";
 
 
@@ -41,8 +41,8 @@ const router = createBrowserRouter([
     element: <Booking />,
   },
   {
-    path: "/classes",
-    element: <Classes />,
+    path: "/Allclasses",
+    element: <AllClasses />,
   },
   {
     path: "/Emploee",

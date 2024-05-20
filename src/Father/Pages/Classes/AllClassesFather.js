@@ -1,32 +1,352 @@
 import * as React from 'react';
 import Card from '@mui/material/Card';
-import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
-import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
+import Classes from './Classes';
+import { Link } from 'react-router-dom';
+import { CircularProgress } from '@mui/material';
 
 export default function MediaCard() {
     return (
-        <Card sx={{ maxWidth: 345 }}>
-            <CardMedia
-                sx={{ height: 140 }}
-                image="/images/home/booking.png"
-                title="green iguana"
-            />
-            <CardContent>
-                <Typography gutterBottom variant="h5" component="div">
-                    Lizard
-                </Typography>
-                <Typography variant="body2" color="text.secondary">
-                    Lizards are a widespread group of squamate reptiles, with over 6,000
-                    species, ranging across all continents except Antarctica
-                </Typography>
-            </CardContent>
-            <CardActions>
-                <Button size="small">Share</Button>
-                <Button size="small">Learn More</Button>
-            </CardActions>
-        </Card>
+        <div className=''>
+            <Classes />
+            <div className="container-fluid allclasses">
+                <div className="row">
+
+                    <div className="col-md-4 mb-3 all-classes-col">
+                        <Link>
+
+                            <div className='white-div p-1'></div>
+                            <div className='bg-white p-2'></div>
+                            <Card className='allclasses-card'>
+                                <CardMedia className='allclasses-img'
+                                    title="all-classes"
+                                />
+                                <CardContent>
+
+                                    <Typography gutterBottom variant="h5" component="div" className='text-muted fw-bold'>
+                                        مجموعة الوالدين
+                                    </Typography>
+
+                                    <Typography variant="body2" color="text.secondary">
+                                        الاحد | 9.00 _ 9.30
+                                    </Typography>
+
+                                    <Typography variant="body2" color="text.secondary" className='mt-3'>
+                                        <Link>
+                                            مشاهدة العروض المتاحة
+                                        </Link>
+                                    </Typography>
+                                    <div className='d-flex justify-content-end position-relative'>
+                                        <CircularProgress variant="determinate" value={75} className='text-success mt-3 ml-3 ' />
+                                        <span className='position-absolute allclasses-open'>مفتوح</span>
+                                    </div>
+                                    <hr className='text-muted' />
+                                    <Link className='text-decoration-none text-info'>
+                                        <span >s</span>
+                                    </Link>
+                                    <Link>
+                                        <span className='text-muted'>m</span>
+                                    </Link>
+                                    <Link>
+                                        <span className='text-muted'>t</span>
+                                    </Link>
+                                    <Link>
+                                        <span className='text-muted'>w</span>
+                                    </Link>
+                                    <Link>
+                                        <span className='text-muted'>t</span>
+                                    </Link>
+                                    <Link>
+                                        <span className='text-muted'>s</span>
+                                    </Link>
+                                    <Link>
+                                        <span className='text-muted'>f</span>
+                                    </Link>
+                                </CardContent>
+
+                            </Card>
+                        </Link>
+                    </div>
+
+                    <div className="col-md-4 mb-3 all-classes-col">
+                        <Link>
+                            <div className=' white-div p-1'></div>
+                            <div className='bg-white p-2'></div>
+                            <Card className='allclasses-card'>
+                                <CardMedia className='allclasses-img'
+                                    title="all-classes"
+                                />
+                                <CardContent>
+
+                                    <Typography gutterBottom variant="h5" component="div" className='text-muted fw-bold'>
+                                        مجموعة الوالدين
+                                    </Typography>
+
+                                    <Typography variant="body2" color="text.secondary">
+                                        الاحد | 9.00 _ 9.30
+                                    </Typography>
+
+                                    <Typography variant="body2" color="text.secondary" className='mt-3'>
+                                        <Link>
+                                            مشاهدة العروض المتاحة
+                                        </Link>
+                                    </Typography>
+                                    <div className='d-flex justify-content-end position-relative'>
+                                        <CircularProgress variant="determinate" value={75} className='text-success mt-3 ml-3 ' />
+                                        <span className='position-absolute allclasses-open'>مفتوح</span>
+                                    </div>
+                                    <hr className='text-muted' />
+                                    <Link className='text-decoration-none text-info'>
+                                        <span >s</span>
+                                    </Link>
+                                    <Link>
+                                        <span className='text-muted'>m</span>
+                                    </Link>
+                                    <Link>
+                                        <span className='text-muted'>t</span>
+                                    </Link>
+                                    <Link>
+                                        <span className='text-muted'>w</span>
+                                    </Link>
+                                    <Link>
+                                        <span className='text-muted'>t</span>
+                                    </Link>
+                                    <Link>
+                                        <span className='text-muted'>s</span>
+                                    </Link>
+                                    <Link>
+                                        <span className='text-muted'>f</span>
+                                    </Link>
+                                </CardContent>
+
+                            </Card>
+                        </Link>
+                    </div>
+
+                    <div className="col-md-4 mb-3 all-classes-col">
+                        <Link>
+                            <div className=' white-div p-1'></div>
+                            <div className='bg-white p-2'></div>
+                            <Card className='allclasses-card'>
+                                <CardMedia className='allclasses-img'
+                                    title="all-classes"
+                                />
+                                <CardContent>
+
+                                    <Typography gutterBottom variant="h5" component="div" className='text-muted fw-bold'>
+                                        مجموعة الوالدين
+                                    </Typography>
+
+                                    <Typography variant="body2" color="text.secondary">
+                                        الاحد | 9.00 _ 9.30
+                                    </Typography>
+
+                                    <Typography variant="body2" color="text.secondary" className='mt-3'>
+                                        <Link>
+                                            مشاهدة العروض المتاحة
+                                        </Link>
+                                    </Typography>
+                                    <div className='d-flex justify-content-end position-relative'>
+                                        <CircularProgress variant="determinate" value={75} className='text-success mt-3 ml-3 ' />
+                                        <span className='position-absolute allclasses-open'>مفتوح</span>
+                                    </div>
+                                    <hr className='text-muted' />
+                                    <Link className='text-decoration-none text-info'>
+                                        <span >s</span>
+                                    </Link>
+                                    <Link>
+                                        <span className='text-muted'>m</span>
+                                    </Link>
+                                    <Link>
+                                        <span className='text-muted'>t</span>
+                                    </Link>
+                                    <Link>
+                                        <span className='text-muted'>w</span>
+                                    </Link>
+                                    <Link>
+                                        <span className='text-muted'>t</span>
+                                    </Link>
+                                    <Link>
+                                        <span className='text-muted'>s</span>
+                                    </Link>
+                                    <Link>
+                                        <span className='text-muted'>f</span>
+                                    </Link>
+                                </CardContent>
+
+                            </Card>
+                        </Link>
+                    </div>
+
+                    <div className="col-md-4 mb-3 all-classes-col">
+                        <Link>
+                            <div className=' white-div p-1'></div>
+                            <div className='bg-white p-2'></div>
+                            <Card className='allclasses-card'>
+                                <CardMedia className='allclasses-img'
+                                    title="all-classes"
+                                />
+                                <CardContent>
+
+                                    <Typography gutterBottom variant="h5" component="div" className='text-muted fw-bold'>
+                                        مجموعة الوالدين
+                                    </Typography>
+
+                                    <Typography variant="body2" color="text.secondary">
+                                        الاحد | 9.00 _ 9.30
+                                    </Typography>
+
+                                    <Typography variant="body2" color="text.secondary" className='mt-3'>
+                                        <Link>
+                                            مشاهدة العروض المتاحة
+                                        </Link>
+                                    </Typography>
+                                    <div className='d-flex justify-content-end position-relative'>
+                                        <CircularProgress variant="determinate" value={75} className='text-success mt-3 ml-3 ' />
+                                        <span className='position-absolute allclasses-open'>مفتوح</span>
+                                    </div>
+                                    <hr className='text-muted' />
+                                    <Link className='text-decoration-none text-info'>
+                                        <span >s</span>
+                                    </Link>
+                                    <Link>
+                                        <span className='text-muted'>m</span>
+                                    </Link>
+                                    <Link>
+                                        <span className='text-muted'>t</span>
+                                    </Link>
+                                    <Link>
+                                        <span className='text-muted'>w</span>
+                                    </Link>
+                                    <Link>
+                                        <span className='text-muted'>t</span>
+                                    </Link>
+                                    <Link>
+                                        <span className='text-muted'>s</span>
+                                    </Link>
+                                    <Link>
+                                        <span className='text-muted'>f</span>
+                                    </Link>
+                                </CardContent>
+
+                            </Card>
+                        </Link>
+                    </div>
+
+                    <div className="col-md-4 mb-3 all-classes-col">
+                        <Link>
+                            <div className=' white-div p-1'></div>
+                            <div className='bg-white p-2'></div>
+                            <Card className='allclasses-card'>
+                                <CardMedia className='allclasses-img'
+                                    title="all-classes"
+                                />
+                                <CardContent>
+
+                                    <Typography gutterBottom variant="h5" component="div" className='text-muted fw-bold'>
+                                        مجموعة الوالدين
+                                    </Typography>
+
+                                    <Typography variant="body2" color="text.secondary">
+                                        الاحد | 9.00 _ 9.30
+                                    </Typography>
+
+                                    <Typography variant="body2" color="text.secondary" className='mt-3'>
+                                        <Link>
+                                            مشاهدة العروض المتاحة
+                                        </Link>
+                                    </Typography>
+                                    <div className='d-flex justify-content-end position-relative'>
+                                        <CircularProgress variant="determinate" value={75} className='text-success mt-3 ml-3 ' />
+                                        <span className='position-absolute allclasses-open'>مفتوح</span>
+                                    </div>
+                                    <hr className='text-muted' />
+                                    <Link className='text-decoration-none text-info'>
+                                        <span >s</span>
+                                    </Link>
+                                    <Link>
+                                        <span className='text-muted'>m</span>
+                                    </Link>
+                                    <Link>
+                                        <span className='text-muted'>t</span>
+                                    </Link>
+                                    <Link>
+                                        <span className='text-muted'>w</span>
+                                    </Link>
+                                    <Link>
+                                        <span className='text-muted'>t</span>
+                                    </Link>
+                                    <Link>
+                                        <span className='text-muted'>s</span>
+                                    </Link>
+                                    <Link>
+                                        <span className='text-muted'>f</span>
+                                    </Link>
+                                </CardContent>
+
+                            </Card>
+                        </Link>
+                    </div>
+
+                    <div className="col-md-4 mb-3 all-classes-col">
+                        <Link>
+                            <div className=' white-div p-1'></div>
+                            <div className='bg-white p-2'></div>
+                            <Card className='allclasses-card'>
+                                <CardMedia className='allclasses-img'
+                                    title="all-classes"
+                                />
+                                <CardContent>
+
+                                    <Typography gutterBottom variant="h5" component="div" className='text-muted fw-bold'>
+                                        مجموعة الوالدين
+                                    </Typography>
+
+                                    <Typography variant="body2" color="text.secondary">
+                                        الاحد | 9.00 _ 9.30
+                                    </Typography>
+
+                                    <Typography variant="body2" color="text.secondary" className='mt-3'>
+                                        <Link>
+                                            مشاهدة العروض المتاحة
+                                        </Link>
+                                    </Typography>
+                                    <div className='d-flex justify-content-end position-relative'>
+                                        <CircularProgress variant="determinate" value={75} className='text-success mt-3 ml-3 ' />
+                                        <span className='position-absolute allclasses-open'>مفتوح</span>
+                                    </div>
+                                    <hr className='text-muted' />
+                                    <Link className='text-decoration-none text-info'>
+                                        <span >s</span>
+                                    </Link>
+                                    <Link>
+                                        <span className='text-muted'>m</span>
+                                    </Link>
+                                    <Link>
+                                        <span className='text-muted'>t</span>
+                                    </Link>
+                                    <Link>
+                                        <span className='text-muted'>w</span>
+                                    </Link>
+                                    <Link>
+                                        <span className='text-muted'>t</span>
+                                    </Link>
+                                    <Link>
+                                        <span className='text-muted'>s</span>
+                                    </Link>
+                                    <Link>
+                                        <span className='text-muted'>f</span>
+                                    </Link>
+                                </CardContent>
+
+                            </Card>
+                        </Link>
+                    </div>
+
+                </div>
+            </div>
+        </div>
     );
 }
