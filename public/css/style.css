@@ -350,14 +350,17 @@ ol {
 /* End classes  */
 
 /* start allclasses  */
-.allclasses,
+.allclasses{
+    background-color: #f9f9f9;
+
+}
 .classes {
     background-color: #F9F9F9 !important;
 }
 
 .allclasses {
-    padding-right: 100px;
-    padding-left: 100px;
+    /* padding-right: 100px;
+    padding-left: 100px; */
     padding-bottom: 30px;
 }
 
@@ -428,3 +431,44 @@ ol {
 }
 
 /* End chose clases  */
+
+
+
+.form-check {
+    display: flex;
+    align-items: center;
+}
+.form-check-label {
+    margin-left: 8px;
+    cursor: pointer;
+}
+.number-checkbox {
+    position: relative;
+    cursor: pointer;
+}
+.number-checkbox input[type="checkbox"] {
+    opacity: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+.number-checkbox span {
+    display: inline-block;
+    width: 40px;
+    /* height: 20px; */
+    text-align: center;
+    line-height: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    user-select: none;
+    cursor: pointer;
+    /* padding: 12px; */
+    border-radius: 51%;
+    padding: 10px 13px;
+}
+.number-checkbox input[type="checkbox"]:checked + span {
+    background-color: #007bff;
+    color: white;
+    border-color: #007bff;
+}
