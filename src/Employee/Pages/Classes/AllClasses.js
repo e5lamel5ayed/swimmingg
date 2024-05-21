@@ -9,9 +9,10 @@ import { CircularProgress } from '@mui/material';
 
 export default function MediaCard() {
     return (
-        <div className=''>
+        <div>
             <Classes />
-            <div className="container-fluid allclasses">
+            <div className='allclasses'>
+            <div className="container ">
                 <div className="row">
 
                     <div className="col-md-4 mb-3 all-classes-col">
@@ -347,5 +348,7 @@ export default function MediaCard() {
                 </div>
             </div>
         </div>
+        </div>
+        
     );
 }

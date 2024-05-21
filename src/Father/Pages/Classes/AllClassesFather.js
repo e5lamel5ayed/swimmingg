@@ -6,9 +6,17 @@ import ClassesFather from './ClassesFather'
 
 const AllClassesFather = () => {
     return (
-        <div className=''>
-            <ClassesFather />
-            <div className="container-fluid allclasses">
+        <div>
+
+        <ClassesFather />
+        <div className='allclasses'>
+            <div className="container ">
+                <div className='col-md-12 mb-4' style={{borderBottom:" 1px #3e3e3e63 solid"}}>
+                    <div className='col-md-1 mb-0' style={{borderBottom:" 2px #004c6d solid"}}>
+
+                    <p className='mb-2'>إسلام</p>
+                    </div>
+                </div>
                 <div className="row">
 
                     <div className="col-md-4 mb-3 all-classes-col">
@@ -344,7 +352,9 @@ const AllClassesFather = () => {
 
                 </div>
             </div>
-        </div>)
+        </div>
+        </div>
+        )
 }
 
 export default AllClassesFather
