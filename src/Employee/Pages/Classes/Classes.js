@@ -1,6 +1,9 @@
 import React from 'react'
 import { Chip, Stack } from '@mui/material';
 import NavBar from '../../Components/NavBar/NavBar';
+import { Link } from 'react-router-dom';
+import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
+
 export const Classes = () => {
 
 
@@ -8,9 +11,17 @@ export const Classes = () => {
         <div>
             <NavBar />
             <div className='classes pb-5'>
-                <div className='title'>
-                    <h2 className='text-center text-white'>الصفوف</h2>
+
+            <div className='title-class d-flex'>
+                <div className='col-md-5 d-flex' style={{ alignItems: "center" }} >
+                    <Link to="/booking">
+                        <ArrowForwardIcon sx={{ color: "#fff", fontSize: "38px" }} />
+                    </Link>
                 </div>
+                <div className='col-md-7 ml-1 d-flex' style={{ justifyContent: "flex-start" }}>
+                    <h2 className='text-center text-white mr-5'>الصفوف</h2>
+                </div>
+            </div>
 
                 <Stack direction="row" spacing={1} className='m-2'>
 

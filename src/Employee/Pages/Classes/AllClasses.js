@@ -15,10 +15,9 @@ export default function MediaCard() {
                 <div className="row">
 
                     <div className="col-md-4 mb-3 all-classes-col">
-                        <Link>
-
-                            <div className='white-div p-1'></div>
-                            <div className='bg-white p-2'></div>
+                        <div className='white-div p-1'></div>
+                        <div className='bg-white p-2'></div>
+                        <Link to='/classDetails'>
                             <Card className='allclasses-card'>
                                 <CardMedia className='allclasses-img'
                                     title="all-classes"

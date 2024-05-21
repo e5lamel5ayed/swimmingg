@@ -19,6 +19,7 @@ import BookingFather from "./Father/Pages/BookingFather";
 import ClassesFather from "./Father/Pages/Classes/ClassesFather";
 import AllClassesFather from "./Father/Pages/Classes/AllClassesFather";
 import ChoseClass from "./Father/Pages/Classes/ChoseClass";
+import ClassDetails from "./Employee/Pages/Classes/ClassDetails";
 
 const router = createBrowserRouter([
   {
@@ -44,6 +45,10 @@ const router = createBrowserRouter([
   {
     path: "/Allclasses",
     element: <AllClasses />,
+  },
+  {
+    path: "/classDetails",
+    element: <ClassDetails />,
   },
   {
     path: "/Emploee",

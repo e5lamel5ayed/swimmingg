@@ -16,7 +16,7 @@ const ChoseClass = () => {
         <div>
             <NavBarFather />
             <div className='myacount'>
-                <div className='title d-flex'>
+                <div className='title-class d-flex'>
                     <div className='col-md-5 d-flex' style={{ alignItems: "center" }} >
                         <Link to="/bookingFather">
                             <ArrowForwardIcon sx={{ color: "#fff", fontSize: "38px" }} />
