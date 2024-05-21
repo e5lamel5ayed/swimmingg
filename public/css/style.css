@@ -331,6 +331,7 @@ ol {
     transition: all .3s ease !important;
     margin-left: 10px !important;
 }
+
 .home .home-login:hover .fa-angle-right {
     margin-left: 20px !important;
 }
@@ -431,6 +432,94 @@ ol {
 }
 
 /* End chose clases  */
+
+/* start class details  */
+.select-student-btn {
+    background-color: #94F0FF !important;
+    padding: 9px 85px !important;
+    font-size: 20px !important;
+    border-radius: 27px !important;
+}
+
+.details {
+    background-color: #F9F9F9;
+}
+
+.details-title h4 {
+    text-align: center;
+    position: relative;
+    color: #254450;
+    font-size: 18px;
+}
+
+.details-title h4::before {
+    position: absolute;
+    content: '';
+    width: 50%;
+    height: 3px;
+    top: 30px;
+    right: 50%;
+    transform: translate(50%, -50%);
+    background-color: #254450;
+}
+
+.description-details p {
+    font-size: 14px !important;
+
+}
+
+@media(max-width:567px) {
+    .select-student-btn {
+        width: 100% !important;
+        font-size: 16px !important;
+    }
+
+    .alldetails p {
+        font-size: 13px;
+    }
+
+    .details-hr {
+        margin: 20px !important;
+    }
+
+    .description-details p {
+        font-size: 12px !important;
+
+    }
+}
+
+/* End class details  */
+
+/* start add-student  */
+
+.add-student  {
+    background-color: #F9F9F9 !important;
+}
+
+ .add-student form input {
+    background-color: #d1cfcfab;
+    border: none ;
+} 
+.special-info {
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px 2px #b6b3b33d;
+}
+@media (max-width:567px){
+    .add-student-btn{
+        flex-direction: column !important;
+    }
+    .btn-edit {
+        margin-left: 0 !important;
+    }
+    .add-student form label {
+        font-size: 13px !important;
+    }
+    .add-student form h4 {
+        margin: 20px 5px !important;
+        font-size: 18px;
+    }
+}
+/* End add-student  */
 
 
 

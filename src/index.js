@@ -20,6 +20,8 @@ import ClassesFather from "./Father/Pages/Classes/ClassesFather";
 import AllClassesFather from "./Father/Pages/Classes/AllClassesFather";
 import ChoseClass from "./Father/Pages/Classes/ChoseClass";
 import ClassDetails from "./Employee/Pages/Classes/ClassDetails";
+import ChoseStudentEmploee from "./Employee/Pages/Classes/ChoseStudentEmploee";
+import AddStudent from "./Employee/Pages/Classes/AddStudent";
 
 const router = createBrowserRouter([
   {
@@ -49,6 +51,14 @@ const router = createBrowserRouter([
   {
     path: "/classDetails",
     element: <ClassDetails />,
+  },
+  {
+    path: "/addstudent",
+    element: <AddStudent />,
+  },
+  {
+    path: "/choosestudent",
+    element: <ChoseStudentEmploee />,
   },
   {
     path: "/Emploee",
