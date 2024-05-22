@@ -3,6 +3,11 @@ import { Chip, Stack } from '@mui/material';
 import NavBar from '../../../Father/Components/NavBar/NavBarFather';
 import { Link } from 'react-router-dom';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
+import Age from '../Chips/Age';
+import Programs from '../Chips/Programs';
+import Days from '../Chips/Days';
+import Instructors from '../Chips/Instructors';
+import Avilable from '../Chips/Avilable';
 
 export const ClassesFather = () => {
     return (
@@ -23,61 +28,14 @@ export const ClassesFather = () => {
 
                 <div className='container'>
 
-                    <Stack direction="row" spacing={1} className='m-2'>
-
-                        <Chip
-                            className='m-1'
-                            label="الكل"
-                            component="a"
-                            href="#basic-chip"
-                            variant="outlined"
-                            clickable
-                        />
-
-                        <Chip
-                            className='m-1'
-                            label="العمر"
-                            component="a"
-                            href="#basic-chip"
-                            variant="outlined"
-                            clickable
-                        />
-
-                        <Chip
-                            className='m-1'
-                            label="البرامج"
-                            component="a"
-                            href="#basic-chip"
-                            variant="outlined"
-                            clickable
-                        />
-
-                        <Chip
-                            className='m-1'
-                            label="الايام"
-                            component="a"
-                            href="#basic-chip"
-                            variant="outlined"
-                            clickable
-                        />
-
-                        <Chip
-                            className='m-1'
-                            label="المدربين"
-                            component="a"
-                            href="#basic-chip"
-                            variant="outlined"
-                            clickable
-                        />
-
-                        <Chip
-                            className='m-1'
-                            label="المتاح"
-                            component="a"
-                            href="#basic-chip"
-                            variant="outlined"
-                            clickable
-                        />
+                    
+                <Stack direction="row" spacing={1} className='m-2'>
+                        <Age/>
+                        <Programs/>
+                        <Days/>
+                        <Instructors/>
+                        <Avilable/>
+                        
 
                     </Stack>
                 </div>

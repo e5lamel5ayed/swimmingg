@@ -4,7 +4,6 @@ import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import React from 'react';
 import { Stack } from '@mui/material';
 
-import All from '../Chips/All';
 import Age from '../Chips/Age';
 import Programs from '../Chips/Programs';
 import Days from '../Chips/Days';
@@ -33,7 +32,6 @@ export const Classes = () => {
                 <div className='container'>
 
                     <Stack direction="row" spacing={1} className='m-2'>
-                        <All/>
                         <Age/>
                         <Programs/>
                         <Days/>
