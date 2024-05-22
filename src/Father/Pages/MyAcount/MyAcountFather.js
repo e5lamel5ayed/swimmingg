@@ -8,7 +8,6 @@ import TransactionHistory from './TransactionHistory';
 import Payment from './Payment';
 import AccountInfo from './AccountInfo/AccountInfo';
 import FamilyCustomFields from './FamilyCustomFields';
-import AccountInfo from './AccountInfo';
 
 
 export const MyAcount = () => {
