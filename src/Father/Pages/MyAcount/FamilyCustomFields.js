@@ -1,13 +1,25 @@
+import { Button } from '@mui/material'
 import React from 'react'
 
 const FamilyCustomFields = () => {
     return (
         <div>
-            <div className="container mt-4 bg-white payment">
-                <div className="row">
-                    <div className="col-md-12">
-                        <h2 className='p-3'>الحقول المخصصه للعائله</h2>
-                    </div>
+            <div className="family mt-4 bg-white all-account pb-3">
+                <div className=' pt-4'>
+                    <h3
+                        style={{
+                            borderRight: " 5px #004c6d solid",
+                            paddingRight: " 11px",
+                            borderRadius: "2px",
+                            color: "#000",
+                        }}
+                    > الحقول المخصصه للعائلة</h3>
+                </div>
+                <div className='col-md-12 mt-4 mb-5'>
+                    <Button className='text-black w-100 d-flex  justify-content-start p-4'>
+                        تم اضافتك من قبل من ؟(الاسم الاول /الاسم الاخير)
+                    </Button>
+
                 </div>
             </div>
         </div>

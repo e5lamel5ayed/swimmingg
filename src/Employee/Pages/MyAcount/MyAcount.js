@@ -14,7 +14,7 @@ export const MyAcount = () => {
         <div>
             <NavBar />
             <div className='myacount'>
-                <div className='title'>
+                <div className='title-class'>
                     <h2 className='text-center text-white'>حسابي</h2>
                 </div>
                 <div className='container'>
@@ -26,19 +26,19 @@ export const MyAcount = () => {
                                     color: "#005476", padding: ".5%",
                                 }}>
 
-                                <Tabs className='tabs' sx={{ borderBottom: "1px #00000052 solid" }} value={tabValue} onChange={handleTabChange}>
+                                {/* <Tabs className='tabs' sx={{ borderBottom: "1px #00000052 solid" }} value={tabValue} onChange={handleTabChange}>
                                     <Tab style={{ fontSize: "20px", fontWeight: "600" }} label="الطلاب" />
                                     <Tab style={{ fontSize: "20px", fontWeight: "600" }} label="الدفع" />
                                     <Tab style={{ fontSize: "20px", fontWeight: "600" }} label="تاريخ المعاملات" />
                                     <Tab style={{ fontSize: "20px", fontWeight: "600" }} label="معلومات الحساب" />
                                     <Tab style={{ fontSize: "20px", fontWeight: "600" }} label=" الحقول المخصصة للعائلة" />
                                     <Tab style={{ fontSize: "20px", fontWeight: "600" }} label=" تسجيل الدخول/الأمان" />
-                                </Tabs>
+                                </Tabs> */}
                             </div>
 
                             {tabValue === 0 && (
                                 <div>
-                                    <Student />
+                                    {/* <Student /> */}
                                 </div>
                             )}
                             {tabValue === 1 && (
