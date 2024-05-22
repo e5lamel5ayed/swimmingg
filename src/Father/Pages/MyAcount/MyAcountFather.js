@@ -4,6 +4,7 @@ import Student from './StudentFather'
 import { Tab, Tabs } from '@mui/material';
 import { Link } from 'react-router-dom';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
+import TransactionHistory from './TransactionHistory';
 import Payment from './Payment';
 
 
@@ -62,7 +63,7 @@ export const MyAcount = () => {
                             )}
                             {tabValue === 2 && (
                                 <div>
-
+                                    <TransactionHistory/>
                                 </div>
                             )}
                             {tabValue === 3 && (

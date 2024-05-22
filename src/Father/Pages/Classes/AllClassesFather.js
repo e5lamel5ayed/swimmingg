@@ -1,10 +1,37 @@
-import { CardContent, CardMedia, CircularProgress, Typography } from '@mui/material'
-import React from 'react'
+import { CardContent, CardMedia, CircularProgress, Dialog, DialogContent, DialogTitle, Typography } from '@mui/material'
+import React, { useState } from 'react'
 import { Card } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import ClassesFather from './ClassesFather'
+import CancelIcon from '@mui/icons-material/Cancel';
+
 
 const AllClassesFather = () => {
+
+    const [open, setOpen] = useState(false);
+    const [selectedDays, setSelectedDays] = useState([]);
+
+    const handleOpen = () => {
+        setOpen(true);
+    };
+
+    const handleClose = () => {
+        setOpen(false);
+    };
+
+    const handleDayClick = (day) => {
+        setSelectedDays((prevSelectedDays) =>
+            prevSelectedDays.includes(day)
+                ? prevSelectedDays.filter((d) => d !== day)
+                : [...prevSelectedDays, day]
+        );
+    };
+
+    const handleClear = () => {
+        setSelectedDays([]);
+    };
+
+
     return (
         <div>
 
@@ -37,7 +64,7 @@ const AllClassesFather = () => {
                                         </Typography>
 
                                         <Typography variant="body2" color="text.secondary" className='mt-3'>
-                                            <Link className='allclasses-watch text-info'>
+                                            <Link className='allclasses-watch text-info' onClick={handleOpen} >
                                                 مشاهدة العروض المتاحة
                                             </Link>
                                         </Typography>
@@ -92,7 +119,7 @@ const AllClassesFather = () => {
                                         </Typography>
 
                                         <Typography variant="body2" color="text.secondary" className='mt-3'>
-                                            <Link className='allclasses-watch text-info'>
+                                            <Link className='allclasses-watch text-info' onClick={handleOpen}>
                                                 مشاهدة العروض المتاحة
                                             </Link>
                                         </Typography>
@@ -147,7 +174,7 @@ const AllClassesFather = () => {
                                         </Typography>
 
                                         <Typography variant="body2" color="text.secondary" className='mt-3'>
-                                            <Link className='allclasses-watch text-info'>
+                                            <Link className='allclasses-watch text-info' onClick={handleOpen}>
                                                 مشاهدة العروض المتاحة
                                             </Link>
                                         </Typography>
@@ -202,7 +229,7 @@ const AllClassesFather = () => {
                                         </Typography>
 
                                         <Typography variant="body2" color="text.secondary" className='mt-3'>
-                                            <Link className='allclasses-watch text-info'>
+                                            <Link className='allclasses-watch text-info' onClick={handleOpen}>
                                                 مشاهدة العروض المتاحة
                                             </Link>
                                         </Typography>
@@ -257,7 +284,7 @@ const AllClassesFather = () => {
                                         </Typography>
 
                                         <Typography variant="body2" color="text.secondary" className='mt-3'>
-                                            <Link className='allclasses-watch text-info'>
+                                            <Link className='allclasses-watch text-info' onClick={handleOpen}>
                                                 مشاهدة العروض المتاحة
                                             </Link>
                                         </Typography>
@@ -312,7 +339,7 @@ const AllClassesFather = () => {
                                         </Typography>
 
                                         <Typography variant="body2" color="text.secondary" className='mt-3'>
-                                            <Link className='allclasses-watch text-info'>
+                                            <Link className='allclasses-watch text-info' onClick={handleOpen}>
                                                 مشاهدة العروض المتاحة
                                             </Link>
                                         </Typography>
@@ -351,6 +378,41 @@ const AllClassesFather = () => {
                     </div>
                 </div>
             </div>
+            <Dialog open={open} onClose={handleClose} fullWidth maxWidth="sm">
+                <div className="white-div p-1" style={{ backgroundColor: "#94F0FF" }}></div>
+                <DialogTitle style={{ marginBottom: "15px", direction: "rtl", textAlign: "center" }}>
+                    الجلسات
+                    <CancelIcon style={{ position: "absolute", left: "15px", cursor: "pointer" }} onClick={handleClose} />
+                </DialogTitle>
+                <DialogContent style={{ direction: "rtl" }}>
+                    <div className="container-fluid">
+                        <div className="row" style={{ display: "flex", justifyContent: "center" }}>
+                            <div className="col-md-12">
+                                <table class="table table-hover">
+                                    <thead className='bg-light'>
+                                        <tr>
+                                            <th scope="col">الاسم</th>
+                                            <th scope="col">التاريخ</th>
+                                            <th scope="col">الحاله</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>صيف 2024 </td>
+                                            <td>22/5/2024</td>
+                                            <td><span class="badge badge-danger">مغلق</span></td>
+                                        </tr>
+                                        
+                                    </tbody>
+                                </table>
+
+                            </div>
+
+                            
+                        </div>
+                    </div>
+                </DialogContent>
+            </Dialog>
         </div>
     )
 }
