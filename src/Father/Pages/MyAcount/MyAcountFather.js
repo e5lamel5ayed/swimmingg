@@ -54,7 +54,6 @@ export const MyAcount = () => {
 
                             {tabValue === 0 && (
                                 <div>
-                                    <AccountInfo/>
                                     <Student />
 
                                 </div>
@@ -67,22 +66,23 @@ export const MyAcount = () => {
                             )}
                             {tabValue === 2 && (
                                 <div>
-                                    <TransactionHistory/>
+                                    <TransactionHistory />
                                 </div>
                             )}
                             {tabValue === 3 && (
                                 <div>
+                                    <AccountInfo />
 
                                 </div>
                             )}
                             {tabValue === 4 && (
                                 <div>
-                                    <FamilyCustomFields/>
+                                    <FamilyCustomFields />
                                 </div>
                             )}
                             {tabValue === 5 && (
                                 <div>
-                                    <ChangePassword/>
+                                    <ChangePassword />
                                 </div>
                             )}
                         </div>

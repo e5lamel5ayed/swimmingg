@@ -2,7 +2,7 @@ import React from 'react'
 import NavBar from '../../../Components/NavBar/NavBarFather'
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import { Link } from 'react-router-dom';
-const AddStudentFather = () => {
+const EditEmail = () => {
 
 
     return (
@@ -11,7 +11,7 @@ const AddStudentFather = () => {
 
             <div className='title-class d-flex justify-content-between align-items-center'>
                 <div className='col-md-4 d-flex justify-content-between align-items-center' style={{ alignItems: "center" }} >
-                    <Link to="/ChoseClass">
+                    <Link to="/MyAcountFather">
                         <ArrowForwardIcon sx={{ color: "#fff", fontSize: "38px" }} />
                     </Link>
                 </div>
@@ -69,4 +69,4 @@ const AddStudentFather = () => {
     )
 }
 
-export default AddStudentFather
+export default EditEmail
