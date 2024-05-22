@@ -37,7 +37,7 @@ const AccountInfo = () => {
                                 </div>
                             </div>
                         </Link>
-                        <Link className='text-decoration-underline'>
+                        <Link to='/editemail' className='text-decoration-underline'>
                             إضافة عنوان بريدي
                         </Link>
                     </div>
@@ -49,7 +49,7 @@ const AccountInfo = () => {
                                 <span>sayedosama@gmail.com</span>
                             </div>
                         </Link>
-                        <Link className='text-decoration-underline'>
+                        <Link to='/addemail' className='text-decoration-underline'>
                             اضافة بريد الكتروني
                         </Link>
                     </div>
@@ -64,7 +64,7 @@ const AccountInfo = () => {
                                 </p>
                             </div>
                         </Link>
-                        <Link className='text-decoration-underline'>
+                        <Link to='/editphone' className='text-decoration-underline'>
                             اضافة رقم هاتف
                         </Link>
                     </div>
