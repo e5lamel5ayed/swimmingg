@@ -4,6 +4,7 @@ import Student from './StudentFather'
 import { Tab, Tabs } from '@mui/material';
 import { Link } from 'react-router-dom';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
+import Payment from './Payment';
 
 
 export const MyAcount = () => {
@@ -17,15 +18,15 @@ export const MyAcount = () => {
         <div>
             <NavBar />
             <div className='myacount'>
-            <div className='title-class d-flex'>
-                    <div className='col-md-5 d-flex'style={{alignItems:"center"}} >
+                <div className='title-class d-flex'>
+                    <div className='col-md-5 d-flex' style={{ alignItems: "center" }} >
                         <Link to="/bookingFather">
-                    <ArrowForwardIcon sx={{color:"#fff",fontSize:"38px"}}/>
+                            <ArrowForwardIcon sx={{ color: "#fff", fontSize: "38px" }} />
                         </Link>
                     </div>
-                    <div className='col-md-7 ml-1 d-flex' style={{justifyContent:"flex-start"}}>
+                    <div className='col-md-7 ml-1 d-flex' style={{ justifyContent: "flex-start" }}>
 
-                    <h2 className='text-center text-white mr-5'>حسابي</h2>
+                        <h2 className='text-center text-white mr-5'>حسابي</h2>
                     </div>
                 </div>
                 <div className='container'>
@@ -50,10 +51,13 @@ export const MyAcount = () => {
                             {tabValue === 0 && (
                                 <div>
                                     <Student />
+
                                 </div>
                             )}
                             {tabValue === 1 && (
                                 <div>
+                                    <Payment />
+
                                 </div>
                             )}
                             {tabValue === 2 && (

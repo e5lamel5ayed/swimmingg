@@ -39,13 +39,16 @@ const NavBar = () => {
           </nav>
 
           <div className='col-md-6 d-flex navtext'>
-            <Link class="navbar-brand pl-5 text-white" to="/booking">حجز</Link>
+            {/* <Link class="navbar-brand pl-5 text-white" to="/booking">حجز</Link> */}
 
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse d-flex" id="navbarNavDropdown">
               <ul class="navbar-nav">
+                <li class="nav-item active">
+                  <Link class="nav-link pl-5 text-white" to="/booking">حجز <span class="sr-only">(current)</span></Link>
+                </li>
                 <li class="nav-item active">
                   <Link class="nav-link pl-5 text-white" to="/MyAcount">حسابي <span class="sr-only">(current)</span></Link>
                 </li>

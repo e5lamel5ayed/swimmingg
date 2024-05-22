@@ -8,7 +8,7 @@ export const ClassesFather = () => {
     return (
         <div>
             <NavBar />
-            <div className='classes pb-5'>
+            <div className='classes pb-3'>
                 <div className='title-class d-flex'>
                     <div className='col-md-5 d-flex' style={{ alignItems: "center" }} >
                         <Link to="/ChoseClass">
@@ -23,7 +23,7 @@ export const ClassesFather = () => {
 
                 <div className='container'>
 
-                    <Stack direction="row" spacing={1} className='m-2'>
+                    <Stack direction="row" spacing={1} className='m-2 mt-4'>
 
                         <Chip
                             className='m-1'

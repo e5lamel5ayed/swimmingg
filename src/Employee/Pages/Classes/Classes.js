@@ -17,7 +17,7 @@ export const Classes = () => {
     return (
         <div>
             <NavBar />
-            <div className='classes pb-5'>
+            <div className='classes pb-3'>
 
                 <div className='title-class d-flex'>
                     <div className='col-md-5 d-flex' style={{ alignItems: "center" }} >
@@ -32,7 +32,7 @@ export const Classes = () => {
 
                 <div className='container'>
 
-                    <Stack direction="row" spacing={1} className='m-2'>
+                    <Stack direction="row" spacing={1} className='m-2 mt-4'>
                         <All/>
                         <Age/>
                         <Programs/>
