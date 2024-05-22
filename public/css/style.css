@@ -649,9 +649,24 @@ ol {
 /* End payment  */
 
 /* start account-info  */
-.account-info-location p{
+.account-info-location p {
     font-size: 12px;
     margin-bottom: 2px !important;
 
 }
+
+.account-hover {
+    padding: 10px;
+    border-radius: 5px;
+    color: gray;
+    transition: all .5s ease;
+}
+
+.account-hover:hover {
+    background-color: #94f1ff25 !important;
+}
+.editemail {
+    padding-bottom: 150px;
+}
+
 /* End account-info  */

@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import TransactionHistory from './TransactionHistory';
 import Payment from './Payment';
-import AccountInfo from './AccountInfo';
+import AccountInfo from './AccountInfo/AccountInfo';
 
 
 export const MyAcount = () => {
