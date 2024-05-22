@@ -544,13 +544,14 @@ ol {
 }
 .number-checkbox span {
     display: inline-block;
+    /* width: 100%; */
     width: 40px;
     /* height: 20px; */
     text-align: center;
     line-height: 20px;
     border: 1px solid #ccc;
     border-radius: 4px;
-    user-select: none;
+    /* user-select: none; */
     cursor: pointer;
     /* padding: 12px; */
     border-radius: 51%;

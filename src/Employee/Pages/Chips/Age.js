@@ -97,6 +97,15 @@ const Age = () => {
                                     <div class="form-group form-check">
                                         <label class="number-checkbox">
                                             <input type="checkbox" id="exampleCheck1" />
+                                            <span>1</span>
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div className='col-md-2'>
+                                    <div class="form-group form-check">
+                                        <label class="number-checkbox">
+                                            <input type="checkbox" id="exampleCheck1" />
                                             <span>2</span>
                                         </label>
                                     </div>
@@ -117,7 +126,11 @@ const Age = () => {
                                         </label>
                                     </div>
                                 </div>
-                                <div className='col-md-2'>
+                               
+                            </div>
+                            <div className='col-md-12  mt-2' style={{ display: "flex", justifyContent: "center" }}>
+
+                            <div className='col-md-2'>
                                     <div class="form-group form-check">
                                         <label class="number-checkbox">
                                             <input type="checkbox" id="exampleCheck1" />
@@ -126,8 +139,6 @@ const Age = () => {
                                     </div>
                                 </div>
 
-                            </div>
-                            <div className='col-md-12  mt-2' style={{ display: "flex", justifyContent: "center" }}>
 
                                 <div className='col-md-2'>
                                     <div class="form-group form-check">
@@ -137,14 +148,7 @@ const Age = () => {
                                         </label>
                                     </div>
                                 </div>
-                                <div className='col-md-2'>
-                                    <div class="form-group form-check">
-                                        <label class="number-checkbox">
-                                            <input type="checkbox" id="exampleCheck1" />
-                                            <span>6</span>
-                                        </label>
-                                    </div>
-                                </div>
+
                                 <div className='col-md-2'>
                                     <div class="form-group form-check">
                                         <label class="number-checkbox">
