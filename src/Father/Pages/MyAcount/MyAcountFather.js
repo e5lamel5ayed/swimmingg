@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import TransactionHistory from './TransactionHistory';
 import Payment from './Payment';
+import FamilyCustomFields from './FamilyCustomFields';
 
 
 export const MyAcount = () => {
@@ -69,6 +70,11 @@ export const MyAcount = () => {
                             {tabValue === 3 && (
                                 <div>
 
+                                </div>
+                            )}
+                            {tabValue === 4 && (
+                                <div>
+                                    <FamilyCustomFields/>
                                 </div>
                             )}
                         </div>
