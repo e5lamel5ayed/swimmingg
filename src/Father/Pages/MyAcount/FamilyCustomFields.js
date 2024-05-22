@@ -1,5 +1,6 @@
 import { Button } from '@mui/material'
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const FamilyCustomFields = () => {
     return (
@@ -16,9 +17,11 @@ const FamilyCustomFields = () => {
                     > الحقول المخصصه للعائلة</h3>
                 </div>
                 <div className='col-md-12 mt-4 mb-5'>
-                    <Button className='text-black w-100 d-flex  justify-content-start p-4'>
-                        تم اضافتك من قبل من ؟(الاسم الاول /الاسم الاخير)
-                    </Button>
+                    <Link to='/UpdateFamily'>
+                        <Button className='text-black w-100 d-flex  justify-content-start p-4'>
+                            تم اضافتك من قبل من ؟(الاسم الاول /الاسم الاخير)
+                        </Button>
+                    </Link>
 
                 </div>
             </div>

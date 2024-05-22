@@ -27,6 +27,8 @@ import ClassDetailsFather from "./Father/Pages/Classes/ClassDetailsFather";
 import EditEmail from "./Father/Pages/MyAcount/AccountInfo/EditEmail";
 import EditPhone from "./Father/Pages/MyAcount/AccountInfo/EditPhone";
 import AddEmail from "./Father/Pages/MyAcount/AccountInfo/AddEmail";
+import UpdateFamily from "./Father/Pages/MyAcount/Update/UpdateFamily";
+import UpdatePassword from "./Father/Pages/MyAcount/Update/UpdatePassword";
 // import ClassDetailsFather from "./Father/Pages/Classes/ClassDetailsFather";
 
 const router = createBrowserRouter([
@@ -114,6 +116,14 @@ const router = createBrowserRouter([
   {
     path: "/addemail",
     element: <AddEmail />,
+  },
+  {
+    path: "/UpdateFamily",
+    element: <UpdateFamily />,
+  },
+  {
+    path: "/UpdatePassword",
+    element: <UpdatePassword />,
   },
 ]);
 
