@@ -26,7 +26,7 @@ export default function MediaCard() {
                                 <CardContent>
 
                                     <Typography gutterBottom variant="h5" component="div" className='text-muted fw-bold'>
-                                        مجموعة الوالدين
+                                        مجموعة 1
                                     </Typography>
 
                                     <Typography variant="body2" color="text.secondary">
@@ -81,7 +81,7 @@ export default function MediaCard() {
                                 <CardContent>
 
                                     <Typography gutterBottom variant="h5" component="div" className='text-muted fw-bold'>
-                                        مجموعة الوالدين
+                                        مجموعة 2
                                     </Typography>
 
                                     <Typography variant="body2" color="text.secondary">
@@ -136,7 +136,7 @@ export default function MediaCard() {
                                 <CardContent>
 
                                     <Typography gutterBottom variant="h5" component="div" className='text-muted fw-bold'>
-                                        مجموعة الوالدين
+                                        مجموعة 3
                                     </Typography>
 
                                     <Typography variant="body2" color="text.secondary">
@@ -191,7 +191,7 @@ export default function MediaCard() {
                                 <CardContent>
 
                                     <Typography gutterBottom variant="h5" component="div" className='text-muted fw-bold'>
-                                        مجموعة الوالدين
+                                        مجموعة 4
                                     </Typography>
 
                                     <Typography variant="body2" color="text.secondary">
@@ -246,7 +246,7 @@ export default function MediaCard() {
                                 <CardContent>
 
                                     <Typography gutterBottom variant="h5" component="div" className='text-muted fw-bold'>
-                                        مجموعة الوالدين
+                                        مجموعة 5
                                     </Typography>
 
                                     <Typography variant="body2" color="text.secondary">
@@ -301,7 +301,7 @@ export default function MediaCard() {
                                 <CardContent>
 
                                     <Typography gutterBottom variant="h5" component="div" className='text-muted fw-bold'>
-                                        مجموعة الوالدين
+                                        مجموعة 6
                                     </Typography>
 
                                     <Typography variant="body2" color="text.secondary">

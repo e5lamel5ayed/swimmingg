@@ -23,6 +23,8 @@ import ClassDetails from "./Employee/Pages/Classes/ClassDetails";
 import ChoseStudentEmploee from "./Employee/Pages/Classes/ChoseStudentEmploee";
 import AddStudent from "./Employee/Pages/Classes/AddStudent";
 import AddStudentFather from "./Father/Pages/Classes/AddStudentFather";
+import ClassDetailsFather from "./Father/Pages/Classes/ClassDetailsFather";
+// import ClassDetailsFather from "./Father/Pages/Classes/ClassDetailsFather";
 
 const router = createBrowserRouter([
   {
@@ -93,7 +95,11 @@ const router = createBrowserRouter([
     path: "/addstudentFather",
     element: <AddStudentFather />,
   },
-    
+ 
+  {
+    path: "/classDetailsFather",
+    element: <ClassDetailsFather />,
+  },
 ]);
 
 createRoot(document.getElementById("root")).render(
