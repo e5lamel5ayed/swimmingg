@@ -11,7 +11,7 @@ const TransactionHistory = () => {
 
     return (
         <div>
-            <div className=' border mt-3'>
+            <div className=' border mt-4 bg-white payment'>
                 <div className='row'>
                     <div className='col-md-12 mt-3'>
                         <h3
