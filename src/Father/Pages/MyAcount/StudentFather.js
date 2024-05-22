@@ -68,17 +68,17 @@ export default function MultiActionAreaCard() {
                                 </div>
                             </CardContent>
                         </CardActionArea>
-                        <CardActions>
+                        <Link to='/addstudentFather2'>
                             <Button
                                 style={{
                                     backgroundColor: "rgb(237 236 236)",
                                     color: "rgb(0, 0, 0)",
                                     borderRadius: "32px",
                                 }}
-                                className='btn bun-block w-100 mb-2 ' size="" color="primary">
+                                className='btn btn-block w-100 mb-3' size="" color="primary">
                                 تعديل الطالب
                             </Button>
-                        </CardActions>
+                            </Link>
                     </Card>
                 </div>
                 <div className='col-md-4 mt-3 position-relative'>
@@ -136,17 +136,17 @@ export default function MultiActionAreaCard() {
                                 </div>
                             </CardContent>
                         </CardActionArea>
-                        <CardActions>
+                        <Link to='/addstudentFather2'>
                             <Button
                                 style={{
                                     backgroundColor: "rgb(237 236 236)",
                                     color: "rgb(0, 0, 0)",
                                     borderRadius: "32px",
                                 }}
-                                className='btn bun-block w-100 mb-2 ' size="" color="primary">
+                                className='btn btn-block w-100 mb-3' size="" color="primary">
                                 تعديل الطالب
                             </Button>
-                        </CardActions>
+                            </Link>
                     </Card>
                 </div>
                 <div className='col-md-4 mt-3 position-relative'>
@@ -161,7 +161,7 @@ export default function MultiActionAreaCard() {
                                 </Typography>
                                 <div className='container'>
                                     <div className='row'>
-                                        
+
                                         <div
                                             style={{
                                                 borderBottom: " 0.5px #000 solid",
@@ -204,23 +204,23 @@ export default function MultiActionAreaCard() {
                                 </div>
                             </CardContent>
                         </CardActionArea>
-                        <CardActions>
+                        <Link to='/addstudentFather2'>
                             <Button
                                 style={{
                                     backgroundColor: "rgb(237 236 236)",
                                     color: "rgb(0, 0, 0)",
                                     borderRadius: "32px",
                                 }}
-                                className='btn bun-block w-100 mb-2 ' size="" color="primary">
+                                className='btn btn-block w-100 mb-3' size="" color="primary">
                                 تعديل الطالب
                             </Button>
-                        </CardActions>
+                            </Link>
                     </Card>
                 </div>
 
                 <div className='col-md-12 text-center mt-4 '>
-                    <Link to='/addstudentFather'>
-                    <button className='btn btn-edit'>اضف طالب</button>
+                    <Link to='/addstudentFather2'>
+                        <button className='btn btn-edit'>اضف طالب</button>
                     </Link>
 
                 </div>

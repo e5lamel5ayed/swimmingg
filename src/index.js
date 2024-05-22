@@ -29,6 +29,7 @@ import EditPhone from "./Father/Pages/MyAcount/AccountInfo/EditPhone";
 import AddEmail from "./Father/Pages/MyAcount/AccountInfo/AddEmail";
 import UpdateFamily from "./Father/Pages/MyAcount/Update/UpdateFamily";
 import UpdatePassword from "./Father/Pages/MyAcount/Update/UpdatePassword";
+import AddStudentFather2 from "./Father/Pages/Classes/AddStudentFather2";
 // import ClassDetailsFather from "./Father/Pages/Classes/ClassDetailsFather";
 
 const router = createBrowserRouter([
@@ -99,6 +100,10 @@ const router = createBrowserRouter([
   {
     path: "/addstudentFather",
     element: <AddStudentFather />,
+  },
+  {
+    path: "/addstudentFather2",
+    element: <AddStudentFather2/>,
   },
  
   {
