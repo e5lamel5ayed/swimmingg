@@ -1,8 +1,8 @@
 import React from 'react'
-import NavBar from '../../Components/NavBar/NavBar'
+import NavBar from '../../Components/NavBar/NavBarFather'
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import { Link } from 'react-router-dom';
-const AddStudent = () => {
+const AddStudentFather = () => {
 
 
     return (
@@ -11,7 +11,7 @@ const AddStudent = () => {
 
             <div className='title-class d-flex justify-content-between align-items-center'>
                 <div className='col-md-4 d-flex justify-content-between align-items-center' style={{ alignItems: "center" }} >
-                    <Link to="/choosestudent">
+                    <Link to="/ChoseClass">
                         <ArrowForwardIcon sx={{ color: "#fff", fontSize: "38px" }} />
                     </Link>
                 </div>
@@ -25,7 +25,8 @@ const AddStudent = () => {
                 <div className="container">
                     <div className="row">
                         <div className="col-md-9 m-auto">
-                            <form action="/choosestudent" className=' mt-5'>
+
+                            <form action="" className=' mt-5' method='get'>
 
                                 <div className='mb-5 p-3 special-info bg-white'>
                                     <h4 className='my-5'>معلومات عامة</h4>
@@ -130,4 +131,4 @@ const AddStudent = () => {
     )
 }
 
-export default AddStudent
+export default AddStudentFather

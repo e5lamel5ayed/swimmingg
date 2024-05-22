@@ -492,33 +492,64 @@ ol {
 
 /* start add-student  */
 
-.add-student  {
+.add-student {
     background-color: #F9F9F9 !important;
 }
 
- .add-student form input {
+.add-student form .gender {
+    margin-left: 160px !important;
+}
+
+.add-student form .condition-health {
+    margin-left: 65px !important;
+}
+
+.add-student form input,
+.input-group-text ,.add-student form select {
     background-color: #d1cfcfab;
-    border: none ;
-} 
+    border: none;
+}
+
+
 .special-info {
     border-radius: 10px;
     box-shadow: 2px 2px 10px 2px #b6b3b33d;
 }
-@media (max-width:567px){
-    .add-student-btn{
+
+@media (max-width:567px) {
+    .add-student-btn {
         flex-direction: column !important;
     }
+
     .btn-edit {
         margin-left: 0 !important;
     }
+
     .add-student form label {
-        font-size: 13px !important;
+        font-size: 12px !important;
     }
+
     .add-student form h4 {
         margin: 20px 5px !important;
         font-size: 18px;
     }
+
+    .add-student form .gender {
+        margin-left: 75px !important;
+    }
+
+    .add-student form .condition-health {
+        margin-left: 10px !important;
+    }
 }
+
+@media (max-width:400px) {
+
+    .add-student form .gender {
+        margin-left: 40px !important;
+    }
+}
+
 /* End add-student  */
 
 

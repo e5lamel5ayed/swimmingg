@@ -180,16 +180,18 @@ const ChoseClass = () => {
 
                         </div>
                         <div className='col-md-12 text-center mt-4 '>
-                            <Button
-                                style={{
-                                    backgroundColor: "rgb(237 236 236)",
-                                    color: "rgb(0, 0, 0)",
-                                    borderRadius: "32px",
-                                }}
-                                className='btn bun-block btn-edit2 mb-2 w-50' size="" color="primary">
-                                اضافه الطالب
-                            </Button>
+                            <Link to='/addstudentFather'>
 
+                                <Button
+                                    style={{
+                                        backgroundColor: "rgb(237 236 236)",
+                                        color: "rgb(0, 0, 0)",
+                                        borderRadius: "32px",
+                                    }}
+                                    className='btn bun-block btn-edit2 mb-2 w-50' size="" color="primary">
+                                    اضافه الطالب
+                                </Button>
+                            </Link>
                         </div>
                     </div>
 
