@@ -32,7 +32,6 @@ export const Classes = () => {
                 <div className='container'>
 
                     <Stack direction="row" spacing={1} className='m-2 mt-4'>
-                        <All/>
                         <Age/>
                         <Programs/>
                         <Days/>
