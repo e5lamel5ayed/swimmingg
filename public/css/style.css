@@ -612,7 +612,7 @@ ol {
 }
 
 /* start payment  */
-.payment {
+.all-account {
     box-shadow: 2px 2px 10px 2px #b6b3b33d;
     border-radius: 10px;
 }
@@ -647,3 +647,11 @@ ol {
 }
 
 /* End payment  */
+
+/* start account-info  */
+.account-info-location p{
+    font-size: 12px;
+    margin-bottom: 2px !important;
+
+}
+/* End account-info  */

@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import TransactionHistory from './TransactionHistory';
 import Payment from './Payment';
+import AccountInfo from './AccountInfo';
 
 
 export const MyAcount = () => {
@@ -51,6 +52,7 @@ export const MyAcount = () => {
 
                             {tabValue === 0 && (
                                 <div>
+                                    <AccountInfo/>
                                     <Student />
 
                                 </div>

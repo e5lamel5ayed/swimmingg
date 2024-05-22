@@ -3,7 +3,7 @@ import React from 'react'
 const Payment = () => {
     return (
         <div>
-            <div className=" mt-4 bg-white payment">
+            <div className=" mt-4 bg-white all-account">
                 <div className=' pt-4'>
                     <h3
                         style={{
