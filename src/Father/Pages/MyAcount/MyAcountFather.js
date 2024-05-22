@@ -8,6 +8,8 @@ import TransactionHistory from './TransactionHistory';
 import Payment from './Payment';
 import AccountInfo from './AccountInfo/AccountInfo';
 import FamilyCustomFields from './FamilyCustomFields';
+import AccountInfo from './AccountInfo';
+import ChangePassword from './ChangePassword';
 
 
 export const MyAcount = () => {
@@ -77,6 +79,11 @@ export const MyAcount = () => {
                             {tabValue === 4 && (
                                 <div>
                                     <FamilyCustomFields/>
+                                </div>
+                            )}
+                            {tabValue === 5 && (
+                                <div>
+                                    <ChangePassword/>
                                 </div>
                             )}
                         </div>
