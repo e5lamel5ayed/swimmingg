@@ -9,7 +9,7 @@ export const ClassesFather = () => {
         <div>
             <NavBar />
             <div className='classes pb-5'>
-            <div className='title-class d-flex'>
+                <div className='title-class d-flex'>
                     <div className='col-md-5 d-flex' style={{ alignItems: "center" }} >
                         <Link to="/ChoseClass">
                             <ArrowForwardIcon sx={{ color: "#fff", fontSize: "38px" }} />
@@ -21,63 +21,66 @@ export const ClassesFather = () => {
                     </div>
                 </div>
 
-                <Stack direction="row" spacing={1} className='m-2'>
+                <div className='container'>
 
-                    <Chip
-                        className='m-1'
-                        label="الكل"
-                        component="a"
-                        href="#basic-chip"
-                        variant="outlined"
-                        clickable
-                    />
+                    <Stack direction="row" spacing={1} className='m-2'>
 
-                    <Chip
-                        className='m-1'
-                        label="العمر"
-                        component="a"
-                        href="#basic-chip"
-                        variant="outlined"
-                        clickable
-                    />
+                        <Chip
+                            className='m-1'
+                            label="الكل"
+                            component="a"
+                            href="#basic-chip"
+                            variant="outlined"
+                            clickable
+                        />
 
-                    <Chip
-                        className='m-1'
-                        label="البرامج"
-                        component="a"
-                        href="#basic-chip"
-                        variant="outlined"
-                        clickable
-                    />
+                        <Chip
+                            className='m-1'
+                            label="العمر"
+                            component="a"
+                            href="#basic-chip"
+                            variant="outlined"
+                            clickable
+                        />
 
-                    <Chip
-                        className='m-1'
-                        label="الايام"
-                        component="a"
-                        href="#basic-chip"
-                        variant="outlined"
-                        clickable
-                    />
+                        <Chip
+                            className='m-1'
+                            label="البرامج"
+                            component="a"
+                            href="#basic-chip"
+                            variant="outlined"
+                            clickable
+                        />
 
-                    <Chip
-                        className='m-1'
-                        label="المدربين"
-                        component="a"
-                        href="#basic-chip"
-                        variant="outlined"
-                        clickable
-                    />
+                        <Chip
+                            className='m-1'
+                            label="الايام"
+                            component="a"
+                            href="#basic-chip"
+                            variant="outlined"
+                            clickable
+                        />
 
-                    <Chip
-                        className='m-1'
-                        label="المتاح"
-                        component="a"
-                        href="#basic-chip"
-                        variant="outlined"
-                        clickable
-                    />
+                        <Chip
+                            className='m-1'
+                            label="المدربين"
+                            component="a"
+                            href="#basic-chip"
+                            variant="outlined"
+                            clickable
+                        />
 
-                </Stack>
+                        <Chip
+                            className='m-1'
+                            label="المتاح"
+                            component="a"
+                            href="#basic-chip"
+                            variant="outlined"
+                            clickable
+                        />
+
+                    </Stack>
+                </div>
 
             </div>
         </div>
