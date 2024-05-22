@@ -12,8 +12,7 @@ const TransactionHistory = () => {
     return (
         <div>
             <div className=' border mt-4 bg-white payment'>
-                <div className='row'>
-                    <div className='col-md-12 mt-3'>
+                    <div className='pt-4 mt-3'>
                         <h3
                             style={{
                                 borderRight: " 5px #004c6d solid",
@@ -154,7 +153,6 @@ const TransactionHistory = () => {
                 </div>
 
             </div>
-        </div>
     )
 }
 
