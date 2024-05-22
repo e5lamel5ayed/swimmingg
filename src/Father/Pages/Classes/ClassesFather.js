@@ -3,6 +3,11 @@ import { Chip, Stack } from '@mui/material';
 import NavBar from '../../../Father/Components/NavBar/NavBarFather';
 import { Link } from 'react-router-dom';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
+import Age from '../Chips/Age';
+import Programs from '../Chips/Programs';
+import Days from '../Chips/Days';
+import Instructors from '../Chips/Instructors';
+import Avilable from '../Chips/Avilable';
 
 export const ClassesFather = () => {
     return (

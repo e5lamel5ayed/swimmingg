@@ -4,7 +4,6 @@ import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import React from 'react';
 import { Stack } from '@mui/material';
 
-import All from '../Chips/All';
 import Age from '../Chips/Age';
 import Programs from '../Chips/Programs';
 import Days from '../Chips/Days';
