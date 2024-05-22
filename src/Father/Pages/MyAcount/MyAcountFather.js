@@ -7,6 +7,8 @@ import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import TransactionHistory from './TransactionHistory';
 import Payment from './Payment';
 import AccountInfo from './AccountInfo/AccountInfo';
+import FamilyCustomFields from './FamilyCustomFields';
+import AccountInfo from './AccountInfo';
 
 
 export const MyAcount = () => {
@@ -71,6 +73,11 @@ export const MyAcount = () => {
                             {tabValue === 3 && (
                                 <div>
 
+                                </div>
+                            )}
+                            {tabValue === 4 && (
+                                <div>
+                                    <FamilyCustomFields/>
                                 </div>
                             )}
                         </div>
