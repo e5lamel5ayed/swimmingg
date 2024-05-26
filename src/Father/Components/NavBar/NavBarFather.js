@@ -45,10 +45,10 @@ const NavBarFather = () => {
             <div class="collapse navbar-collapse d-flex" id="navbarNavDropdown">
               <ul class="navbar-nav">
                 <li class="nav-item active">
-                  <Link class="nav-link pl-5 text-white" to="/booking">حجز <span class="sr-only">(current)</span></Link>
+                  <Link class="nav-link pl-5 text-white" to="/bookingFather">حجز <span class="sr-only">(current)</span></Link>
                 </li>
                 <li class="nav-item active">
-                  <Link class="nav-link pl-5 text-white" to="/MyAcount">حسابي <span class="sr-only">(current)</span></Link>
+                  <Link class="nav-link pl-5 text-white" to="/MyAcountFather">حسابي <span class="sr-only">(current)</span></Link>
                 </li>
                 <li class="nav-item active">
                   <Link class="nav-link pl-5 text-white" to="#">اخبار <span class="sr-only">(current)</span></Link>
