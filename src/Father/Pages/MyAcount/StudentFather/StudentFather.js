@@ -81,7 +81,7 @@ export default function MultiActionAreaCard() {
                                 className='btn btn-block w-100 mb-3' size="" color="primary">
                                 تعديل الطالب
                             </Button>
-                            </Link>
+                        </Link>
                     </Card>
                 </div>
 
@@ -153,7 +153,7 @@ export default function MultiActionAreaCard() {
                                 className='btn btn-block w-100 mb-3' size="" color="primary">
                                 تعديل الطالب
                             </Button>
-                            </Link>
+                        </Link>
                     </Card>
                 </div>
 
@@ -226,16 +226,17 @@ export default function MultiActionAreaCard() {
                                 className='btn btn-block w-100 mb-3' size="" color="primary">
                                 تعديل الطالب
                             </Button>
-                            </Link>
+                        </Link>
                     </Card>
                 </div>
 
                 <div className='col-md-12 text-center mt-4 '>
                     <Link to='/addstudentFather2'>
                         <button className='btn btn-edit'>اضف طالب</button>
-                    <Link to='/addstudentFather'>
-                        <button className='btn btn-edit'>اضف طالب</button>
                     </Link>
+                        <Link to='/addstudentFather'>
+                            <button className='btn btn-edit'>اضف طالب</button>
+                        </Link>
 
                 </div>
             </div>
