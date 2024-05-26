@@ -50,38 +50,30 @@ const ClassDetailsFather = () => {
                     <div className='details py-5'>
                         <div className="container">
                             <div className="row">
-                                <div className='alldetails'>
-
-                                    <div className='d-flex'>
-                                        <p className='fw-bold ml-5'>الجدول :</p>
-                                        <p>الاحد | 9.00 - 9.00صباحا</p>
-                                    </div>
-
-                                    <div className='d-flex'>
-                                        <p className='fw-bold ml-5'>المدربين :</p>
-                                        <p>اسلام السيد</p>
-                                    </div>
-
-                                    <div className='d-flex'>
-                                        <p className='fw-bold ml-5'>البرنامج :</p>
-                                        <p>برنامج السباحه</p>
-                                    </div>
-
-                                    <div className='d-flex'>
-                                        <p className='fw-bold ml-5'>المستوي :</p>
-                                        <p>الاب</p>
-                                    </div>
-
-                                    <div className='d-flex'>
-                                        <p className='fw-bold ml-5'>التكلفة :</p>
-                                        <p>200.00 جنيه</p>
-                                    </div>
-
+                                <div className="table-responsive text-center">
+                                    <table className="table">
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">الجدول</th>
+                                                <th scope="col">المدربين</th>
+                                                <th scope="col">البرنامج</th>
+                                                <th scope="col">المستوي</th>
+                                                <th scope="col">التكلفة</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>الاحد | 9.00 - 9.00صباحا<br />الثلاثاء | 10.00 - 11.00صباحا<br />الخميس | 1.00 - 2.00مساءا<br />السبت | 3.00 - 4.00مساءا</td>
+                                                <td>اسلام السيد</td>
+                                                <td>برنامج السباحة</td>
+                                                <td>مبتدى</td>
+                                                <td>200.00 جنية</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
                                 </div>
 
-                                <hr className='my-5 w-75 details-hr m-auto' />
-
-                                <div className='description-details'>
+                                <div className='description-details mt-5'>
 
 
                                     <p className='fw-bold'>الوصف</p>
