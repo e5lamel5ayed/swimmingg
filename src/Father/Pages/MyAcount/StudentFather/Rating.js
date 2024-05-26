@@ -61,67 +61,63 @@ const Rating = () => {
                     <div className="row">
 
                         <div className="col-md-4 mb-3 all-classes-col">
-                            <Link to="/EnrollNow">
-                                <div className=' white-div p-1'></div>
-                                <div className='bg-white p-2'></div>
-                                <Card className='allclasses-card'>
-                                    <CardMedia className='allclasses-img'
-                                        title="all-classes"
-                                    />
-                                    <CardContent>
+                            <div className=' white-div p-1'></div>
+                            <div className='bg-white p-2'></div>
+                            <Card className='allclasses-card'>
+                                <CardMedia className='allclasses-img'
+                                    title="all-classes"
+                                />
+                                <CardContent>
 
-                                        <Typography gutterBottom variant="h5" component="div" className='text-muted fw-bold'>
-                                            مجموعة 3
+                                    <Typography gutterBottom variant="h5" component="div" className='text-muted fw-bold'>
+                                        مجموعة 3
+                                    </Typography>
+
+
+
+                                    <div className='d-flex justify-content-between align-item-center position-relative'>
+                                        <Typography variant="" style={{ fontSize: "20px" }} color="text.secondary" className='mt-3 '>
+                                            التقييم
                                         </Typography>
+                                        <CircularProgress variant="determinate" value={75} className='text-success mt-3 ml-3 ' />
+                                        <span className='position-absolute allclasses-open'>75%</span>
+                                    </div>
 
-                                        
+                                </CardContent>
 
-                                        <div className='d-flex justify-content-between align-item-center position-relative'>
-                                            <Typography variant="" style={{fontSize:"20px"}} color="text.secondary" className='mt-3 '>
-                                                    التقييم  
-                                            </Typography>
-                                            <CircularProgress variant="determinate" value={75} className='text-success mt-3 ml-3 ' />
-                                            <span className='position-absolute allclasses-open'>75%</span>
-                                        </div>
-
-                                    </CardContent>
-
-                                </Card>
-                            </Link>
+                            </Card>
                         </div>
 
                         <div className="col-md-4 mb-3 all-classes-col">
-                            <Link to="/EnrollNow">
-                                <div className=' white-div p-1'></div>
-                                <div className='bg-white p-2'></div>
-                                <Card className='allclasses-card'>
-                                    <CardMedia className='allclasses-img'
-                                        title="all-classes"
-                                    />
-                                    <CardContent>
+                            <div className=' white-div p-1'></div>
+                            <div className='bg-white p-2'></div>
+                            <Card className='allclasses-card'>
+                                <CardMedia className='allclasses-img'
+                                    title="all-classes"
+                                />
+                                <CardContent>
 
-                                        <Typography gutterBottom variant="h5" component="div" className='text-muted fw-bold'>
-                                            مجموعة 2
+                                    <Typography gutterBottom variant="h5" component="div" className='text-muted fw-bold'>
+                                        مجموعة 2
+                                    </Typography>
+
+
+
+                                    <div className='d-flex justify-content-between align-item-center position-relative'>
+                                        <Typography variant="" style={{ fontSize: "20px" }} color="text.secondary" className='mt-3 '>
+                                            التقييم
                                         </Typography>
+                                        <CircularProgress variant="determinate" value={90} className='text-success mt-3 ml-3 ' />
+                                        <span className='position-absolute allclasses-open'>90%</span>
+                                    </div>
 
-                                        
+                                </CardContent>
 
-                                        <div className='d-flex justify-content-between align-item-center position-relative'>
-                                            <Typography variant="" style={{fontSize:"20px"}} color="text.secondary" className='mt-3 '>
-                                                    التقييم  
-                                            </Typography>
-                                            <CircularProgress variant="determinate" value={90} className='text-success mt-3 ml-3 ' />
-                                            <span className='position-absolute allclasses-open'>90%</span>
-                                        </div>
-
-                                    </CardContent>
-
-                                </Card>
-                            </Link>
+                            </Card>
                         </div>
 
 
-                       
+
 
                     </div>
                 </div>
