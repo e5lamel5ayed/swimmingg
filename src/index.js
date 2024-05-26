@@ -30,6 +30,9 @@ import AddEmail from "./Father/Pages/MyAcount/AccountInfo/AddEmail";
 import UpdateFamily from "./Father/Pages/MyAcount/Update/UpdateFamily";
 import UpdatePassword from "./Father/Pages/MyAcount/Update/UpdatePassword";
 import AddStudentFather2 from "./Father/Pages/Classes/AddStudentFather2";
+import Setting from "./Employee/Pages/Setting/Setting";
+import AddPlace from "./Employee/Pages/Setting/AddPlace";
+import AddPath from "./Employee/Pages/Setting/AddPath";
 // import ClassDetailsFather from "./Father/Pages/Classes/ClassDetailsFather";
 
 const router = createBrowserRouter([
@@ -92,6 +95,18 @@ const router = createBrowserRouter([
   {
     path: "/ChoseClass",
     element: <ChoseClass />,
+  },
+  {
+    path: "/setting",
+    element: <Setting />,
+  },
+  {
+    path: "/addPlace",
+    element: <AddPlace />,
+  },
+  {
+    path: "/addPath",
+    element: <AddPath />,
   },
   {
     path: "/AllclassesFather",

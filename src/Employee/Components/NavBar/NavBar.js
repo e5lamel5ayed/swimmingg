@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
 import { SidebarData } from '../../../SideBar/SideBarData';
+import { Dropdown } from 'react-bootstrap';
 
 const NavBar = () => {
   const [sidebar, setSidebar] = useState(false)
@@ -17,24 +18,47 @@ const NavBar = () => {
             <Link className="menu_barss" >
               <MenuIcon className='menu_bars-menuIcon ' onClick={showSidebar} /> </Link><Link onClick={showSidebar}></Link>
           </div>
+
           <nav className={sidebar ? 'nav-menu active' : 'nav-menu'}>
-            <ul className='nav-menu-atems' >
-              <li className='navbar-toggle' onClick={showSidebar} >
-                <Link className='menu-bars' >
+            <ul className='nav-menu-items'>
+              <li className='navbar-toggle' onClick={showSidebar}>
+                <Link className='menu-bars'>
                   <CloseIcon />
                 </Link>
               </li>
               {SidebarData.map((item, index) => {
-                return (
-                  <li key={index} className={item.cName}   >
-                    <Link to={item.path}>
-                      {item.icon}
-                      <span>{item.title}</span>
-                    </Link>
-                  </li>
-                )
-              }
-              )}
+                if (item.subMenu) {
+                  return (
+                    <li key={index} className={item.cName}>
+                      <Dropdown>
+                        <Dropdown.Toggle as="a" className="nav-text">
+                          {item.icon}
+                          <span>{item.title}</span>
+                        </Dropdown.Toggle>
+                        <Dropdown.Menu>
+                          {item.subMenu.map((subItem, subIndex) => (
+                            <Dropdown.Item key={subIndex} as={Link} to={subItem.path} className={item.cName}>
+                              <div className={item.ccName}>
+
+                                {subItem.title}
+                              </div>
+                            </Dropdown.Item>
+                          ))}
+                        </Dropdown.Menu>
+                      </Dropdown>
+                    </li>
+                  );
+                } else {
+                  return (
+                    <li key={index} className={item.cName}>
+                      <Link to={item.path}>
+                        {item.icon}
+                        <span>{item.title}</span>
+                      </Link>
+                    </li>
+                  );
+                }
+              })}
             </ul>
           </nav>
 

@@ -22,7 +22,22 @@ export const SidebarData = [
         path: "/Emploee",
         cName: "nav-text"
     },
-    
-
-
-]
+    {
+        title: 'الاعدادت',
+        path: '/setting',
+        cName: 'nav-text',
+        subMenu: [
+            {
+                title: 'اضافة مكان',
+                path: '/addPlace',
+            },
+            {
+                title: 'اضافة حمام',
+                path: '/addPath',
+            },
+            {
+                title: 'اضافة حارة',
+                path: '/addLane',
+            },
+        ]
+    }]

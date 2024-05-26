@@ -371,6 +371,7 @@ export default function MediaCard() {
                     </div>
                 </div>
             </div>
+            
             <Dialog open={open} onClose={handleClose} fullWidth maxWidth="sm">
                 <div className="white-div p-1" style={{ backgroundColor: "#94F0FF" }}></div>
                 <DialogTitle style={{ marginBottom: "15px", direction: "rtl", textAlign: "center" }}>
