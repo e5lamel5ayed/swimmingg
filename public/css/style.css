@@ -520,8 +520,9 @@ ol {
 }
 
 .add-student form input,
-.input-group-text,
-.add-student form select {
+
+.add-student .input-group-text,
+ form select {
     background-color: #d1cfcfab;
     border: none;
 }

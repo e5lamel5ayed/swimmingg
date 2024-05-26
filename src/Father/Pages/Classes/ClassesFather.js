@@ -25,68 +25,18 @@ export const ClassesFather = () => {
                         <h2 className='text-center text-white mr-5'>الصفوف</h2>
                     </div>
                 </div>
-
                 <div className='container'>
 
                     <Stack direction="row" spacing={1} className='m-2 mt-4'>
+                        <Age />
+                        <Programs />
+                        <Days />
+                        <Instructors />
+                        <Avilable />
 
-                        <Chip
-                            className='m-1'
-                            label="الكل"
-                            component="a"
-                            href="#basic-chip"
-                            variant="outlined"
-                            clickable
-                        />
-
-                        <Chip
-                            className='m-1'
-                            label="العمر"
-                            component="a"
-                            href="#basic-chip"
-                            variant="outlined"
-                            clickable
-                        />
-
-                        <Chip
-                            className='m-1'
-                            label="البرامج"
-                            component="a"
-                            href="#basic-chip"
-                            variant="outlined"
-                            clickable
-                        />
-
-                        <Chip
-                            className='m-1'
-                            label="الايام"
-                            component="a"
-                            href="#basic-chip"
-                            variant="outlined"
-                            clickable
-                        />
-
-                        <Chip
-                            className='m-1'
-                            label="المدربين"
-                            component="a"
-                            href="#basic-chip"
-                            variant="outlined"
-                            clickable
-                        />
-
-                        <Chip
-                            className='m-1'
-                            label="المتاح"
-                            component="a"
-                            href="#basic-chip"
-                            variant="outlined"
-                            clickable
-                        />
 
                     </Stack>
                 </div>
-
             </div>
         </div>
     )

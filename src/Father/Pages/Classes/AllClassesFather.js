@@ -101,7 +101,7 @@ const AllClassesFather = () => {
                         </div>
 
                         <div className="col-md-4 mb-3 all-classes-col">
-                            <Link>
+                            <Link to="/EnrollNow">
                                 <div className=' white-div p-1'></div>
                                 <div className='bg-white p-2'></div>
                                 <Card className='allclasses-card'>
@@ -111,7 +111,7 @@ const AllClassesFather = () => {
                                     <CardContent>
 
                                         <Typography gutterBottom variant="h5" component="div" className='text-muted fw-bold'>
-                                            مجموعة 2
+                                            مجموعة 3
                                         </Typography>
 
                                         <Typography variant="body2" color="text.secondary">
@@ -124,12 +124,12 @@ const AllClassesFather = () => {
                                             </Link>
                                         </Typography>
                                         <div className='d-flex justify-content-end position-relative'>
-                                            <CircularProgress variant="determinate" value={100} className='text-danger mt-3 ml-3 ' />
-                                            <span className='position-absolute allclasses-open'>مغلق</span>
+                                            <CircularProgress variant="determinate" value={75} className='text-success mt-3 ml-3 ' />
+                                            <span className='position-absolute allclasses-open'>مفتوح</span>
                                         </div>
                                         <hr className='text-muted' />
                                         <Link className='text-decoration-none text-info'>
-                                            <span className='text-info mr-2'>s</span>
+                                            <span className='mr-2'>s</span>
                                         </Link>
                                         <Link>
                                             <span className='text-muted mr-2'>m</span>

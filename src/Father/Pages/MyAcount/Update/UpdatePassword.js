@@ -38,8 +38,6 @@ const UpdatePassword = () => {
                                         <input type="password" className="form-control w-75" placeholder='تأكيد كلمه السر ' />
                                     </div>
 
-                                    
-
                                 </div>
 
                                 <div className='add-student-btn d-flex justify-content-end align-items-center my-5 '>
