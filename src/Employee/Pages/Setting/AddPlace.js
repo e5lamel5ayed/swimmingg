@@ -45,10 +45,10 @@ const AddPlace = () => {
                     <h2 className='text-center text-white mr-5'>اضافة مكان</h2>
                 </div>
             </div>
-            <div className='bg-white'>
-                <div className="container bg-white pt-5">
+            <div className='bg-white add-setting'>
+                <div className="container pt-5">
                     <div className="row">
-                        <div className="col-md-10 m-auto">
+                        <div className="col-md-12 m-auto">
 
                             <div className='mb-5 p-3 special-info bg-white'>
 

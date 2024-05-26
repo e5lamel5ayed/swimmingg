@@ -33,7 +33,7 @@ import AddStudentFather2 from "./Father/Pages/Classes/AddStudentFather2";
 import Setting from "./Employee/Pages/Setting/Setting";
 import AddPlace from "./Employee/Pages/Setting/AddPlace";
 import AddPath from "./Employee/Pages/Setting/AddPath";
-// import ClassDetailsFather from "./Father/Pages/Classes/ClassDetailsFather";
+import AddLane from "./Employee/Pages/Setting/AddLane";
 
 const router = createBrowserRouter([
   {
@@ -107,6 +107,10 @@ const router = createBrowserRouter([
   {
     path: "/addPath",
     element: <AddPath />,
+  },
+  {
+    path: "/addLane",
+    element: <AddLane />,
   },
   {
     path: "/AllclassesFather",

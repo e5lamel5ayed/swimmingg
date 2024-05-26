@@ -62,8 +62,8 @@ const AddPath = () => {
                 </div>
             </div>
 
-            <div className='bg-white'>
-                <div className="container bg-white pt-5">
+            <div className='bg-white add-setting'>
+                <div className="container pt-5">
                     <div className="row">
                         <div className="col-md-12">
                             <div className='mb-5 p-3 special-info bg-white'>

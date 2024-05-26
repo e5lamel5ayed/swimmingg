@@ -46,6 +46,7 @@ export default function MediaCard() {
                                     <CardMedia className='allclasses-img'
                                         title="all-classes"
                                     />
+                                    
                                     <CardContent>
 
                                         <Typography gutterBottom variant="h5" component="div" className='text-muted fw-bold'>
