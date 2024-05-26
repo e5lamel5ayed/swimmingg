@@ -32,12 +32,17 @@ const AddStudentFather = () => {
                                     <h4 className='my-5'>معلومات عامة</h4>
 
                                     <div className="form-group d-flex justify-content-between align-items-center">
-                                        <label htmlFor=""> الاسم الاول :</label>
+                                        <label htmlFor="">اسم الطالب :</label>
                                         <input type="text" className="form-control w-75" />
                                     </div>
 
                                     <div className="form-group d-flex justify-content-between align-items-center">
-                                        <label htmlFor=""> الاسم الثاني :</label>
+                                        <label htmlFor=""> اسم الاب :</label>
+                                        <input type="text" className="form-control w-75" />
+                                    </div>
+
+                                    <div className="form-group d-flex justify-content-between align-items-center">
+                                        <label htmlFor=""> اسم الام :</label>
                                         <input type="text" className="form-control w-75" />
                                     </div>
 
@@ -46,22 +51,17 @@ const AddStudentFather = () => {
                                         <input type="date" className="form-control w-75" />
                                     </div>
 
+                                    <div className="form-group d-flex justify-content-between align-items-center">
+                                        <label htmlFor=""> ظروف صحية خاصة :</label>
+                                        <input type="text" className="form-control w-75" />
+                                    </div>
+
                                     <div class="form-group d-flex">
                                         <label htmlFor="" className='ml-5 gender'>النوع :</label>
                                         <div class="input-group-prepend">
                                             <div class="input-group-text">
                                                 <input type="radio" className='ml-2' value='male' name='gender' /> ذكر
                                                 <input type="radio" className='mr-2 ml-2' value='female' name='gender' /> انثى
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="form-group d-flex">
-                                        <label htmlFor="" className='ml-5 condition-health'>ظروف صحية خاصة :</label>
-                                        <div class="input-group-prepend">
-                                            <div class="input-group-text">
-                                                <input type="radio" className='ml-2' value='yes' name='condition-health' /> نعم
-                                                <input type="radio" className='mr-2 ml-2' value='no' name='condition-health' /> لا
                                             </div>
                                         </div>
                                     </div>
@@ -89,34 +89,6 @@ const AddStudentFather = () => {
 
                                 </div>
 
-                                <div className='mb-5 p-3 special-info bg-white'>
-                                    <h4 className='my-5'>المعلومات الصحية للطالب</h4>
-
-                                    <div className="form-group d-flex justify-content-between align-items-center">
-                                        <label htmlFor=""> المستشفي :</label>
-                                        <input type="text" className="form-control w-75" />
-                                    </div>
-
-                                    <div className="form-group d-flex justify-content-between align-items-center">
-                                        <label htmlFor=""> شركة التأمين :</label>
-                                        <input type="text" className="form-control w-75" />
-                                    </div>
-
-                                    <div className="form-group d-flex justify-content-between align-items-center">
-                                        <label htmlFor=""> رقم الوثيقة :</label>
-                                        <input type="text" className="form-control w-75" />
-                                    </div>
-
-                                    <div className="form-group d-flex justify-content-between align-items-center">
-                                        <label htmlFor="">الاسم الأول للطبيب :</label>
-                                        <input type="text" className="form-control w-75" />
-                                    </div>
-
-                                    <div className="form-group d-flex justify-content-between align-items-center">
-                                        <label htmlFor=""> رقم للطبيب :</label>
-                                        <input type="text" className="form-control w-75" />
-                                    </div>
-                                </div>
                                 <div className='add-student-btn d-flex justify-content-end align-items-center my-5 '>
                                     <button className='btn ml-2 mb-3 w-100 btn-edit'>حفظ</button>
                                     <button className='btn w-100  mb-3 btn-edit2'>الغاء</button>
