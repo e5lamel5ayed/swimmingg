@@ -1,35 +1,9 @@
 import React, { useState } from 'react'
 import NavBar from '../../Components/NavBar/NavBar'
-import Student from './Student'
-import { Tab, Tabs } from '@mui/material';
-import { CardContent, CardMedia, CircularProgress, Dialog, DialogContent, DialogTitle, Typography } from '@mui/material'
+import { CardContent, CardMedia, Typography } from '@mui/material'
 import { Card } from 'react-bootstrap'
-import { Link } from 'react-router-dom'
 
 export const MyAcount = () => {
-    const [open, setOpen] = useState(false);
-    const [selectedDays, setSelectedDays] = useState([]);
-
-    const handleOpen = () => {
-        setOpen(true);
-    };
-
-    const handleClose = () => {
-        setOpen(false);
-    };
-
-    const handleDayClick = (day) => {
-        setSelectedDays((prevSelectedDays) =>
-            prevSelectedDays.includes(day)
-                ? prevSelectedDays.filter((d) => d !== day)
-                : [...prevSelectedDays, day]
-        );
-    };
-
-    const handleClear = () => {
-        setSelectedDays([]);
-    };
-
 
     return (
         <div>
@@ -94,7 +68,7 @@ export const MyAcount = () => {
                                         تاريخ الحجز
                                     </p>
                                     <p className='mt-3 text-danger'>
-                                        ( 25 أغسطس 2024 )
+                                        ( 18 مايو 2024 )
                                     </p>
                                 </CardContent>
                             </Card>
@@ -123,7 +97,7 @@ export const MyAcount = () => {
                                         تاريخ الحجز
                                     </p>
                                     <p className='mt-3 text-danger'>
-                                        ( 25 أغسطس 2024 )
+                                        ( 15 يناير 2024 )
                                     </p>
                                 </CardContent>
                             </Card>
@@ -152,7 +126,7 @@ export const MyAcount = () => {
                                         تاريخ الحجز
                                     </p>
                                     <p className='mt-3 text-danger'>
-                                        ( 25 أغسطس 2024 )
+                                        ( 25 ابريل 2024 )
                                     </p>
                                 </CardContent>
                             </Card>
