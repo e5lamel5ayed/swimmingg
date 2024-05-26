@@ -25,24 +25,27 @@ export default function MultiActionAreaCard() {
                                 </Typography>
                                 <div className='container'>
                                     <div className='row'>
-                                        <div></div>
                                         <div
                                             style={{
                                                 borderBottom: " 0.5px #000 solid",
                                                 borderLeft: ".5px #000 solid",
                                             }}
                                             className='col-md-6 mt-2 text-center'>
-                                            <GroupIcon sx={{ color: "#8b8be1" }} />
-                                            <p>التسجيلات</p>
+                                            <Link to="/Enrollments">
+                                                <GroupIcon sx={{ color: "#8b8be1" }} />
+                                                <p>التسجيلات</p>
 
+                                            </Link>
                                         </div>
                                         <div
                                             style={{
                                                 borderBottom: " .5px #000 solid",
                                             }}
                                             className='col-md-6 mt-2 text-center'>
-                                            <StarIcon sx={{ color: "#f1d45f" }} />
-                                            <p>التقيمات</p>
+                                            <Link to="/Rating">
+                                                <StarIcon sx={{ color: "#f1d45f" }} />
+                                                <p>التقيمات</p>
+                                            </Link>
 
                                         </div>
                                         <div
@@ -78,9 +81,10 @@ export default function MultiActionAreaCard() {
                                 className='btn btn-block w-100 mb-3' size="" color="primary">
                                 تعديل الطالب
                             </Button>
-                            </Link>
+                        </Link>
                     </Card>
                 </div>
+
                 <div className='col-md-4 mt-3 position-relative'>
                     {/* <div className='student_name'>
                         <h6 className='subName' >م م</h6>
@@ -93,17 +97,20 @@ export default function MultiActionAreaCard() {
                                 </Typography>
                                 <div className='container'>
                                     <div className='row'>
-                                        <div></div>
+
                                         <div
                                             style={{
                                                 borderBottom: " 0.5px #000 solid",
                                                 borderLeft: ".5px #000 solid",
                                             }}
                                             className='col-md-6 mt-2 text-center'>
-                                            <GroupIcon sx={{ color: "#8b8be1" }} />
-                                            <p>التسجيلات</p>
+                                            <Link to="/Enrollments">
+                                                <GroupIcon sx={{ color: "#8b8be1" }} />
+                                                <p>التسجيلات</p>
 
+                                            </Link>
                                         </div>
+
                                         <div
                                             style={{
                                                 borderBottom: " .5px #000 solid",
@@ -146,9 +153,10 @@ export default function MultiActionAreaCard() {
                                 className='btn btn-block w-100 mb-3' size="" color="primary">
                                 تعديل الطالب
                             </Button>
-                            </Link>
+                        </Link>
                     </Card>
                 </div>
+
                 <div className='col-md-4 mt-3 position-relative'>
                     {/* <div className='student_name'>
                         <h6 className='subName' >م م</h6>
@@ -162,16 +170,20 @@ export default function MultiActionAreaCard() {
                                 <div className='container'>
                                     <div className='row'>
 
+
                                         <div
                                             style={{
                                                 borderBottom: " 0.5px #000 solid",
                                                 borderLeft: ".5px #000 solid",
                                             }}
                                             className='col-md-6 mt-2 text-center'>
-                                            <GroupIcon sx={{ color: "#8b8be1" }} />
-                                            <p>التسجيلات</p>
+                                            <Link to="/Enrollments">
+                                                <GroupIcon sx={{ color: "#8b8be1" }} />
+                                                <p>التسجيلات</p>
 
+                                            </Link>
                                         </div>
+
                                         <div
                                             style={{
                                                 borderBottom: " .5px #000 solid",
@@ -214,7 +226,7 @@ export default function MultiActionAreaCard() {
                                 className='btn btn-block w-100 mb-3' size="" color="primary">
                                 تعديل الطالب
                             </Button>
-                            </Link>
+                        </Link>
                     </Card>
                 </div>
 
@@ -222,6 +234,9 @@ export default function MultiActionAreaCard() {
                     <Link to='/addstudentFather2'>
                         <button className='btn btn-edit'>اضف طالب</button>
                     </Link>
+                        <Link to='/addstudentFather'>
+                            <button className='btn btn-edit'>اضف طالب</button>
+                        </Link>
 
                 </div>
             </div>

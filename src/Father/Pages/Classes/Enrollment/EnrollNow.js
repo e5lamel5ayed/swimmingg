@@ -1,9 +1,9 @@
 import React from 'react'
-import NavBar from '../../Components/NavBar/NavBarFather';
+import NavBar from '../../../Components/NavBar/NavBarFather';
 import { Link } from 'react-router-dom';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 
-const ClassDetailsFather = () => {
+const EnrollNow = () => {
     return (
         <div>
 
@@ -16,7 +16,7 @@ const ClassDetailsFather = () => {
                     </Link>
                 </div>
                 <div className='col-md-7 ml-1 d-flex' style={{ justifyContent: "flex-start" }}>
-                    <h2 className='text-center text-white mr-5'>تفاصيل الصف</h2>
+                    <h2 className='text-center text-white mr-5'>حجز الصف</h2>
                 </div>
             </div>
 
@@ -27,7 +27,7 @@ const ClassDetailsFather = () => {
 
                             <div className="col-md-12">
                                 <h3 className='text-dark'>مجموعة 1 - هوليداي إن إكسبريس - ليثبريدج</h3>
-                                <form action="">
+                                <form action="/choosestudent">
                                     <div className="form-group text-dark mt-5">
                                         <label htmlFor="class">الجلسات : </label>
                                         <select name="class" className='form-control'>
@@ -37,7 +37,9 @@ const ClassDetailsFather = () => {
                                         </select>
                                     </div>
                                     <hr className='my-5 details-hr' />
-                                    <button type="submit" className='btn m-auto d-block w-50 select-student-btn fw-bold text-dark'>اتصل بنا</button>
+                                    <Link to="/NewEnroll">
+                                    <button type="submit" className='btn m-auto d-block w-50 select-student-btn fw-bold text-dark'>تسجيل الآن </button>
+                                    </Link>
                                 </form>
                             </div>
                         </div>
@@ -106,4 +108,4 @@ const ClassDetailsFather = () => {
     )
 }
 
-export default ClassDetailsFather
+export default EnrollNow

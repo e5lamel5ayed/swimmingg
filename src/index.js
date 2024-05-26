@@ -34,6 +34,11 @@ import Setting from "./Employee/Pages/Setting/Setting";
 import AddPlace from "./Employee/Pages/Setting/AddPlace";
 import AddPath from "./Employee/Pages/Setting/AddPath";
 import AddLane from "./Employee/Pages/Setting/AddLane";
+// import ClassDetailsFather from "./Father/Pages/Classes/ClassDetailsFather";
+import EnrollNow from "./Father/Pages/Classes/Enrollment/EnrollNow";
+import NewEnroll from "./Father/Pages/Classes/Enrollment/NewEnroll";
+import Enrollments from "./Father/Pages/MyAcount/StudentFather/Enrollments";
+import Rating from "./Father/Pages/MyAcount/StudentFather/Rating";
 
 const router = createBrowserRouter([
   {
@@ -148,6 +153,22 @@ const router = createBrowserRouter([
   {
     path: "/UpdatePassword",
     element: <UpdatePassword />,
+  },
+  {
+    path: "/EnrollNow",
+    element: <EnrollNow />,
+  },
+  {
+    path: "/NewEnroll",
+    element: <NewEnroll />,
+  },
+  {
+    path: "/Enrollments",
+    element: <Enrollments />,
+  },
+  {
+    path: "/Rating",
+    element: <Rating />,
   },
 ]);
 

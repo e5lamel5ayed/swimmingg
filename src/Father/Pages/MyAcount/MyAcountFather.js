@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import NavBar from '../../Components/NavBar/NavBarFather'
-import Student from './StudentFather'
+import Student from './StudentFather/StudentFather'
 import { Tab, Tabs } from '@mui/material';
 import { Link } from 'react-router-dom';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
