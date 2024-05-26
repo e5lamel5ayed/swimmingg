@@ -17,29 +17,27 @@ const NavBarFather = () => {
             <Link className="menu_barss" >
               <MenuIcon className='menu_bars-menuIcon ' onClick={showSidebar} /> </Link><Link onClick={showSidebar}></Link>
           </div>
+
           <nav className={sidebar ? 'nav-menu active' : 'nav-menu'}>
-            <ul className='nav-menu-atems' >
-              <li className='navbar-toggle' onClick={showSidebar} >
-                <Link className='menu-bars' >
+            <ul className='nav-menu-items'>
+              <li className='navbar-toggle' onClick={showSidebar}>
+                <Link className='menu-bars'>
                   <CloseIcon />
                 </Link>
               </li>
-              {SidebarDataFather.map((item, index) => {
-                return (
-                  <li key={index} className={item.cName}   >
-                    <Link to={item.path}>
-                      {item.icon}
-                      <span>{item.title}</span>
-                    </Link>
-                  </li>
-                )
-              }
-              )}
+              {SidebarDataFather.map((item, index) => (
+                <li key={index} className={item.cName}>
+                  <Link to={item.path}>
+                    {item.icon}
+                    <span>{item.title}</span>
+                  </Link>
+                </li>
+              ))}
             </ul>
           </nav>
 
           <div className='col-md-6 d-flex navtext'>
-            {/* <Link class="navbar-brand pl-5 text-white" to="/bookingFather">حجز</Link> */}
+            {/* <Link class="navbar-brand pl-5 text-white" to="/booking">حجز</Link> */}
 
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
@@ -47,15 +45,14 @@ const NavBarFather = () => {
             <div class="collapse navbar-collapse d-flex" id="navbarNavDropdown">
               <ul class="navbar-nav">
                 <li class="nav-item active">
-                  <Link class="nav-link pl-5 text-white" to="/bookingFather">حجز <span class="sr-only">(current)</span></Link>
+                  <Link class="nav-link pl-5 text-white" to="/booking">حجز <span class="sr-only">(current)</span></Link>
                 </li>
                 <li class="nav-item active">
-                  <Link class="nav-link pl-5 text-white" to="/MyAcountFather">حسابي <span class="sr-only">(current)</span></Link>
+                  <Link class="nav-link pl-5 text-white" to="/MyAcount">حسابي <span class="sr-only">(current)</span></Link>
                 </li>
                 <li class="nav-item active">
                   <Link class="nav-link pl-5 text-white" to="#">اخبار <span class="sr-only">(current)</span></Link>
                 </li>
-                
                 <li class="nav-item dropdown">
                   <Link class="nav-link dropdown-toggle text-white" to="#" role="button" data-toggle="dropdown" aria-expanded="false">
                     المزيد

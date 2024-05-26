@@ -29,6 +29,14 @@ a {
     color: #145978 !important;
 }
 
+.bg-info {
+    background-color: #94F0FF !important;
+}
+
+.bg-info:hover {
+    color: #fff !important;
+}
+
 :root {
     --main-color: ;
     --bg-color: ;
@@ -125,7 +133,7 @@ ol {
     display: flex;
     position: relative;
     top: 10px;
-    right: 160px;
+    right: 90%;
 }
 
 .nav-menu {
@@ -149,12 +157,33 @@ ol {
 }
 
 .nav-text {
-    list-style: none;
-    height: 50px;
+    list-style: none !important;
+    height: 50px !important;
+    cursor: pointer;
 }
 
 .nav-text a:hover {
-    background-color: #504e4e;
+    background-color: #504e4e !important;
+    color: #fff !important;
+    border-radius: 0 !important;
+}
+
+.dropdown-menu {
+    color: #4f4f4f;
+    margin: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    border: 0;
+    box-shadow: 0 2px 15px -3px rgba(0, 0, 0, .07), 0 10px 20px -2px rgba(0, 0, 0, .04);
+    font-size: .875rem;
+    background: transparent;
+}
+
+.dropdown-menu.show {
+    display: block;
+    position: absolute;
+    inset: 0px auto auto 0px;
+    transform: translate(50%, 52px) !important;
 }
 
 .nav-menu-items {
@@ -186,18 +215,11 @@ ol {
         width: 100%;
     }
 
-    .navbar-toggle {
-        right: 190px;
-    }
 }
 
 /*start media querry */
 
 @media only screen and (max-width:992px) {
-
-    .navbar-toggle {
-        left: 170px
-    }
 
     .navtext {
         display: none !important;
@@ -533,6 +555,8 @@ ol {
     box-shadow: 2px 2px 10px 2px #b6b3b33d;
 }
 
+.form-dialog {}
+
 @media (max-width:567px) {
     .add-student-btn {
         flex-direction: column !important;
@@ -666,12 +690,31 @@ ol {
 .account-hover:hover {
     background-color: #94f1ff25 !important;
 }
+
 .editemail {
     padding-bottom: 200px;
 }
 
-.family{
+.family {
     /* height: 500px; */
     margin-bottom: 16%;
 }
+
 /* End account-info  */
+.table td ul {
+    padding-left: 0;
+    list-style: none;
+}
+
+.table td ul li {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+}
+
+.table td ul li span {
+    margin-left: 10px;
+}
+.add-setting {
+    padding-bottom: 100px;
+}

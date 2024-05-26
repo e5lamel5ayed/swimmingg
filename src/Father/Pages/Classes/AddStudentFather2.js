@@ -1,0 +1,133 @@
+import React from 'react'
+import NavBar from '../../Components/NavBar/NavBarFather'
+import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
+import { Link } from 'react-router-dom';
+
+const AddStudentFather2 = () => {
+    return (
+        <div>
+            <NavBar />
+
+            <div className='title-class d-flex justify-content-between align-items-center'>
+                <div className='col-md-4 d-flex justify-content-between align-items-center' style={{ alignItems: "center" }} >
+                    <Link to="/MyAcountFather">
+                        <ArrowForwardIcon sx={{ color: "#fff", fontSize: "38px" }} />
+                    </Link>
+                </div>
+
+                <div className='col-md-8 ml-1 d-flex justify-content-between align-items-center' style={{ justifyContent: "flex-start" }}>
+                    <h2 className='text-center text-white mr-5'>اضافة طالب جديد</h2>
+                </div>
+            </div>
+
+            <div className="add-student">
+                <div className="container">
+                    <div className="row">
+                        <div className="col-md-9 m-auto">
+
+                            <form action="" className=' mt-5' method='get'>
+
+                                <div className='mb-5 p-3 special-info bg-white'>
+                                    <h4 className='my-5'>معلومات عامة</h4>
+
+                                    <div className="form-group d-flex justify-content-between align-items-center">
+                                        <label htmlFor=""> الاسم الاول :</label>
+                                        <input type="text" className="form-control w-75" />
+                                    </div>
+
+                                    <div className="form-group d-flex justify-content-between align-items-center">
+                                        <label htmlFor=""> الاسم الثاني :</label>
+                                        <input type="text" className="form-control w-75" />
+                                    </div>
+
+                                    <div className="form-group d-flex justify-content-between align-items-center">
+                                        <label htmlFor="">تاريخ الميلاد :</label>
+                                        <input type="date" className="form-control w-75" />
+                                    </div>
+
+                                    <div class="form-group d-flex">
+                                        <label htmlFor="" className='ml-5 gender'>النوع :</label>
+                                        <div class="input-group-prepend">
+                                            <div class="input-group-text">
+                                                <input type="radio" className='ml-2' value='male' name='gender' /> ذكر
+                                                <input type="radio" className='mr-2 ml-2' value='female' name='gender' /> انثى
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group d-flex">
+                                        <label htmlFor="" className='ml-5 condition-health'>ظروف صحية خاصة :</label>
+                                        <div class="input-group-prepend">
+                                            <div class="input-group-text">
+                                                <input type="radio" className='ml-2' value='yes' name='condition-health' /> نعم
+                                                <input type="radio" className='mr-2 ml-2' value='no' name='condition-health' /> لا
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div className="form-group d-flex justify-content-between align-items-center">
+                                        <label htmlFor="class">اختر صف : </label>
+                                        <select name="class" className='form-control w-75'>
+                                            <option value="class">
+                                                صيف 2024 (1 يوليو 2024 - 25 أغسطس 2024) (مفتوح)
+                                            </option>
+                                            <option value="class">
+                                                صيف 2024 (1 يوليو 2024 - 25 أغسطس 2024) (مفتوح)
+                                            </option>
+                                            <option value="class">
+                                                صيف 2024 (1 يوليو 2024 - 25 أغسطس 2024) (مفتوح)
+                                            </option>
+                                            <option value="class">
+                                                صيف 2024 (1 يوليو 2024 - 25 أغسطس 2024) (مفتوح)
+                                            </option>
+                                            <option value="class">
+                                                صيف 2024 (1 يوليو 2024 - 25 أغسطس 2024) (مفتوح)
+                                            </option>
+                                        </select>
+                                    </div>
+
+                                </div>
+
+                                <div className='mb-5 p-3 special-info bg-white'>
+                                    <h4 className='my-5'>المعلومات الصحية للطالب</h4>
+
+                                    <div className="form-group d-flex justify-content-between align-items-center">
+                                        <label htmlFor=""> المستشفي :</label>
+                                        <input type="text" className="form-control w-75" />
+                                    </div>
+
+                                    <div className="form-group d-flex justify-content-between align-items-center">
+                                        <label htmlFor=""> شركة التأمين :</label>
+                                        <input type="text" className="form-control w-75" />
+                                    </div>
+
+                                    <div className="form-group d-flex justify-content-between align-items-center">
+                                        <label htmlFor=""> رقم الوثيقة :</label>
+                                        <input type="text" className="form-control w-75" />
+                                    </div>
+
+                                    <div className="form-group d-flex justify-content-between align-items-center">
+                                        <label htmlFor="">الاسم الأول للطبيب :</label>
+                                        <input type="text" className="form-control w-75" />
+                                    </div>
+
+                                    <div className="form-group d-flex justify-content-between align-items-center">
+                                        <label htmlFor=""> رقم للطبيب :</label>
+                                        <input type="text" className="form-control w-75" />
+                                    </div>
+                                </div>
+                                <div className='add-student-btn d-flex justify-content-end align-items-center my-5 '>
+                                    <button className='btn ml-2 mb-3 w-100 btn-edit'>حفظ</button>
+                                    <button className='btn w-100  mb-3 btn-edit2'>الغاء</button>
+                                </div>
+
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    )
+}
+
+export default AddStudentFather2

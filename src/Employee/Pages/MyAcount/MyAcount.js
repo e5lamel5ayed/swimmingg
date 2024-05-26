@@ -1,14 +1,9 @@
 import React, { useState } from 'react'
 import NavBar from '../../Components/NavBar/NavBar'
-import Student from './Student'
-import { Tab, Tabs } from '@mui/material';
+import { CardContent, CardMedia, Typography } from '@mui/material'
+import { Card } from 'react-bootstrap'
 
 export const MyAcount = () => {
-    const [tabValue, setTabValue] = useState(0);
-
-    const handleTabChange = (event, newValue) => {
-        setTabValue(newValue);
-    };
 
     return (
         <div>
@@ -17,45 +12,213 @@ export const MyAcount = () => {
                 <div className='title-class'>
                     <h2 className='text-center text-white'>حسابي</h2>
                 </div>
-                <div className='container'>
+                <div className='container mt-5'>
                     <div className='row'>
-                        <div className='col-md-9 ml-auto mr-auto '>
-                            <div
-                                style={{
-                                    direction: "rtl", textAlign: "right",
-                                    color: "#005476", padding: ".5%",
-                                }}>
+                        <h4>المجموعات المحجوزة للطلاب</h4>
 
-                                {/* <Tabs className='tabs' sx={{ borderBottom: "1px #00000052 solid" }} value={tabValue} onChange={handleTabChange}>
-                                    <Tab style={{ fontSize: "20px", fontWeight: "600" }} label="الطلاب" />
-                                    <Tab style={{ fontSize: "20px", fontWeight: "600" }} label="الدفع" />
-                                    <Tab style={{ fontSize: "20px", fontWeight: "600" }} label="تاريخ المعاملات" />
-                                    <Tab style={{ fontSize: "20px", fontWeight: "600" }} label="معلومات الحساب" />
-                                    <Tab style={{ fontSize: "20px", fontWeight: "600" }} label=" الحقول المخصصة للعائلة" />
-                                    <Tab style={{ fontSize: "20px", fontWeight: "600" }} label=" تسجيل الدخول/الأمان" />
-                                </Tabs> */}
-                            </div>
+                        <div className='col-md-4 ml-auto mr-auto mt-5 all-classes-col'>
+                            <div className='white-div p-1'></div>
+                            <div className='bg-white p-2'></div>
+                            <Card className='allclasses-card'>
+                                <CardMedia className='allclasses-img'
+                                    title="all-classes"
+                                />
+                                <CardContent>
+                                    <Typography gutterBottom variant="h5" component="div" className='text-muted fw-bold'>
+                                        مجموعة 1
+                                    </Typography>
 
-                            {tabValue === 0 && (
-                                <div>
-                                    {/* <Student /> */}
-                                </div>
-                            )}
-                            {tabValue === 1 && (
-                                <div>
-                                </div>
-                            )}
-                            {tabValue === 2 && (
-                                <div>
+                                    <p className='mt-3'>
+                                        تم الحجز للطالب
+                                    </p>
 
-                                </div>
-                            )}
-                            {tabValue === 3 && (
-                                <div>
-
-                                </div>
-                            )}
+                                    <h6 className='mt-3 text-danger'>
+                                        آدم محمد
+                                    </h6>
+                                    <p className='mt-3'>
+                                        تاريخ الحجز
+                                    </p>
+                                    <p className='mt-3 text-danger'>
+                                        ( 25 أغسطس 2024 )
+                                    </p>
+                                </CardContent>
+                            </Card>
                         </div>
+
+                        <div className='col-md-4 ml-auto mr-auto mt-5 all-classes-col'>
+                            <div className='white-div p-1'></div>
+                            <div className='bg-white p-2'></div>
+                            <Card className='allclasses-card'>
+                                <CardMedia className='allclasses-img'
+                                    title="all-classes"
+                                />
+                                <CardContent>
+                                    <Typography gutterBottom variant="h5" component="div" className='text-muted fw-bold'>
+                                        مجموعة 1
+                                    </Typography>
+
+                                    <p className='mt-3'>
+                                        تم الحجز للطالب
+                                    </p>
+
+                                    <h6 className='mt-3 text-danger'>
+                                        السيد اسامة
+                                    </h6>
+                                    <p className='mt-3'>
+                                        تاريخ الحجز
+                                    </p>
+                                    <p className='mt-3 text-danger'>
+                                        ( 18 مايو 2024 )
+                                    </p>
+                                </CardContent>
+                            </Card>
+                        </div>
+
+                        <div className='col-md-4 ml-auto mr-auto mt-5 all-classes-col'>
+                            <div className='white-div p-1'></div>
+                            <div className='bg-white p-2'></div>
+                            <Card className='allclasses-card'>
+                                <CardMedia className='allclasses-img'
+                                    title="all-classes"
+                                />
+                                <CardContent>
+                                    <Typography gutterBottom variant="h5" component="div" className='text-muted fw-bold'>
+                                        مجموعة 1
+                                    </Typography>
+
+                                    <p className='mt-3'>
+                                        تم الحجز للطالب
+                                    </p>
+
+                                    <h6 className='mt-3 text-danger'>
+                                        اسلام السيد
+                                    </h6>
+                                    <p className='mt-3'>
+                                        تاريخ الحجز
+                                    </p>
+                                    <p className='mt-3 text-danger'>
+                                        ( 15 يناير 2024 )
+                                    </p>
+                                </CardContent>
+                            </Card>
+                        </div>
+
+                        <div className='col-md-4 ml-auto mr-auto mt-5 all-classes-col'>
+                            <div className='white-div p-1'></div>
+                            <div className='bg-white p-2'></div>
+                            <Card className='allclasses-card'>
+                                <CardMedia className='allclasses-img'
+                                    title="all-classes"
+                                />
+                                <CardContent>
+                                    <Typography gutterBottom variant="h5" component="div" className='text-muted fw-bold'>
+                                        مجموعة 1
+                                    </Typography>
+
+                                    <p className='mt-3'>
+                                        تم الحجز للطالب
+                                    </p>
+
+                                    <h6 className='mt-3 text-danger'>
+                                        محمد احمد
+                                    </h6>
+                                    <p className='mt-3'>
+                                        تاريخ الحجز
+                                    </p>
+                                    <p className='mt-3 text-danger'>
+                                        ( 25 ابريل 2024 )
+                                    </p>
+                                </CardContent>
+                            </Card>
+                        </div>
+
+                        <div className='col-md-4 ml-auto mr-auto mt-5 all-classes-col'>
+                            <div className='white-div p-1'></div>
+                            <div className='bg-white p-2'></div>
+                            <Card className='allclasses-card'>
+                                <CardMedia className='allclasses-img'
+                                    title="all-classes"
+                                />
+                                <CardContent>
+                                    <Typography gutterBottom variant="h5" component="div" className='text-muted fw-bold'>
+                                        مجموعة 1
+                                    </Typography>
+
+                                    <p className='mt-3'>
+                                        تم الحجز للطالب
+                                    </p>
+
+                                    <h6 className='mt-3 text-danger'>
+                                        اسلام علي
+                                    </h6>
+                                    <p className='mt-3'>
+                                        تاريخ الحجز
+                                    </p>
+                                    <p className='mt-3 text-danger'>
+                                        ( 25 أغسطس 2024 )
+                                    </p>
+                                </CardContent>
+                            </Card>
+                        </div>
+
+                        <div className='col-md-4 ml-auto mr-auto mt-5 all-classes-col'>
+                            <div className='white-div p-1'></div>
+                            <div className='bg-white p-2'></div>
+                            <Card className='allclasses-card'>
+                                <CardMedia className='allclasses-img'
+                                    title="all-classes"
+                                />
+                                <CardContent>
+                                    <Typography gutterBottom variant="h5" component="div" className='text-muted fw-bold'>
+                                        مجموعة 1
+                                    </Typography>
+
+                                    <p className='mt-3'>
+                                        تم الحجز للطالب
+                                    </p>
+
+                                    <h6 className='mt-3 text-danger'>
+                                        متولي سعد
+                                    </h6>
+                                    <p className='mt-3'>
+                                        تاريخ الحجز
+                                    </p>
+                                    <p className='mt-3 text-danger'>
+                                        ( 25 أغسطس 2024 )
+                                    </p>
+                                </CardContent>
+                            </Card>
+                        </div>
+
+                        <div className='col-md-4 ml-auto mr-auto mt-5 all-classes-col'>
+                            <div className='white-div p-1'></div>
+                            <div className='bg-white p-2'></div>
+                            <Card className='allclasses-card'>
+                                <CardMedia className='allclasses-img'
+                                    title="all-classes"
+                                />
+                                <CardContent>
+                                    <Typography gutterBottom variant="h5" component="div" className='text-muted fw-bold'>
+                                        مجموعة 1
+                                    </Typography>
+
+                                    <p className='mt-3'>
+                                        تم الحجز للطالب
+                                    </p>
+
+                                    <h6 className='mt-3 text-danger'>
+                                        ادم محمد
+                                    </h6>
+                                    <p className='mt-3'>
+                                        تاريخ الحجز
+                                    </p>
+                                    <p className='mt-3 text-danger'>
+                                        ( 25 أغسطس 2024 )
+                                    </p>
+                                </CardContent>
+                            </Card>
+                        </div>
+
                     </div>
 
 

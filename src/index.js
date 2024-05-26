@@ -29,6 +29,11 @@ import EditPhone from "./Father/Pages/MyAcount/AccountInfo/EditPhone";
 import AddEmail from "./Father/Pages/MyAcount/AccountInfo/AddEmail";
 import UpdateFamily from "./Father/Pages/MyAcount/Update/UpdateFamily";
 import UpdatePassword from "./Father/Pages/MyAcount/Update/UpdatePassword";
+import AddStudentFather2 from "./Father/Pages/Classes/AddStudentFather2";
+import Setting from "./Employee/Pages/Setting/Setting";
+import AddPlace from "./Employee/Pages/Setting/AddPlace";
+import AddPath from "./Employee/Pages/Setting/AddPath";
+import AddLane from "./Employee/Pages/Setting/AddLane";
 // import ClassDetailsFather from "./Father/Pages/Classes/ClassDetailsFather";
 import EnrollNow from "./Father/Pages/Classes/Enrollment/EnrollNow";
 import NewEnroll from "./Father/Pages/Classes/Enrollment/NewEnroll";
@@ -97,12 +102,32 @@ const router = createBrowserRouter([
     element: <ChoseClass />,
   },
   {
+    path: "/setting",
+    element: <Setting />,
+  },
+  {
+    path: "/addPlace",
+    element: <AddPlace />,
+  },
+  {
+    path: "/addPath",
+    element: <AddPath />,
+  },
+  {
+    path: "/addLane",
+    element: <AddLane />,
+  },
+  {
     path: "/AllclassesFather",
     element: <AllClassesFather />,
   },
   {
     path: "/addstudentFather",
     element: <AddStudentFather />,
+  },
+  {
+    path: "/addstudentFather2",
+    element: <AddStudentFather2/>,
   },
  
   {
