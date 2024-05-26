@@ -116,8 +116,10 @@ export default function MultiActionAreaCard() {
                                                 borderBottom: " .5px #000 solid",
                                             }}
                                             className='col-md-6 mt-2 text-center'>
-                                            <StarIcon sx={{ color: "#f1d45f" }} />
-                                            <p>التقيمات</p>
+                                            <Link to="/Rating">
+                                                <StarIcon sx={{ color: "#f1d45f" }} />
+                                                <p>التقيمات</p>
+                                            </Link>
 
                                         </div>
                                         <div
@@ -189,8 +191,10 @@ export default function MultiActionAreaCard() {
                                                 borderBottom: " .5px #000 solid",
                                             }}
                                             className='col-md-6 mt-2 text-center'>
-                                            <StarIcon sx={{ color: "#f1d45f" }} />
-                                            <p>التقيمات</p>
+                                            <Link to="/Rating">
+                                                <StarIcon sx={{ color: "#f1d45f" }} />
+                                                <p>التقيمات</p>
+                                            </Link>
 
                                         </div>
                                         <div
@@ -234,9 +238,7 @@ export default function MultiActionAreaCard() {
                     <Link to='/addstudentFather2'>
                         <button className='btn btn-edit'>اضف طالب</button>
                     </Link>
-                        <Link to='/addstudentFather'>
-                            <button className='btn btn-edit'>اضف طالب</button>
-                        </Link>
+                        
 
                 </div>
             </div>
