@@ -183,7 +183,7 @@ ol {
     display: block;
     position: absolute;
     inset: 0px auto auto 0px;
-    transform: translate(50%, 100%) !important;
+    /* transform: translate(50%, 10%) !important; */
 }
 
 .nav-menu-items {
