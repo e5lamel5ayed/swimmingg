@@ -39,6 +39,8 @@ import EnrollNow from "./Father/Pages/Classes/Enrollment/EnrollNow";
 import NewEnroll from "./Father/Pages/Classes/Enrollment/NewEnroll";
 import Enrollments from "./Father/Pages/MyAcount/StudentFather/Enrollments";
 import Rating from "./Father/Pages/MyAcount/StudentFather/Rating";
+import AddCourse from "./Employee/Pages/Setting/AddCourse";
+import AddInstructor from "./Employee/Pages/Setting/AddInstructor";
 
 const router = createBrowserRouter([
   {
@@ -116,6 +118,14 @@ const router = createBrowserRouter([
   {
     path: "/addLane",
     element: <AddLane />,
+  },
+  {
+    path: "/addCourse",
+    element: <AddCourse />,
+  },
+  {
+    path: "/addInstructor",
+    element: <AddInstructor />,
   },
   {
     path: "/AllclassesFather",

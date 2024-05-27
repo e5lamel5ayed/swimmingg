@@ -61,91 +61,91 @@ const Enrollments = () => {
                     <div className="row">
 
                         <div className="col-md-4 mb-3 all-classes-col">
-                                <div className='white-div p-1'></div>
-                                <div className='bg-white p-2'></div>
-                                <Card className='allclasses-card'>
-                                    <CardMedia className='allclasses-img'
-                                        title="all-classes"
-                                    />
-                                    <CardContent>
-                                        <Typography gutterBottom variant="h5" component="div" className='text-muted fw-bold'>
-                                            مجموعة 1
-                                        </Typography>
+                            <div className='white-div p-1'></div>
+                            <div className='bg-white p-2'></div>
+                            <Card className='allclasses-card'>
+                                <CardMedia className='allclasses-img'
+                                    title="all-classes"
+                                />
+                                <CardContent>
+                                    <Typography gutterBottom variant="h5" component="div" className='text-muted fw-bold'>
+                                        مجموعة 1
+                                    </Typography>
 
-                                        <Typography variant="body2" color="text.secondary">
-                                            الاحد | 9.00 _ 9.30
-                                        </Typography>
+                                    <Typography variant="body2" color="text.secondary">
+                                        الاحد | 9.00 _ 9.30
+                                    </Typography>
 
 
-                                        <hr className='text-muted' />
-                                        <Link className='text-info'>
-                                            <span className='text-info mr-2'>s</span>
-                                        </Link>
-                                        <Link>
-                                            <span className='text-muted mr-2'>m</span>
-                                        </Link>
-                                        <Link>
-                                            <span className='text-muted mr-2'>t</span>
-                                        </Link>
-                                        <Link>
-                                            <span className='text-muted mr-2'>w</span>
-                                        </Link>
-                                        <Link>
-                                            <span className='text-muted mr-2'>t</span>
-                                        </Link>
-                                        <Link>
-                                            <span className='text-muted mr-2'>s</span>
-                                        </Link>
-                                        <Link>
-                                            <span className='text-muted mr-2'>f</span>
-                                        </Link>
-                                    </CardContent>
+                                    <hr className='text-muted' />
+                                    <Link className='text-info'>
+                                        <span className='text-info mr-2'>s</span>
+                                    </Link>
+                                    <Link>
+                                        <span className='text-muted mr-2'>m</span>
+                                    </Link>
+                                    <Link>
+                                        <span className='text-muted mr-2'>t</span>
+                                    </Link>
+                                    <Link>
+                                        <span className='text-muted mr-2'>w</span>
+                                    </Link>
+                                    <Link>
+                                        <span className='text-muted mr-2'>t</span>
+                                    </Link>
+                                    <Link>
+                                        <span className='text-muted mr-2'>s</span>
+                                    </Link>
+                                    <Link>
+                                        <span className='text-muted mr-2'>f</span>
+                                    </Link>
+                                </CardContent>
 
-                                </Card>
+                            </Card>
                         </div>
 
                         <div className="col-md-4 mb-3 all-classes-col">
-                                <div className='white-div p-1'></div>
-                                <div className='bg-white p-2'></div>
-                                <Card className='allclasses-card'>
-                                    <CardMedia className='allclasses-img'
-                                        title="all-classes"
-                                    />
-                                    <CardContent>
-                                        <Typography gutterBottom variant="h5" component="div" className='text-muted fw-bold'>
-                                            مجموعة 2
-                                        </Typography>
+                            <div className='white-div p-1'></div>
+                            <div className='bg-white p-2'></div>
+                            <Card className='allclasses-card'>
+                                <CardMedia className='allclasses-img'
+                                    title="all-classes"
+                                />
+                                <CardContent>
+                                    <Typography gutterBottom variant="h5" component="div" className='text-muted fw-bold'>
+                                        مجموعة 2
+                                    </Typography>
 
-                                        <Typography variant="body2" color="text.secondary">
-                                            الاحد | 9.00 _ 9.30
-                                        </Typography>
+                                    <Typography variant="body2" color="text.secondary">
+                                        الاحد | 9.00 _ 9.30
+                                    </Typography>
 
 
-                                        <hr className='text-muted' />
-                                        <Link className='text-info'>
-                                            <span className='text-info mr-2'>s</span>
-                                        </Link>
-                                        <Link>
-                                            <span className='text-muted mr-2'>m</span>
-                                        </Link>
-                                        <Link>
-                                            <span className='text-muted mr-2'>t</span>
-                                        </Link>
-                                        <Link>
-                                            <span className='text-muted mr-2'>w</span>
-                                        </Link>
-                                        <Link>
-                                            <span className='text-muted mr-2'>t</span>
-                                        </Link>
-                                        <Link>
-                                            <span className='text-muted mr-2'>s</span>
-                                        </Link>
-                                        <Link>
-                                            <span className='text-muted mr-2'>f</span>
-                                        </Link>
-                                    </CardContent>
+                                    <hr className='text-muted' />
+                                    <Link className='text-info'>
+                                        <span className='text-info mr-2'>s</span>
+                                    </Link>
+                                    <Link>
+                                        <span className='text-muted mr-2'>m</span>
+                                    </Link>
+                                    <Link>
+                                        <span className='text-muted mr-2'>t</span>
+                                    </Link>
+                                    <Link>
+                                        <span className='text-muted mr-2'>w</span>
+                                    </Link>
+                                    <Link>
+                                        <span className='text-muted mr-2'>t</span>
+                                    </Link>
+                                    <Link>
+                                        <span className='text-muted mr-2'>s</span>
+                                    </Link>
+                                    <Link>
+                                        <span className='text-muted mr-2'>f</span>
+                                    </Link>
+                                </CardContent>
 
-                                </Card>
+                            </Card>
                         </div>
 
 

@@ -36,8 +36,16 @@ export const SidebarData = [
                 path: '/addPath',
             },
             {
-                title: 'اضافة حارة',
-                path: '/addLane',
+                title: 'اضافة كورس',
+                path: '/addCourse',
             },
+            {
+                title: 'اضافة مدرب',
+                path: '/addInstructor',
+            },
+            // {
+            //     title: 'اضافة حارة',
+            //     path: '/addLane',
+            // },
         ]
     }]
