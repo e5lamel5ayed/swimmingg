@@ -31,7 +31,7 @@ const NavBar = () => {
                   return (
                     <li key={index} className={item.cName}>
                       <Dropdown>
-                        <Dropdown.Toggle as="a" className="nav-text">
+                        <Dropdown.Toggle as="a" className="nav-text ">
                           {item.icon}
                           <span>{item.title}</span>
                         </Dropdown.Toggle>
