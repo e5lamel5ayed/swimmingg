@@ -25,7 +25,7 @@ export const SidebarData = [
     {
         title: 'الاعدادت',
         path: '/setting',
-        cName: 'nav-text',
+        cName: 'nav-text nav-drop',
         subMenu: [
             {
                 title: 'اضافة مكان',
