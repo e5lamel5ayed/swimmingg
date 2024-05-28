@@ -41,6 +41,8 @@ import Enrollments from "./Father/Pages/MyAcount/StudentFather/Enrollments";
 import Rating from "./Father/Pages/MyAcount/StudentFather/Rating";
 import AddCourse from "./Employee/Pages/Setting/AddCourse";
 import AddInstructor from "./Employee/Pages/Setting/AddInstructor";
+import AllClassesAccountFather from "./Father/Pages/Classes/AllClassesAccountFather";
+import ClassesAccountFather from "./Father/Pages/Classes/ClassesAccountFather";
 
 const router = createBrowserRouter([
   {
@@ -130,6 +132,14 @@ const router = createBrowserRouter([
   {
     path: "/AllclassesFather",
     element: <AllClassesFather />,
+  },
+  {
+    path: "/AllclassesAccountFather",
+    element: <AllClassesAccountFather />,
+  },
+  {
+    path: "/ClassesAccountFather",
+    element: <ClassesAccountFather />,
   },
   {
     path: "/addstudentFather",

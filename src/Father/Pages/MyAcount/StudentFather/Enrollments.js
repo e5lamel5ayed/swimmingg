@@ -52,13 +52,16 @@ const Enrollments = () => {
 
             <div className='allclasses'>
                 <div className="container ">
-                    <div className='col-md-12 mb-4' style={{ borderBottom: " 1px #3e3e3e63 solid" }}>
+                    <div className='col-md-12 mb-4 d-flex justify-content-between align-items-center' style={{ borderBottom: " 1px #3e3e3e63 solid" }}>
                         <div className='col-md-1 mb-0' style={{ borderBottom: " 2px #004c6d solid" }}>
 
                             <p className='mb-2'>إسلام</p>
                         </div>
+                        <Link to='/AllclassesAccountFather'>
+                            <button type="button" className='btn btn-edit m-auto mb-3'>اضافة كورس</button>
+                        </Link>
                     </div>
-                    <div className="row">
+                    <div className="row mt-5">
 
                         <div className="col-md-4 mb-3 all-classes-col">
                             <div className='white-div p-1'></div>
@@ -147,47 +150,10 @@ const Enrollments = () => {
 
                             </Card>
                         </div>
-
-
-
+                        
                     </div>
                 </div>
             </div>
-            <Dialog open={open} onClose={handleClose} fullWidth maxWidth="sm">
-                <div className="white-div p-1" style={{ backgroundColor: "#94F0FF" }}></div>
-                <DialogTitle style={{ marginBottom: "15px", direction: "rtl", textAlign: "center" }}>
-                    الجلسات
-                    <CancelIcon style={{ position: "absolute", left: "15px", cursor: "pointer" }} onClick={handleClose} />
-                </DialogTitle>
-                <DialogContent style={{ direction: "rtl" }}>
-                    <div className="container-fluid">
-                        <div className="row" style={{ display: "flex", justifyContent: "center" }}>
-                            <div className="col-md-12">
-                                <table class="table table-hover">
-                                    <thead className='bg-light'>
-                                        <tr>
-                                            <th scope="col">الاسم</th>
-                                            <th scope="col">التاريخ</th>
-                                            <th scope="col">الحاله</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>صيف 2024 </td>
-                                            <td>22/5/2024</td>
-                                            <td><span class="badge badge-danger">مغلق</span></td>
-                                        </tr>
-
-                                    </tbody>
-                                </table>
-
-                            </div>
-
-
-                        </div>
-                    </div>
-                </DialogContent>
-            </Dialog>
         </div>
     )
 }
