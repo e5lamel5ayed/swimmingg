@@ -57,6 +57,8 @@ const ClassDetailsFather = () => {
                                                 <th scope="col">الجدول</th>
                                                 <th scope="col">المدربين</th>
                                                 <th scope="col">البرنامج</th>
+                                                <th scope="col">الحمام</th>
+                                                <th scope="col">الحاره</th>
                                                 <th scope="col">المستوي</th>
                                                 <th scope="col">التكلفة</th>
                                             </tr>
@@ -66,6 +68,8 @@ const ClassDetailsFather = () => {
                                                 <td>الاحد | 9.00 - 9.00صباحا<br />الثلاثاء | 10.00 - 11.00صباحا<br />الخميس | 1.00 - 2.00مساءا<br />السبت | 3.00 - 4.00مساءا</td>
                                                 <td>اسلام السيد</td>
                                                 <td>برنامج السباحة</td>
+                                                <td> حمام 1</td>
+                                                <td> حاره 2</td>
                                                 <td>مبتدى</td>
                                                 <td>200.00 جنية</td>
                                             </tr>

@@ -1,3 +1,4 @@
+/* eslint-disable no-loop-func */
 import React, { useState } from 'react';
 import NavBar from '../../Components/NavBar/NavBar';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
@@ -23,11 +24,14 @@ const levels = [
 
 const AddPath = () => {
     const [open, setOpen] = useState(false);
+    const [intervalOpen, setIntervalOpen] = useState(false);
+    const [selectedDay, setSelectedDay] = useState(null);
     const [bathrooms, setBathrooms] = useState([]);
     const [bathroomCode, setBathroomCode] = useState('');
     const [bathroomName, setBathroomName] = useState('');
     const [selectedDays, setSelectedDays] = useState([]);
     const [daysAndHours, setDaysAndHours] = useState({});
+    const [currentInterval, setCurrentInterval] = useState({ from: '', to: '', count: '', level: '' });
 
     const handleOpen = () => {
         setOpen(true);
@@ -35,6 +39,16 @@ const AddPath = () => {
 
     const handleClose = () => {
         setOpen(false);
+    };
+
+    const handleIntervalOpen = (day) => {
+        setSelectedDay(day);
+        setIntervalOpen(true);
+    };
+
+    const handleIntervalClose = () => {
+        setIntervalOpen(false);
+        setCurrentInterval({ from: '', to: '', count: '', level: '' });
     };
 
     const handleDayCheckboxChange = (day) => {
@@ -53,35 +67,43 @@ const AddPath = () => {
             ...daysAndHours,
             [day]: {
                 ...daysAndHours[day],
-                [field]: value
+                [field]: value,
+                intervals: daysAndHours[day]?.intervals || []
             }
         });
     };
 
-    const handleLaneChange = (day, value) => {
-        setDaysAndHours({
-            ...daysAndHours,
-            [day]: {
-                ...daysAndHours[day],
-                lanes: {
-                    ...daysAndHours[day]?.lanes,
-                    count: value
+    const handleSaveDayHours = (day) => {
+        if (daysAndHours[day]?.from && daysAndHours[day]?.to) {
+            setDaysAndHours({
+                ...daysAndHours,
+                [day]: {
+                    ...daysAndHours[day],
+                    saved: true
                 }
-            }
-        });
+            });
+        } else {
+            alert("Please specify both 'from' and 'to' times.");
+        }
     };
 
-    const handleLevelChange = (day, value) => {
+    const handleIntervalChange = (field, value) => {
+        setCurrentInterval({ ...currentInterval, [field]: value });
+    };
+
+    const handleSaveInterval = () => {
+        const dayHours = daysAndHours[selectedDay];
+        const newIntervals = [...dayHours.intervals, currentInterval].sort((a, b) => a.from.localeCompare(b.from));
         setDaysAndHours({
             ...daysAndHours,
-            [day]: {
-                ...daysAndHours[day],
-                lanes: {
-                    ...daysAndHours[day]?.lanes,
-                    level: value
-                }
+            [selectedDay]: {
+                ...dayHours,
+                intervals: newIntervals,
+                availableFrom: dayHours.from,
+                availableTo: dayHours.to,
             }
         });
+        handleIntervalClose();
     };
 
     const handleSave = () => {
@@ -96,6 +118,39 @@ const AddPath = () => {
         setSelectedDays([]);
         setDaysAndHours({});
         handleClose();
+    };
+
+    const getAvailableHours = (day) => {
+        const dayHours = daysAndHours[day];
+        if (!dayHours) return [];
+
+        const fromTime = dayHours.from;
+        const toTime = dayHours.to;
+
+        const intervals = dayHours.intervals || [];
+
+        let availableHours = [];
+        let currentTime = fromTime;
+
+        while (currentTime < toTime) {
+            const [currentHour, currentMinute] = currentTime.split(':').map(Number);
+            const nextHour = currentMinute === 0 ? currentHour : currentHour + 1;
+            const nextMinute = currentMinute === 0 ? 30 : 0;
+
+            const nextTime = `${String(nextHour).padStart(2, '0')}:${String(nextMinute).padStart(2, '0')}`;
+            if (nextTime > toTime) break;
+
+            const isAvailable = !intervals.some(interval => (
+                (interval.from <= currentTime && interval.to > currentTime) ||
+                (interval.from < nextTime && interval.to >= nextTime)
+            ));
+
+            if (isAvailable) availableHours.push({ from: currentTime, to: nextTime });
+
+            currentTime = nextTime;
+        }
+
+        return availableHours;
     };
 
     return (
@@ -114,7 +169,7 @@ const AddPath = () => {
                 </div>
             </div>
 
-            <div className='bg-white add-setting'>
+            <div className='bg-white add-setting pt-5'>
                 <div className="container pt-5">
                     <div className="row">
                         <div className="col-md-12">
@@ -166,41 +221,103 @@ const AddPath = () => {
                                                             </div>
 
                                                             {selectedDays.map(day => (
-                                                                <div key={day} className="mb-2">
-                                                                    <label>{day} :</label>
-                                                                    <div className="form-group d-flex  align-items-center  ">
-                                                                        <div className='d-flex justify-content-between align-items-center flex-wrap'>
-                                                                            <div className="form-group d-flex justify-content-between align-items-center col-md-3">
-                                                                                <label htmlFor="">من</label>
-                                                                                <input type="time" className="form-control w-75" value={daysAndHours[day]?.from || ''} onChange={(e) => handleTimeChange(day, 'from', e.target.value)} />
-                                                                            </div>
-                                                                            <div className="form-group d-flex justify-content-between align-items-center col-md-3">
-                                                                                <label htmlFor="">إلى</label>
-                                                                                <input type="time" className="form-control w-75" value={daysAndHours[day]?.to || ''} onChange={(e) => handleTimeChange(day, 'to', e.target.value)} />
-                                                                            </div>
-                                                                            <div className="form-group d-flex justify-content-between align-items-center col-md-3">
-                                                                                <label htmlFor="">عدد الحارات </label>
-                                                                                <input type="number" className="form-control w-75" value={daysAndHours[day]?.lanes?.count || ''} onChange={(e) => handleLaneChange(day, e.target.value)} />
-                                                                            </div>
-                                                                            <div className="form-group d-flex justify-content-between align-items-center col-md-3">
-                                                                                <label htmlFor="">المستوى </label>
-                                                                                <select className="form-control w-75" value={daysAndHours[day]?.lanes?.level || ''} onChange={(e) => handleLevelChange(day, e.target.value)}>
-                                                                                    <option value="">اختر مستوى</option>
-                                                                                    {levels.map(level => (
-                                                                                        <option key={level.value} value={level.value}>{level.label}</option>
-                                                                                    ))}
-                                                                                </select>
-                                                                            </div>
-
+                                                                <div key={day} className="mb-3 p-3 border rounded">
+                                                                    <h5 className="mb-3">{day}</h5>
+                                                                    <div className="d-flex justify-content-between align-items-center flex-wrap">
+                                                                        <div className="form-group d-flex justify-content-between align-items-center col-md-4">
+                                                                            <label htmlFor="">من</label>
+                                                                            <input type="time" className="form-control" value={daysAndHours[day]?.from || ''} onChange={(e) => handleTimeChange(day, 'from', e.target.value)} />
                                                                         </div>
-                                                                    </div>
-                                                                    <div className='d-flex'>
 
+                                                                        <div className="form-group d-flex justify-content-between align-items-center col-md-4">
+                                                                            <label htmlFor="">إلى</label>
+                                                                            <input type="time" className="form-control" value={daysAndHours[day]?.to || ''} onChange={(e) => handleTimeChange(day, 'to', e.target.value)} />
+                                                                        </div>
+
+                                                                        {daysAndHours[day]?.from && daysAndHours[day]?.to && !daysAndHours[day]?.saved && (
+                                                                            <div className="form-group d-flex justify-content-between align-items-center col-md-3">
+                                                                                <button type="button" className="btn btn-primary" onClick={() => handleSaveDayHours(day)}>حفظ الساعات</button>
+                                                                            </div>
+                                                                        )}
+
+                                                                        {daysAndHours[day]?.saved && (
+                                                                            <div className="form-group d-flex justify-content-between align-items-center col-md-3">
+                                                                                <button type="button" className="btn btn-primary" onClick={() => handleIntervalOpen(day)}>إضافة فترة</button>
+                                                                            </div>
+                                                                        )}
+                                                                    </div>
+
+                                                                    <div className="mt-3">
+                                                                        <h6>الفترات الزمنية</h6>
+                                                                        {daysAndHours[day]?.intervals && daysAndHours[day].intervals.map((interval, index) => (
+                                                                            <div key={index} className="d-flex justify-content-between align-items-center mb-2">
+                                                                                <div>{interval.from} - {interval.to}</div>
+                                                                                <div>عدد الحارات: {interval.count}</div>
+                                                                                <div>المستوى: {interval.level}</div>
+                                                                            </div>
+                                                                        ))}
                                                                     </div>
                                                                 </div>
                                                             ))}
+
                                                         </div>
                                                         <button type="button" className='btn ml-2 mb-3 w-100 btn-edit' onClick={handleSave}>حفظ</button>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </DialogContent>
+                                </Dialog>
+
+                                <Dialog open={intervalOpen} onClose={handleIntervalClose} fullWidth maxWidth="sm">
+                                    <DialogTitle style={{ marginBottom: "15px", direction: "rtl", textAlign: "center" }}>
+                                        إضافة فترة زمنية
+                                        <CancelIcon style={{ position: "absolute", left: "15px", cursor: "pointer" }} onClick={handleIntervalClose} />
+                                    </DialogTitle>
+                                    <DialogContent style={{ direction: "rtl" }}>
+                                        <div className="container-fluid">
+                                            <div className="row" style={{ display: "flex", justifyContent: "center" }}>
+                                                <div className="col-md-12">
+                                                    <form action="">
+                                                        <div className='d-flex'>
+
+                                                        <div className="form-group col-md-6">
+                                                            <label htmlFor="">من</label>
+                                                            <select className="form-control" value={currentInterval.from} onChange={(e) => handleIntervalChange('from', e.target.value)}>
+                                                                <option value="">اختر الوقت</option>
+                                                                {getAvailableHours(selectedDay).map((timeSlot, index) => (
+                                                                    <option key={index} value={timeSlot.from}>{timeSlot.from}</option>
+                                                                ))}
+                                                            </select>
+                                                        </div>
+                                                        <div className="form-group col-md-6">
+                                                            <label htmlFor="">إلى</label>
+                                                            <select className="form-control" value={currentInterval.to} onChange={(e) => handleIntervalChange('to', e.target.value)}>
+                                                                <option value="">اختر الوقت</option>
+                                                                {getAvailableHours(selectedDay).map((timeSlot, index) => (
+                                                                    <option key={index} value={timeSlot.to}>{timeSlot.to}</option>
+                                                                ))}
+                                                            </select>
+                                                        </div>
+                                                        </div>
+                                                        
+                                                        <div className='d-flex'>
+
+                                                        <div className="form-group col-md-6">
+                                                            <label htmlFor="">عدد الحارات</label>
+                                                            <input type="number" className="form-control" value={currentInterval.count} onChange={(e) => handleIntervalChange('count', e.target.value)} />
+                                                        </div>
+                                                        <div className="form-group col-md-6">
+                                                            <label htmlFor="">المستوى</label>
+                                                            <select className="form-control" value={currentInterval.level} onChange={(e) => handleIntervalChange('level', e.target.value)}>
+                                                                <option value="">اختر مستوى</option>
+                                                                {levels.map(level => (
+                                                                    <option key={level.value} value={level.value}>{level.label}</option>
+                                                                ))}
+                                                            </select>
+                                                        </div>
+                                                        </div>
+                                                        <button type="button" className="btn btn-primary" onClick={handleSaveInterval}>حفظ</button>
                                                     </form>
                                                 </div>
                                             </div>
@@ -220,7 +337,7 @@ const AddPath = () => {
                                                 <th scope="col">الأيام</th>
                                                 <th scope="col">الساعات</th>
                                                 <th scope="col">عدد الحارات</th>
-                                                <th scope="col"> المستوى</th>
+                                                <th scope="col">المستوى</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -236,17 +353,29 @@ const AddPath = () => {
                                                     </td>
                                                     <td>
                                                         {Object.keys(bathroom.daysAndHours).map(day => (
-                                                            <div key={day}>{bathroom.daysAndHours[day].from} - {bathroom.daysAndHours[day].to}</div>
+                                                            <div key={day}>
+                                                                {bathroom.daysAndHours[day].intervals.map((interval, index) => (
+                                                                    <div key={index}>{interval.from} - {interval.to}</div>
+                                                                ))}
+                                                            </div>
                                                         ))}
                                                     </td>
                                                     <td>
                                                         {Object.keys(bathroom.daysAndHours).map(day => (
-                                                            <div key={day}>{bathroom.daysAndHours[day].lanes.count}</div>
+                                                            <div key={day}>
+                                                                {bathroom.daysAndHours[day].intervals.map((interval, index) => (
+                                                                    <div key={index}>{interval.count}</div>
+                                                                ))}
+                                                            </div>
                                                         ))}
                                                     </td>
                                                     <td>
                                                         {Object.keys(bathroom.daysAndHours).map(day => (
-                                                            <div key={day}>{bathroom.daysAndHours[day].lanes.level}</div>
+                                                            <div key={day}>
+                                                                {bathroom.daysAndHours[day].intervals.map((interval, index) => (
+                                                                    <div key={index}>{interval.level}</div>
+                                                                ))}
+                                                            </div>
                                                         ))}
                                                     </td>
                                                 </tr>
@@ -264,4 +393,3 @@ const AddPath = () => {
 };
 
 export default AddPath;
-
