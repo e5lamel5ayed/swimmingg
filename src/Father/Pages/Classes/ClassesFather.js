@@ -8,6 +8,7 @@ import Programs from '../Chips/Programs';
 import Days from '../Chips/Days';
 import Instructors from '../Chips/Instructors';
 import Avilable from '../Chips/Avilable';
+import Lanes from '../Chips/Lanes';
 
 export const ClassesFather = () => {
     return (
@@ -33,6 +34,7 @@ export const ClassesFather = () => {
                         <Days />
                         <Instructors />
                         <Avilable />
+                        <Lanes/>
 
 
                     </Stack>

@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import { Chip, Button, Dialog, DialogActions, DialogContent, DialogTitle } from '@mui/material';
+import { Chip, Dialog, DialogActions, DialogContent, DialogTitle } from '@mui/material';
 import CancelIcon from '@mui/icons-material/Cancel';
 
-const Days = () => {
+const Lanes = () => {
     const [open, setOpen] = useState(false);
     const [selectedDays, setSelectedDays] = useState([]);
 
@@ -26,13 +26,13 @@ const Days = () => {
         setSelectedDays([]);
     };
 
-    const daysOfWeek = ['السبت', 'الأحد', 'الاثنين', 'الثلاثاء', 'الأربعاء', 'الخميس', 'الجمعة'];
+    const daysOfWeek = ['حمام 1', '2 حمام', 'حمام 3', 'حمام 4', 'حمام 5', 'حمام 6', 'حمام 7'];
 
     return (
         <div>
             <Chip
                 className="m-1"
-                label="الايام"
+                label="الحارات"
                 component="a"
                 href="#basic-chip"
                 variant="outlined"
@@ -108,7 +108,7 @@ const Days = () => {
                                         className="btn"
                                         onClick={handleClear}
                                     >
-                                        مسح فلتر الايام
+                                        مسح فلتر الحارات
                                     </button>
                                 </div>
                             </div>
@@ -121,4 +121,4 @@ const Days = () => {
     );
 };
 
-export default Days;
+export default Lanes;

@@ -126,7 +126,7 @@ const Instructors = () => {
                                         className='btn'
                                         onClick={handleClear}
                                     >
-                                        مسح فلتر العمر
+                                        مسح فلتر المدربين
                                     </button>
                                 </div>
                             </div>

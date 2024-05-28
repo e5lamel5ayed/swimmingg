@@ -17,7 +17,7 @@ const ClassHome = () => {
                         <h2 className='mt-3'>ماذا تريد ان تري</h2>
                     </div>
 
-                    <div className="col-md-4 text-white">
+                    <div className="col-md-4 text-white m-auto">
                         <Link to='/ChoseClass' className='text-decoration-none'>
                             <div className='box px-4'>
                                 <h4 className='text-info'>
@@ -30,7 +30,7 @@ const ClassHome = () => {
                         </Link>
                     </div>
 
-                    <div className="col-md-4 text-white">
+                    {/* <div className="col-md-4 text-white">
                         <Link to='/' className='text-decoration-none'>
                             <div className='box px-4'>
                                 <h4 className='text-info'>
@@ -93,7 +93,7 @@ const ClassHome = () => {
                                 </div>
                             </div>
                         </Link>
-                    </div>
+                    </div> */}
 
 
 

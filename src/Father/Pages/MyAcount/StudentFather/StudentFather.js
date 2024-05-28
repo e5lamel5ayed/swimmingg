@@ -235,7 +235,7 @@ export default function MultiActionAreaCard() {
                 </div>
 
                 <div className='col-md-12 text-center mt-4 '>
-                    <Link to='/addstudentFather2'>
+                    <Link to='/addstudentFather'>
                         <button className='btn btn-edit'>اضف طالب</button>
                     </Link>
                         

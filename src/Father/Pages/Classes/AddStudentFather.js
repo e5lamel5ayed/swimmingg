@@ -89,9 +89,13 @@ const AddStudentFather = () => {
 
                                 </div>
 
-                                <div className='add-student-btn d-flex justify-content-end align-items-center my-5 '>
-                                    <button className='btn ml-2 mb-3 w-100 btn-edit'>حفظ</button>
-                                    <button className='btn w-100  mb-3 btn-edit2'>الغاء</button>
+                                <div className='add-student-btn d-flex justify-content-center align-items-center my-5 '>
+                                    <Link to='/EnrollNow'>
+                                        <button className='btn mb-3 w-100 btn-edit'>حفظ</button>
+                                    </Link>
+                                    <Link>
+                                        <button className='btn w-100 mr-2 mb-3 btn-edit2'>الغاء</button>
+                                    </Link>
                                 </div>
 
                             </form>

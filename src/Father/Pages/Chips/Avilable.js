@@ -115,7 +115,7 @@ const Avilable = () => {
                                         className='btn'
                                         onClick={handleClear}
                                     >
-                                        مسح فلتر العمر
+                                        مسح فلتر المتاح
                                     </button>
                                 </div>
                             </div>
