@@ -11,7 +11,7 @@ const AddInstructor = () => {
     const [laneCode, setLaneCode] = useState('');
     const [laneName, setLaneName] = useState('');
     const [level, setLevel] = useState('');
-    const [bathroomName, setBathroomName] = useState('');
+    const [ClassName, setClassName] = useState('');
 
     const handleOpen = () => {
         setOpen(true);
@@ -26,13 +26,13 @@ const AddInstructor = () => {
             code: laneCode,
             name: laneName,
             level: level,
-            bathroom: bathroomName,
+            class: ClassName,
         };
         setLanes([...lanes, newLane]);
         setLaneCode('');
         setLaneName('');
         setLevel('');
-        setBathroomName('');
+        setClassName('');
         handleClose();
     };
 
@@ -85,22 +85,17 @@ const AddInstructor = () => {
 
                                                             <div className="form-group d-flex justify-content-between align-items-center">
                                                                 <label htmlFor="class"> اسم الكلاس : </label>
-                                                                <select name="class" className='form-control w-75'>
-                                                                    <option value="class">
+                                                                <select name="class" className='form-control w-75' value={ClassName} onChange={(e) => setClassName(e.target.value)}>
+                                                                    <option value="صيف 2024 (1 يوليو 2024 - 25 أغسطس 2024) (مفتوح)">
                                                                         صيف 2024 (1 يوليو 2024 - 25 أغسطس 2024) (مفتوح)
                                                                     </option>
-                                                                    <option value="class">
-                                                                        صيف 2024 (1 يوليو 2024 - 25 أغسطس 2024) (مفتوح)
+                                                                    <option value="صيف 2025 (1 يوليو 2025 - 25 أغسطس 2025) (مفتوح)">
+                                                                        صيف 2025 (1 يوليو 2025 - 25 أغسطس 2025) (مفتوح)
                                                                     </option>
-                                                                    <option value="class">
-                                                                        صيف 2024 (1 يوليو 2024 - 25 أغسطس 2024) (مفتوح)
+                                                                    <option value="صيف 2026 (1 يوليو 2026 - 25 أغسطس 2026) (مغلق)">
+                                                                        صيف 2026 (1 يوليو 2026 - 25 أغسطس 2026) (مغلق)
                                                                     </option>
-                                                                    <option value="class">
-                                                                        صيف 2024 (1 يوليو 2024 - 25 أغسطس 2024) (مفتوح)
-                                                                    </option>
-                                                                    <option value="class">
-                                                                        صيف 2024 (1 يوليو 2024 - 25 أغسطس 2024) (مفتوح)
-                                                                    </option>
+                                                                    {/* أضف المزيد من الخيارات هنا إذا لزم الأمر */}
                                                                 </select>
                                                             </div>
 
@@ -122,8 +117,7 @@ const AddInstructor = () => {
                                                 <th scope="col">#</th>
                                                 <th scope="col">كود المدرب</th>
                                                 <th scope="col">اسم المدرب</th>
-                                                <th scope="col">المستوى</th>
-                                                <th scope="col">اسم الحمام</th>
+                                                <th scope="col">اسم الكلاس</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -132,9 +126,7 @@ const AddInstructor = () => {
                                                     <th scope="row">{index + 1}</th>
                                                     <td>{lane.code}</td>
                                                     <td>{lane.name}</td>
-                                                    <td>{lane.level}</td>
-                                                    <td>{lane.bathroom}</td>
-
+                                                    <td>{lane.class}</td>
                                                 </tr>
                                             ))}
                                         </tbody>
