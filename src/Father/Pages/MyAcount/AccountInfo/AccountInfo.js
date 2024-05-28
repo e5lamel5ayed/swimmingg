@@ -70,6 +70,13 @@ const AccountInfo = () => {
                     </div>
 
 
+                    <div className='col-md-12 text-center mt-4 mb-4 '>
+                        <Link to='/AddGuardian'>
+                            <button className='btn btn-edit'>اضف وصي </button>
+                        </Link>
+
+
+                    </div>
                 </div>
             </div>
         </div>
