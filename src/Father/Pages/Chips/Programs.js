@@ -119,7 +119,7 @@ const Programs = () => {
                                         className="btn"
                                         onClick={handleClear}
                                     >
-                                        مسح فلتر العمر
+                                        مسح فلتر البرامج
                                     </button>
                                 </div>
                             </div>
