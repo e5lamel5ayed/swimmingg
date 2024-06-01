@@ -3,7 +3,6 @@ import NavBar from '../../Components/NavBar/NavBar';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import { Link } from 'react-router-dom';
 import { Dialog, DialogContent, DialogTitle } from '@mui/material';
-import CancelIcon from '@mui/icons-material/Cancel';
 
 const daysOfWeek = [
     { value: 'السبت', label: 'السبت' },
@@ -23,7 +22,6 @@ const levels = [
 
 const AddPath = () => {
     const [open, setOpen] = useState(false);
-    const [selectedDay, setSelectedDay] = useState(null);
     const [bathrooms, setBathrooms] = useState([]);
     const [bathroomCode, setBathroomCode] = useState('');
     const [bathroomName, setBathroomName] = useState('');
@@ -75,7 +73,7 @@ const AddPath = () => {
             });
             setTrainingDuration({
                 ...trainingDuration,
-                [day]: ''
+                [day]: 0
             });
             setLanesDistribution({
                 ...lanesDistribution,
@@ -95,10 +93,6 @@ const AddPath = () => {
     };
 
     const handleTrainingDurationChange = (day, value) => {
-        if (value > 60) {
-            alert('مدة التدريب لا يمكن أن تتجاوز 60 دقيقة.');
-            return;
-        }
         setTrainingDuration({
             ...trainingDuration,
             [day]: value
@@ -106,8 +100,8 @@ const AddPath = () => {
     };
 
     const handleAddHours = (day) => {
-        if (!daysAndHours[day]?.from || !daysAndHours[day]?.to || !trainingDuration[day]) {
-            alert('يرجى إدخال الوقت ومدة التدريب.');
+        if (!daysAndHours[day]?.from || !daysAndHours[day]?.to) {
+            alert('يرجى إدخال الوقت.');
             return;
         }
         const calculatedIntervals = calculateIntervals(daysAndHours[day]?.from, daysAndHours[day]?.to, trainingDuration[day]);
@@ -147,8 +141,32 @@ const AddPath = () => {
     };
 
     const handleSaveHours = () => {
+        // تحديث حمام السباحة الحالي بالبيانات الجديدة
+        const updatedBathrooms = bathrooms.map(bathroom => {
+            if (bathroom.code === bathroomCode) {
+                return {
+                    ...bathroom,
+                    totalLanes: {
+                        ...bathroom.totalLanes,
+                        [currentDay]: { ...totalLanes[currentDay] }
+                    },
+                    lanesDistribution: {
+                        ...bathroom.lanesDistribution,
+                        [currentDay]: { ...lanesDistribution[currentDay] }
+                    }
+                };
+            }
+            return bathroom;
+        });
+
+        // تحديث حالة الحمامات في الحالة العامة للتطبيق
+        setBathrooms(updatedBathrooms);
+
+        // إغلاق الديالوج بعد حفظ البيانات
         setOpenHourDialog(false);
     };
+
+
 
     const handleSave = () => {
         const newBathroom = {
@@ -177,20 +195,26 @@ const AddPath = () => {
     const calculateIntervals = (fromTime, toTime, duration) => {
         let intervals = [];
         let currentTime = fromTime;
+        const [toHour, toMinute] = toTime.split(':').map(Number);
 
-        while (currentTime < toTime) {
+        while (true) {
             const [currentHour, currentMinute] = currentTime.split(':').map(Number);
-            let nextTime = new Date();
-            nextTime.setHours(currentHour);
-            nextTime.setMinutes(currentMinute + parseInt(duration));
+            let endTime = new Date();
+            endTime.setHours(currentHour);
+            endTime.setMinutes(currentMinute + parseInt(duration));
+            const endHour = endTime.getHours();
+            const endMinute = endTime.getMinutes();
+            const endTimeStr = `${String(endHour).padStart(2, '0')}:${String(endMinute).padStart(2, '0')}`;
 
-            const nextHour = nextTime.getHours();
-            const nextMinute = nextTime.getMinutes();
-            const nextTimeStr = `${String(nextHour).padStart(2, '0')}:${String(nextMinute).padStart(2, '0')}`;
-
-            if (nextTimeStr <= toTime) {
-                intervals.push({ from: currentTime, to: nextTimeStr });
-                currentTime = `${String(nextHour).padStart(2, '0')}:${String(nextMinute + 1).padStart(2, '0')}`; // إضافة دقيقة واحدة للفترة التالية
+            if (endHour < toHour || (endHour === toHour && endMinute <= toMinute)) {
+                intervals.push({ from: currentTime, to: endTimeStr });
+                let newTime = new Date();
+                newTime.setHours(currentHour);
+                newTime.setMinutes(currentMinute + 60); // الفاصل الزمني هو ساعة واحدة
+                const newHour = newTime.getHours();
+                const newMinute = newTime.getMinutes();
+                currentTime = `${String(newHour).padStart(2, '0')}:${String(newMinute).padStart(2, '0')}`;
+                if (newHour > toHour || (newHour === toHour && newMinute > toMinute)) break;
             } else {
                 break;
             }
@@ -218,125 +242,166 @@ const AddPath = () => {
                 <div className="container pt-5">
                     <div className="row">
                         <div className="col-md-12">
-                            <div className='mb-5 p-3 special-info bg-white'>
-                            <div className='d-flex justify-content-end'>
-                                    <button className='btn btn-edit' onClick={handleOpen}>اضافة حمام</button>
-                                </div>
-
-                                <Dialog open={open} onClose={handleClose} fullWidth maxWidth="md">
-                                    <div className="white-div p-1" style={{ backgroundColor: "#94F0F0" }}></div>
-                                    <DialogTitle style={{ marginBottom: "15px", direction: "rtl", textAlign: "center" }}>
-                                        اضافة حمام
-                                        <CancelIcon style={{ position: "absolute", left: "15px", cursor: "pointer" }} onClick={handleClose} />
-                                    </DialogTitle>
-                                    <DialogContent>
-                                        <div className='row'>
-                                            <div className='col-md-6'>
-                                                <label htmlFor="bathroomCode" style={{ display: "block", textAlign: "right", fontSize: "20px" }}>كود الحمام</label>
-                                                <input id="bathroomCode" type="text" value={bathroomCode} onChange={(e) => setBathroomCode(e.target.value)} style={{ width: "100%", height: "45px", borderRadius: "5px", padding: "5px" }} />
-                                            </div>
-                                            <div className='col-md-6'>
-                                                <label htmlFor="bathroomName" style={{ display: "block", textAlign: "right", fontSize: "20px" }}>اسم الحمام</label>
-                                                <input id="bathroomName" type="text" value={bathroomName} onChange={(e) => setBathroomName(e.target.value)} style={{ width: "100%", height: "45px", borderRadius: "5px", padding: "5px" }} />
-                                            </div>
-                                        </div>
-                                        <div className='row mt-4'>
-                                            <div className='col-md-12'>
-                                                <h3 className='text-center'>الأيام المتاحة</h3>
-                                                <div className='d-flex justify-content-around'>
-                                                    {daysOfWeek.map((day) => (
-                                                        <label key={day.value}>
-                                                            <input type="checkbox" checked={selectedDays.includes(day.value)} onChange={() => handleDayCheckboxChange(day.value)} />
-                                                            {day.label}
-                                                        </label>
-                                                    ))}
-                                                </div>
-                                            </div>
-                                        </div>
-                                        {selectedDays.map((day) => (
-                                            <div
-                                                style={{
-                                                    border: "1px #000 solid",
-                                                    padding: "25px",
-                                                    borderRadius: "15px"
-                                                }}
-                                                key={day} className='mt-4'>
-                                                <h3 className='text-center'>{day}</h3>
-                                                <div className='d-flex justify-content-around'>
-                                                    <div className='col-md-6'>
-                                                        <label style={{ display: "block", textAlign: "right", fontSize: "20px" }}>من</label>
-                                                        <input type="time" value={daysAndHours[day]?.from} onChange={(e) => handleTimeChange(day, 'from', e.target.value)} style={{ width: "100%", height: "45px", borderRadius: "5px", padding: "5px" }} />
-                                                    </div>
-                                                    <div className='col-md-6'>
-                                                        <label style={{ display: "block", textAlign: "right", fontSize: "20px" }}>إلى</label>
-                                                        <input type="time" value={daysAndHours[day]?.to} onChange={(e) => handleTimeChange(day, 'to', e.target.value)} style={{ width: "100%", height: "45px", borderRadius: "5px", padding: "5px" }} />
-                                                    </div>
-                                                </div>
-                                                <div className='d-flex justify-content-around mt-3'>
-                                                    <div className='col-md-6'>
-                                                        <label style={{ display: "block", textAlign: "right", fontSize: "20px" }}>مدة التدريب (بالدقائق)</label>
-                                                        <input type="number" value={trainingDuration[day]} onChange={(e) => handleTrainingDurationChange(day, e.target.value)} style={{ width: "100%", height: "45px", borderRadius: "5px", padding: "5px" }} />
-                                                    </div>
-                                                    <div className='col-md-6 d-flex align-items-end'>
-                                                        <button className='btn btn-edit' onClick={() => handleAddHours(day)}>إضافة الساعات</button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        ))}
-                                    </DialogContent>
-                                    <div className='d-flex justify-content-center mb-3'>
-                                        <button className='btn btn-edit' onClick={handleSave}>حفظ</button>
-                                    </div>
-                                </Dialog>
+                            <div className="d-flex justify-content-end align-items-center">
+                                <button className='btn btn-edit' onClick={handleOpen}>إضافة حمام</button>
                             </div>
+
+                            <table className="table table-bordered mt-4">
+                                <thead>
+                                    <tr>
+                                        <th>كود الحمام</th>
+                                        <th>اسم الحمام</th>
+                                        <th>الايام و الساعات</th>
+                                        <th>مدة التدريب (دقائق)</th>
+                                        <th>فترات التدريب</th>
+                                        <th>عدد الحارات</th>
+                                        <th>توزيع الحارات</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {bathrooms.map((bathroom, index) => (
+                                        <tr key={index}>
+                                            <td>{bathroom.code}</td>
+                                            <td>{bathroom.name}</td>
+                                            <td>
+                                                {Object.entries(bathroom.daysAndHours).map(([day, times], idx) => (
+                                                    <div key={idx}>
+                                                        {day}: {times.from} - {times.to}
+                                                    </div>
+                                                ))}
+                                            </td>
+                                            <td>
+                                                {Object.entries(bathroom.trainingDuration).map(([day, duration], idx) => (
+                                                    <div key={idx}>
+                                                        {day}: {duration} دقائق
+                                                    </div>
+                                                ))}
+                                            </td>
+                                            <td>
+                                                {Object.entries(bathroom.intervals).map(([day, dayIntervals], idx) => (
+                                                    <div key={idx}>
+                                                        {day}:
+                                                        {dayIntervals.map((interval, intIdx) => (
+                                                            <div key={intIdx}>
+                                                                {interval.from} - {interval.to}
+                                                            </div>
+                                                        ))}
+                                                    </div>
+                                                ))}
+                                            </td>
+                                            <td>
+                                                <p>السبت</p>
+                                                <p>10 حارات </p>
+                                                <hr />
+                                                <p>السبت</p>
+                                                <p>10 حارات </p>
+                                            </td>
+                                            <td>
+                                                <div>
+                                                    <div>السبت</div>
+                                                    <div>مبتدأ: 3</div>
+                                                    <div>متوسط: 2</div>
+                                                    <div>محترف: 5</div>
+                                                    <hr />
+                                                    <div>مبتدأ: 3</div>
+                                                    <div>متوسط: 2</div>
+                                                    <div>محترف: 5</div>
+                                                </div>
+                                            </td>
+
+
+                                        </tr>
+                                    ))}
+                                </tbody>
+                            </table>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <Dialog open={openHourDialog} onClose={() => setOpenHourDialog(false)} fullWidth maxWidth="md">
-                <DialogTitle style={{ marginBottom: "15px", direction: "rtl", textAlign: "center" }}>
-                    إضافة حارات لـ {currentDay}
-                    <CancelIcon style={{ position: "absolute", left: "15px", cursor: "pointer" }} onClick={() => setOpenHourDialog(false)} />
-                </DialogTitle>
+            <Dialog open={open} onClose={handleClose} fullWidth maxWidth="md">
+                <DialogTitle>إضافة حمام</DialogTitle>
                 <DialogContent>
+                    <div className="row">
+                        <div className="form-group col-md-6">
+                            <label htmlFor="bathroomCode">كود الحمام:</label>
+                            <input type="text" className="form-control" id="bathroomCode" value={bathroomCode} onChange={(e) => setBathroomCode(e.target.value)} />
+                        </div>
+                        <div className="form-group col-md-6">
+                            <label htmlFor="bathroomName">اسم الحمام:</label>
+                            <input type="text" className="form-control" id="bathroomName" value={bathroomName} onChange={(e) => setBathroomName(e.target.value)} />
+                        </div>
 
-                    {currentIntervals.map((interval, index) => (
-                        <div key={index}
-                            style={{
-                                border: "1px #000 solid",
-                                padding: "25px",
-                                borderRadius: "15px"
-                            }}
-                            className='mt-3'>
-                            <div className='d-flex justify-content-around'>
-                                <h3 className='text-center d-flex ' style={{ alignItems: "end" }} >من {interval.from} إلى {interval.to}</h3>
-                                <div className='col-md-6'>
-                                    <label style={{ display: "block", textAlign: "right", fontSize: "20px" }}>عدد الحارات الكلي</label>
-                                    <input type="number" value={totalLanes[currentDay]?.[index] || ''} onChange={(e) => handleTotalLanesChange(currentDay, index, e.target.value)} style={{ width: "100%", height: "45px", borderRadius: "5px", padding: "5px" }} />
+                    </div>
+                    <div className="form-group d-flex flex-wrap">
+                        <label>الأيام:</label>
+                        {daysOfWeek.map((day) => (
+                            <div key={day.value}>
+                                <input className='mr-3 ml-1' type="checkbox" id={day.value} checked={selectedDays.includes(day.value)} onChange={() => handleDayCheckboxChange(day.value)} />
+                                <label htmlFor={day.value}>{day.label}</label>
+                            </div>
+                        ))}
+                    </div>
+                    {selectedDays.map((day) => (
+                        <div key={day}>
+                            <h4>{day}</h4>
+                            <div className="row">
+                                <div className="form-group col-md-6">
+                                    <label>من:</label>
+                                    <input type="time" className="form-control" value={daysAndHours[day]?.from} onChange={(e) => handleTimeChange(day, 'from', e.target.value)} />
+                                </div>
+                                <div className="form-group col-md-6">
+                                    <label>إلى:</label>
+                                    <input type="time" className="form-control" value={daysAndHours[day]?.to} onChange={(e) => handleTimeChange(day, 'to', e.target.value)} />
                                 </div>
                             </div>
-                            {totalLanes[currentDay]?.[index] && (
-                                <div className='mt-3 d-flex'>
-                                    {levels.map((level, levelIndex) => (
-                                        <div key={level.value} className='mt-3 col-md-4'>
-                                            <label style={{ display: "block", textAlign: "right", fontSize: "20px" }}>عدد الحارات - {level.label}</label>
-                                            <input type="number" value={lanesDistribution[currentDay]?.[index]?.[level.value] || 0} onChange={(e) => handleLaneDistributionChange(currentDay, index, level.value, e.target.value)} style={{ width: "100%", height: "45px", borderRadius:"5px", padding: "5px" }} disabled={Object.values(lanesDistribution[currentDay]?.[index] || {}).reduce((a, b) => a + b, 0) >= totalLanes[currentDay][index]} />
-                                        </div>
-                                    ))}
-                                </div>
-                            )}
+                            <div className="form-group col-md-6">
+                                <label>مدة التدريب (دقائق):</label>
+                                <input type="number" className="form-control" value={trainingDuration[day]} onChange={(e) => handleTrainingDurationChange(day, e.target.value)} />
+                            </div>
+                            <button className="btn btn-primary" onClick={() => handleAddHours(day)}>إضافة فترات التدريب</button>
                         </div>
                     ))}
+                    <button className="btn btn-primary mt-3" onClick={handleSave}>حفظ</button>
                 </DialogContent>
-                <div className='d-flex justify-content-center mb-3'>
-                    <button className='btn btn-edit' onClick={handleSaveHours}>حفظ</button>
-                </div>
             </Dialog>
-        </div >
+
+            <Dialog open={openHourDialog} onClose={handleSaveHours} fullWidth maxWidth="md">
+                <DialogTitle>إضافة حارات لكل فترة</DialogTitle>
+                <DialogContent>
+                    {currentIntervals.map((interval, index) => (
+                        <div key={index}>
+                            <div className="row border px-3 pt-3 m-auto mb-3">
+                                <div className='col-md-6'>
+                                    <p>بداية وانتهاء التدريب </p>
+                                    <p className='fw-bold'>{interval.from} - {interval.to}</p>
+                                </div>
+                                <div className="form-group col-md-6 d-flex">
+                                    <label> عدد الحارات الكلي :  </label>
+                                    <input type="number" className="form-control" value={totalLanes[currentDay]?.[index]} onChange={(e) => handleTotalLanesChange(currentDay, index, e.target.value)} />
+                                </div>
+                            </div>
+
+                            <div className="row">
+                                {levels.map(level => (
+                                    <div className="form-group col-md-4 d-flex" key={level.value}>
+                                        <label>عدد الحارات لـ{level.label}</label>
+                                        <input
+                                            type="number"
+                                            className="form-control"
+                                            value={lanesDistribution[currentDay]?.[index]?.[level.value] || 0}
+                                            onChange={(e) => handleLaneDistributionChange(currentDay, index, level.value, e.target.value)}
+                                        />
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                    ))}
+                    <button className="btn btn-primary" onClick={handleSaveHours}>حفظ</button>
+                </DialogContent>
+            </Dialog>
+        </div>
     );
 };
 
 export default AddPath;
-
-
