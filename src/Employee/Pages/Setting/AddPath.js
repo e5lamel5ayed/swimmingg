@@ -1,4 +1,3 @@
-/* eslint-disable no-loop-func */
 import React, { useState } from 'react';
 import NavBar from '../../Components/NavBar/NavBar';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
@@ -24,14 +23,20 @@ const levels = [
 
 const AddPath = () => {
     const [open, setOpen] = useState(false);
-    const [intervalOpen, setIntervalOpen] = useState(false);
     const [selectedDay, setSelectedDay] = useState(null);
     const [bathrooms, setBathrooms] = useState([]);
     const [bathroomCode, setBathroomCode] = useState('');
     const [bathroomName, setBathroomName] = useState('');
     const [selectedDays, setSelectedDays] = useState([]);
     const [daysAndHours, setDaysAndHours] = useState({});
-    const [currentInterval, setCurrentInterval] = useState({ from: '', to: '', count: '', level: '' });
+    const [trainingDuration, setTrainingDuration] = useState({});
+    const [intervals, setIntervals] = useState({});
+    const [lanes, setLanes] = useState({});
+    const [openHourDialog, setOpenHourDialog] = useState(false);
+    const [currentIntervals, setCurrentIntervals] = useState([]);
+    const [currentDay, setCurrentDay] = useState(null);
+    const [totalLanes, setTotalLanes] = useState({});
+    const [lanesDistribution, setLanesDistribution] = useState({});
 
     const handleOpen = () => {
         setOpen(true);
@@ -41,24 +46,41 @@ const AddPath = () => {
         setOpen(false);
     };
 
-    const handleIntervalOpen = (day) => {
-        setSelectedDay(day);
-        setIntervalOpen(true);
-    };
-
-    const handleIntervalClose = () => {
-        setIntervalOpen(false);
-        setCurrentInterval({ from: '', to: '', count: '', level: '' });
-    };
-
     const handleDayCheckboxChange = (day) => {
         if (selectedDays.includes(day)) {
             setSelectedDays(selectedDays.filter(selectedDay => selectedDay !== day));
             const newDaysAndHours = { ...daysAndHours };
             delete newDaysAndHours[day];
             setDaysAndHours(newDaysAndHours);
+            const newTrainingDuration = { ...trainingDuration };
+            delete newTrainingDuration[day];
+            setTrainingDuration(newTrainingDuration);
+            const newIntervals = { ...intervals };
+            delete newIntervals[day];
+            setIntervals(newIntervals);
+            const newLanes = { ...lanes };
+            delete newLanes[day];
+            setLanes(newLanes);
+            const newTotalLanes = { ...totalLanes };
+            delete newTotalLanes[day];
+            setTotalLanes(newTotalLanes);
+            const newLanesDistribution = { ...lanesDistribution };
+            delete newLanesDistribution[day];
+            setLanesDistribution(newLanesDistribution);
         } else {
             setSelectedDays([...selectedDays, day]);
+            setDaysAndHours({
+                ...daysAndHours,
+                [day]: { from: '', to: '' }
+            });
+            setTrainingDuration({
+                ...trainingDuration,
+                [day]: ''
+            });
+            setLanesDistribution({
+                ...lanesDistribution,
+                [day]: {}
+            });
         }
     };
 
@@ -67,43 +89,65 @@ const AddPath = () => {
             ...daysAndHours,
             [day]: {
                 ...daysAndHours[day],
-                [field]: value,
-                intervals: daysAndHours[day]?.intervals || []
+                [field]: value
             }
         });
     };
 
-    const handleSaveDayHours = (day) => {
-        if (daysAndHours[day]?.from && daysAndHours[day]?.to) {
-            setDaysAndHours({
-                ...daysAndHours,
-                [day]: {
-                    ...daysAndHours[day],
-                    saved: true
-                }
-            });
-        } else {
-            alert("Please specify both 'from' and 'to' times.");
+    const handleTrainingDurationChange = (day, value) => {
+        if (value > 60) {
+            alert('مدة التدريب لا يمكن أن تتجاوز 60 دقيقة.');
+            return;
         }
-    };
-
-    const handleIntervalChange = (field, value) => {
-        setCurrentInterval({ ...currentInterval, [field]: value });
-    };
-
-    const handleSaveInterval = () => {
-        const dayHours = daysAndHours[selectedDay];
-        const newIntervals = [...dayHours.intervals, currentInterval].sort((a, b) => a.from.localeCompare(b.from));
-        setDaysAndHours({
-            ...daysAndHours,
-            [selectedDay]: {
-                ...dayHours,
-                intervals: newIntervals,
-                availableFrom: dayHours.from,
-                availableTo: dayHours.to,
-            }
+        setTrainingDuration({
+            ...trainingDuration,
+            [day]: value
         });
-        handleIntervalClose();
+    };
+
+    const handleAddHours = (day) => {
+        if (!daysAndHours[day]?.from || !daysAndHours[day]?.to || !trainingDuration[day]) {
+            alert('يرجى إدخال الوقت ومدة التدريب.');
+            return;
+        }
+        const calculatedIntervals = calculateIntervals(daysAndHours[day]?.from, daysAndHours[day]?.to, trainingDuration[day]);
+        setIntervals({
+            ...intervals,
+            [day]: calculatedIntervals
+        });
+        setCurrentIntervals(calculatedIntervals);
+        setCurrentDay(day);
+        setOpenHourDialog(true);
+    };
+
+    const handleTotalLanesChange = (day, intervalIndex, value) => {
+        const newTotalLanes = { ...totalLanes };
+        const numLanes = parseInt(value);
+        if (!newTotalLanes[day]) newTotalLanes[day] = {};
+        newTotalLanes[day][intervalIndex] = numLanes;
+        setTotalLanes(newTotalLanes);
+    };
+
+    const handleLaneDistributionChange = (day, intervalIndex, level, value) => {
+        const newLanesDistribution = { ...lanesDistribution };
+        const numLanes = parseInt(value);
+
+        if (!newLanesDistribution[day]) newLanesDistribution[day] = {};
+        if (!newLanesDistribution[day][intervalIndex]) newLanesDistribution[day][intervalIndex] = { beginner: 0, intermediate: 0, advanced: 0 };
+        newLanesDistribution[day][intervalIndex][level] = numLanes;
+
+        const totalLanesForInterval = Object.values(newLanesDistribution[day][intervalIndex]).reduce((a, b) => a + b, 0);
+        if (totalLanesForInterval > totalLanes[day][intervalIndex]) {
+            alert('مجموع عدد الحارات للمستويات المختلفة يجب ألا يتجاوز العدد الكلي للحارات.');
+            newLanesDistribution[day][intervalIndex][level] -= numLanes;
+            return;
+        }
+
+        setLanesDistribution(newLanesDistribution);
+    };
+
+    const handleSaveHours = () => {
+        setOpenHourDialog(false);
     };
 
     const handleSave = () => {
@@ -111,46 +155,47 @@ const AddPath = () => {
             code: bathroomCode,
             name: bathroomName,
             daysAndHours: daysAndHours,
+            trainingDuration: trainingDuration,
+            intervals: intervals,
+            lanes: lanes,
+            totalLanes: totalLanes,
+            lanesDistribution: lanesDistribution
         };
         setBathrooms([...bathrooms, newBathroom]);
         setBathroomCode('');
         setBathroomName('');
         setSelectedDays([]);
         setDaysAndHours({});
+        setTrainingDuration({});
+        setIntervals({});
+        setLanes({});
+        setTotalLanes({});
+        setLanesDistribution({});
         handleClose();
     };
 
-    const getAvailableHours = (day) => {
-        const dayHours = daysAndHours[day];
-        if (!dayHours) return [];
-
-        const fromTime = dayHours.from;
-        const toTime = dayHours.to;
-
-        const intervals = dayHours.intervals || [];
-
-        let availableHours = [];
+    const calculateIntervals = (fromTime, toTime, duration) => {
+        let intervals = [];
         let currentTime = fromTime;
 
         while (currentTime < toTime) {
             const [currentHour, currentMinute] = currentTime.split(':').map(Number);
-            const nextHour = currentMinute === 0 ? currentHour : currentHour + 1;
-            const nextMinute = currentMinute === 0 ? 30 : 0;
+            let nextTime = new Date();
+            nextTime.setHours(currentHour);
+            nextTime.setMinutes(currentMinute + parseInt(duration));
 
-            const nextTime = `${String(nextHour).padStart(2, '0')}:${String(nextMinute).padStart(2, '0')}`;
-            if (nextTime > toTime) break;
+            const nextHour = nextTime.getHours();
+            const nextMinute = nextTime.getMinutes();
+            const nextTimeStr = `${String(nextHour).padStart(2, '0')}:${String(nextMinute).padStart(2, '0')}`;
 
-            const isAvailable = !intervals.some(interval => (
-                (interval.from <= currentTime && interval.to > currentTime) ||
-                (interval.from < nextTime && interval.to >= nextTime)
-            ));
-
-            if (isAvailable) availableHours.push({ from: currentTime, to: nextTime });
-
-            currentTime = nextTime;
+            if (nextTimeStr <= toTime) {
+                intervals.push({ from: currentTime, to: nextTimeStr });
+                currentTime = `${String(nextHour).padStart(2, '0')}:${String(nextMinute + 1).padStart(2, '0')}`; // إضافة دقيقة واحدة للفترة التالية
+            } else {
+                break;
+            }
         }
-
-        return availableHours;
+        return intervals;
     };
 
     return (
@@ -174,222 +219,124 @@ const AddPath = () => {
                     <div className="row">
                         <div className="col-md-12">
                             <div className='mb-5 p-3 special-info bg-white'>
-                                <div className='d-flex justify-content-end'>
+                            <div className='d-flex justify-content-end'>
                                     <button className='btn btn-edit' onClick={handleOpen}>اضافة حمام</button>
                                 </div>
 
                                 <Dialog open={open} onClose={handleClose} fullWidth maxWidth="md">
-                                    <div className="white-div p-1" style={{ backgroundColor: "#94F0FF" }}></div>
+                                    <div className="white-div p-1" style={{ backgroundColor: "#94F0F0" }}></div>
                                     <DialogTitle style={{ marginBottom: "15px", direction: "rtl", textAlign: "center" }}>
                                         اضافة حمام
                                         <CancelIcon style={{ position: "absolute", left: "15px", cursor: "pointer" }} onClick={handleClose} />
                                     </DialogTitle>
-                                    <DialogContent style={{ direction: "rtl" }}>
-                                        <div className="container-fluid">
-                                            <div className="row" style={{ display: "flex", justifyContent: "center" }}>
-                                                <div className="col-md-12">
-                                                    <form action="">
-                                                        <div className='mb-2 p-3'>
-                                                            <div className='d-flex'>
-
-                                                                <div className="form-group d-flex justify-content-between align-items-center col-md-6">
-                                                                    <label htmlFor="">كود الحمام </label>
-                                                                    <input type="text" className="form-control w-75" value={bathroomCode} onChange={(e) => setBathroomCode(e.target.value)} />
-                                                                </div>
-
-                                                                <div className="form-group d-flex justify-content-between align-items-center col-md-6">
-                                                                    <label htmlFor="">اسم الحمام </label>
-                                                                    <input type="text" className="form-control w-75" value={bathroomName} onChange={(e) => setBathroomName(e.target.value)} />
-                                                                </div>
-                                                            </div>
-
-                                                            <div className='mb-2 p-3'>
-                                                                <label>اختر الأيام :</label>
-                                                                <div className="d-flex flex-wrap">
-                                                                    {daysOfWeek.map(day => (
-                                                                        <div key={day.value} className="form-check ">
-                                                                            <input
-                                                                                type="checkbox"
-                                                                                className="form-check-input ml-0"
-                                                                                id={day.value} checked={selectedDays.includes(day.value)}
-                                                                                onChange={() => handleDayCheckboxChange(day.value)}
-                                                                            />
-                                                                            <label className="form-check-label mr-0" htmlFor={day.value}>{day.label}</label>
-                                                                        </div>
-                                                                    ))}
-                                                                </div>
-                                                            </div>
-
-                                                            {selectedDays.map(day => (
-                                                                <div key={day} className="mb-3 p-3 border rounded">
-                                                                    <h5 className="mb-3">{day}</h5>
-                                                                    <div className="d-flex justify-content-between align-items-center flex-wrap">
-                                                                        <div className="form-group d-flex justify-content-between align-items-center col-md-4">
-                                                                            <label htmlFor="">من</label>
-                                                                            <input type="time" className="form-control" value={daysAndHours[day]?.from || ''} onChange={(e) => handleTimeChange(day, 'from', e.target.value)} />
-                                                                        </div>
-
-                                                                        <div className="form-group d-flex justify-content-between align-items-center col-md-4">
-                                                                            <label htmlFor="">إلى</label>
-                                                                            <input type="time" className="form-control" value={daysAndHours[day]?.to || ''} onChange={(e) => handleTimeChange(day, 'to', e.target.value)} />
-                                                                        </div>
-
-                                                                        {daysAndHours[day]?.from && daysAndHours[day]?.to && !daysAndHours[day]?.saved && (
-                                                                            <div className="form-group d-flex justify-content-between align-items-center col-md-3">
-                                                                                <button type="button" className="btn btn-primary" onClick={() => handleSaveDayHours(day)}>حفظ الساعات</button>
-                                                                            </div>
-                                                                        )}
-
-                                                                        {daysAndHours[day]?.saved && (
-                                                                            <div className="form-group d-flex justify-content-between align-items-center col-md-3">
-                                                                                <button type="button" className="btn btn-primary" onClick={() => handleIntervalOpen(day)}>إضافة فترة</button>
-                                                                            </div>
-                                                                        )}
-                                                                    </div>
-
-                                                                    <div className="mt-3">
-                                                                        <h6>الفترات الزمنية</h6>
-                                                                        {daysAndHours[day]?.intervals && daysAndHours[day].intervals.map((interval, index) => (
-                                                                            <div key={index} className="d-flex justify-content-between align-items-center mb-2">
-                                                                                <div>{interval.from} - {interval.to}</div>
-                                                                                <div>عدد الحارات: {interval.count}</div>
-                                                                                <div>المستوى: {interval.level}</div>
-                                                                            </div>
-                                                                        ))}
-                                                                    </div>
-                                                                </div>
-                                                            ))}
-
-                                                        </div>
-                                                        <button type="button" className='btn ml-2 mb-3 w-100 btn-edit' onClick={handleSave}>حفظ</button>
-                                                    </form>
+                                    <DialogContent>
+                                        <div className='row'>
+                                            <div className='col-md-6'>
+                                                <label htmlFor="bathroomCode" style={{ display: "block", textAlign: "right", fontSize: "20px" }}>كود الحمام</label>
+                                                <input id="bathroomCode" type="text" value={bathroomCode} onChange={(e) => setBathroomCode(e.target.value)} style={{ width: "100%", height: "45px", borderRadius: "5px", padding: "5px" }} />
+                                            </div>
+                                            <div className='col-md-6'>
+                                                <label htmlFor="bathroomName" style={{ display: "block", textAlign: "right", fontSize: "20px" }}>اسم الحمام</label>
+                                                <input id="bathroomName" type="text" value={bathroomName} onChange={(e) => setBathroomName(e.target.value)} style={{ width: "100%", height: "45px", borderRadius: "5px", padding: "5px" }} />
+                                            </div>
+                                        </div>
+                                        <div className='row mt-4'>
+                                            <div className='col-md-12'>
+                                                <h3 className='text-center'>الأيام المتاحة</h3>
+                                                <div className='d-flex justify-content-around'>
+                                                    {daysOfWeek.map((day) => (
+                                                        <label key={day.value}>
+                                                            <input type="checkbox" checked={selectedDays.includes(day.value)} onChange={() => handleDayCheckboxChange(day.value)} />
+                                                            {day.label}
+                                                        </label>
+                                                    ))}
                                                 </div>
                                             </div>
                                         </div>
-                                    </DialogContent>
-                                </Dialog>
-
-                                <Dialog open={intervalOpen} onClose={handleIntervalClose} fullWidth maxWidth="sm">
-                                    <DialogTitle style={{ marginBottom: "15px", direction: "rtl", textAlign: "center" }}>
-                                        إضافة فترة زمنية
-                                        <CancelIcon style={{ position: "absolute", left: "15px", cursor: "pointer" }} onClick={handleIntervalClose} />
-                                    </DialogTitle>
-                                    <DialogContent style={{ direction: "rtl" }}>
-                                        <div className="container-fluid">
-                                            <div className="row" style={{ display: "flex", justifyContent: "center" }}>
-                                                <div className="col-md-12">
-                                                    <form action="">
-                                                        <div className='d-flex'>
-
-                                                        <div className="form-group col-md-6">
-                                                            <label htmlFor="">من</label>
-                                                            <select className="form-control" value={currentInterval.from} onChange={(e) => handleIntervalChange('from', e.target.value)}>
-                                                                <option value="">اختر الوقت</option>
-                                                                {getAvailableHours(selectedDay).map((timeSlot, index) => (
-                                                                    <option key={index} value={timeSlot.from}>{timeSlot.from}</option>
-                                                                ))}
-                                                            </select>
-                                                        </div>
-                                                        <div className="form-group col-md-6">
-                                                            <label htmlFor="">إلى</label>
-                                                            <select className="form-control" value={currentInterval.to} onChange={(e) => handleIntervalChange('to', e.target.value)}>
-                                                                <option value="">اختر الوقت</option>
-                                                                {getAvailableHours(selectedDay).map((timeSlot, index) => (
-                                                                    <option key={index} value={timeSlot.to}>{timeSlot.to}</option>
-                                                                ))}
-                                                            </select>
-                                                        </div>
-                                                        </div>
-                                                        
-                                                        <div className='d-flex'>
-
-                                                        <div className="form-group col-md-6">
-                                                            <label htmlFor="">عدد الحارات</label>
-                                                            <input type="number" className="form-control" value={currentInterval.count} onChange={(e) => handleIntervalChange('count', e.target.value)} />
-                                                        </div>
-                                                        <div className="form-group col-md-6">
-                                                            <label htmlFor="">المستوى</label>
-                                                            <select className="form-control" value={currentInterval.level} onChange={(e) => handleIntervalChange('level', e.target.value)}>
-                                                                <option value="">اختر مستوى</option>
-                                                                {levels.map(level => (
-                                                                    <option key={level.value} value={level.value}>{level.label}</option>
-                                                                ))}
-                                                            </select>
-                                                        </div>
-                                                        </div>
-                                                        <button type="button" className="btn btn-primary" onClick={handleSaveInterval}>حفظ</button>
-                                                    </form>
+                                        {selectedDays.map((day) => (
+                                            <div
+                                                style={{
+                                                    border: "1px #000 solid",
+                                                    padding: "25px",
+                                                    borderRadius: "15px"
+                                                }}
+                                                key={day} className='mt-4'>
+                                                <h3 className='text-center'>{day}</h3>
+                                                <div className='d-flex justify-content-around'>
+                                                    <div className='col-md-6'>
+                                                        <label style={{ display: "block", textAlign: "right", fontSize: "20px" }}>من</label>
+                                                        <input type="time" value={daysAndHours[day]?.from} onChange={(e) => handleTimeChange(day, 'from', e.target.value)} style={{ width: "100%", height: "45px", borderRadius: "5px", padding: "5px" }} />
+                                                    </div>
+                                                    <div className='col-md-6'>
+                                                        <label style={{ display: "block", textAlign: "right", fontSize: "20px" }}>إلى</label>
+                                                        <input type="time" value={daysAndHours[day]?.to} onChange={(e) => handleTimeChange(day, 'to', e.target.value)} style={{ width: "100%", height: "45px", borderRadius: "5px", padding: "5px" }} />
+                                                    </div>
+                                                </div>
+                                                <div className='d-flex justify-content-around mt-3'>
+                                                    <div className='col-md-6'>
+                                                        <label style={{ display: "block", textAlign: "right", fontSize: "20px" }}>مدة التدريب (بالدقائق)</label>
+                                                        <input type="number" value={trainingDuration[day]} onChange={(e) => handleTrainingDurationChange(day, e.target.value)} style={{ width: "100%", height: "45px", borderRadius: "5px", padding: "5px" }} />
+                                                    </div>
+                                                    <div className='col-md-6 d-flex align-items-end'>
+                                                        <button className='btn btn-edit' onClick={() => handleAddHours(day)}>إضافة الساعات</button>
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
+                                        ))}
                                     </DialogContent>
+                                    <div className='d-flex justify-content-center mb-3'>
+                                        <button className='btn btn-edit' onClick={handleSave}>حفظ</button>
+                                    </div>
                                 </Dialog>
-
-                                <h4 className='my-5'>الحمامات المضافة مسبقا</h4>
-
-                                <div className="table-responsive text-center">
-                                    <table className="table">
-                                        <thead>
-                                            <tr>
-                                                <th scope="col">#</th>
-                                                <th scope="col">كود الحمام</th>
-                                                <th scope="col">اسم الحمام</th>
-                                                <th scope="col">الأيام</th>
-                                                <th scope="col">الساعات</th>
-                                                <th scope="col">عدد الحارات</th>
-                                                <th scope="col">المستوى</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            {bathrooms.map((bathroom, index) => (
-                                                <tr key={index}>
-                                                    <th scope="row">{index + 1}</th>
-                                                    <td>{bathroom.code}</td>
-                                                    <td>{bathroom.name}</td>
-                                                    <td>
-                                                        {Object.keys(bathroom.daysAndHours).map(day => (
-                                                            <div key={day}>{day}</div>
-                                                        ))}
-                                                    </td>
-                                                    <td>
-                                                        {Object.keys(bathroom.daysAndHours).map(day => (
-                                                            <div key={day}>
-                                                                {bathroom.daysAndHours[day].intervals.map((interval, index) => (
-                                                                    <div key={index}>{interval.from} - {interval.to}</div>
-                                                                ))}
-                                                            </div>
-                                                        ))}
-                                                    </td>
-                                                    <td>
-                                                        {Object.keys(bathroom.daysAndHours).map(day => (
-                                                            <div key={day}>
-                                                                {bathroom.daysAndHours[day].intervals.map((interval, index) => (
-                                                                    <div key={index}>{interval.count}</div>
-                                                                ))}
-                                                            </div>
-                                                        ))}
-                                                    </td>
-                                                    <td>
-                                                        {Object.keys(bathroom.daysAndHours).map(day => (
-                                                            <div key={day}>
-                                                                {bathroom.daysAndHours[day].intervals.map((interval, index) => (
-                                                                    <div key={index}>{interval.level}</div>
-                                                                ))}
-                                                            </div>
-                                                        ))}
-                                                    </td>
-                                                </tr>
-                                            ))}
-                                        </tbody>
-                                    </table>
-                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
+
+            <Dialog open={openHourDialog} onClose={() => setOpenHourDialog(false)} fullWidth maxWidth="md">
+                <DialogTitle style={{ marginBottom: "15px", direction: "rtl", textAlign: "center" }}>
+                    إضافة حارات لـ {currentDay}
+                    <CancelIcon style={{ position: "absolute", left: "15px", cursor: "pointer" }} onClick={() => setOpenHourDialog(false)} />
+                </DialogTitle>
+                <DialogContent>
+
+                    {currentIntervals.map((interval, index) => (
+                        <div key={index}
+                            style={{
+                                border: "1px #000 solid",
+                                padding: "25px",
+                                borderRadius: "15px"
+                            }}
+                            className='mt-3'>
+                            <div className='d-flex justify-content-around'>
+                                <h3 className='text-center d-flex ' style={{ alignItems: "end" }} >من {interval.from} إلى {interval.to}</h3>
+                                <div className='col-md-6'>
+                                    <label style={{ display: "block", textAlign: "right", fontSize: "20px" }}>عدد الحارات الكلي</label>
+                                    <input type="number" value={totalLanes[currentDay]?.[index] || ''} onChange={(e) => handleTotalLanesChange(currentDay, index, e.target.value)} style={{ width: "100%", height: "45px", borderRadius: "5px", padding: "5px" }} />
+                                </div>
+                            </div>
+                            {totalLanes[currentDay]?.[index] && (
+                                <div className='mt-3 d-flex'>
+                                    {levels.map((level, levelIndex) => (
+                                        <div key={level.value} className='mt-3 col-md-4'>
+                                            <label style={{ display: "block", textAlign: "right", fontSize: "20px" }}>عدد الحارات - {level.label}</label>
+                                            <input type="number" value={lanesDistribution[currentDay]?.[index]?.[level.value] || 0} onChange={(e) => handleLaneDistributionChange(currentDay, index, level.value, e.target.value)} style={{ width: "100%", height: "45px", borderRadius:"5px", padding: "5px" }} disabled={Object.values(lanesDistribution[currentDay]?.[index] || {}).reduce((a, b) => a + b, 0) >= totalLanes[currentDay][index]} />
+                                        </div>
+                                    ))}
+                                </div>
+                            )}
+                        </div>
+                    ))}
+                </DialogContent>
+                <div className='d-flex justify-content-center mb-3'>
+                    <button className='btn btn-edit' onClick={handleSaveHours}>حفظ</button>
+                </div>
+            </Dialog>
+        </div >
     );
 };
 
 export default AddPath;
+
+
