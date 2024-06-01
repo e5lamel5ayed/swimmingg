@@ -3,6 +3,8 @@ import NavBar from '../../Components/NavBar/NavBar';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import { Link } from 'react-router-dom';
 import { Dialog, DialogContent, DialogTitle } from '@mui/material';
+import CancelIcon from '@mui/icons-material/Cancel';
+
 
 const daysOfWeek = [
     { value: 'السبت', label: 'السبت' },
@@ -320,7 +322,12 @@ const AddPath = () => {
             </div>
 
             <Dialog open={open} onClose={handleClose} fullWidth maxWidth="md">
-                <DialogTitle>إضافة حمام</DialogTitle>
+                {/* <DialogTitle>إضافة حمام</DialogTitle> */}
+                <div className="white-div p-1" style={{ backgroundColor: "#94F0FF" }}></div>
+                <DialogTitle style={{ marginBottom: "15px", direction: "rtl", textAlign: "center" }}>
+                    اضافة حمام
+                    <CancelIcon style={{ position: "absolute", left: "15px", cursor: "pointer" }} onClick={handleClose} />
+                </DialogTitle>
                 <DialogContent>
                     <div className="row">
                         <div className="form-group col-md-6">
@@ -355,11 +362,17 @@ const AddPath = () => {
                                     <input type="time" className="form-control" value={daysAndHours[day]?.to} onChange={(e) => handleTimeChange(day, 'to', e.target.value)} />
                                 </div>
                             </div>
-                            <div className="form-group col-md-6">
-                                <label>مدة التدريب (دقائق):</label>
-                                <input type="number" className="form-control" value={trainingDuration[day]} onChange={(e) => handleTrainingDurationChange(day, e.target.value)} />
+                            <div className='d-flex'>
+
+                                <div className="form-group col-md-6 ">
+                                    <label>مدة التدريب (دقائق):</label>
+                                    <input type="number" className="form-control" value={trainingDuration[day]} onChange={(e) => handleTrainingDurationChange(day, e.target.value)} />
+                                </div>
+                                <div className='col-md-6' style={{ alignContent: "center" }}>
+
+                                    <button className="btn btn-primary " onClick={() => handleAddHours(day)}>إضافة فترات التدريب</button>
+                                </div>
                             </div>
-                            <button className="btn btn-primary" onClick={() => handleAddHours(day)}>إضافة فترات التدريب</button>
                         </div>
                     ))}
                     <button className="btn btn-primary mt-3" onClick={handleSave}>حفظ</button>
@@ -367,7 +380,12 @@ const AddPath = () => {
             </Dialog>
 
             <Dialog open={openHourDialog} onClose={handleSaveHours} fullWidth maxWidth="md">
-                <DialogTitle>إضافة حارات لكل فترة</DialogTitle>
+                {/* <DialogTitle>إضافة حارات لكل فترة</DialogTitle> */}
+                <div className="white-div p-1" style={{ backgroundColor: "#94F0FF" }}></div>
+                <DialogTitle style={{ marginBottom: "15px", direction: "rtl", textAlign: "center" }}>
+                    إضافة حارات لكل فترة
+                    <CancelIcon style={{ position: "absolute", left: "15px", cursor: "pointer" }} onClick={handleClose} />
+                </DialogTitle>
                 <DialogContent>
                     {currentIntervals.map((interval, index) => (
                         <div key={index}>
@@ -380,21 +398,21 @@ const AddPath = () => {
                                     <label> عدد الحارات الكلي :  </label>
                                     <input type="number" className="form-control" value={totalLanes[currentDay]?.[index]} onChange={(e) => handleTotalLanesChange(currentDay, index, e.target.value)} />
                                 </div>
+                                <div className="row">
+                                    {levels.map(level => (
+                                        <div className="form-group col-md-4 d-flex" key={level.value}>
+                                            <label>عدد الحارات لـ{level.label}</label>
+                                            <input
+                                                type="number"
+                                                className="form-control"
+                                                value={lanesDistribution[currentDay]?.[index]?.[level.value] || 0}
+                                                onChange={(e) => handleLaneDistributionChange(currentDay, index, level.value, e.target.value)}
+                                            />
+                                        </div>
+                                    ))}
+                                </div>
                             </div>
 
-                            <div className="row">
-                                {levels.map(level => (
-                                    <div className="form-group col-md-4 d-flex" key={level.value}>
-                                        <label>عدد الحارات لـ{level.label}</label>
-                                        <input
-                                            type="number"
-                                            className="form-control"
-                                            value={lanesDistribution[currentDay]?.[index]?.[level.value] || 0}
-                                            onChange={(e) => handleLaneDistributionChange(currentDay, index, level.value, e.target.value)}
-                                        />
-                                    </div>
-                                ))}
-                            </div>
                         </div>
                     ))}
                     <button className="btn btn-primary" onClick={handleSaveHours}>حفظ</button>
