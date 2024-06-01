@@ -39,7 +39,7 @@ import EnrollNow from "./Father/Pages/Classes/Enrollment/EnrollNow";
 import NewEnroll from "./Father/Pages/Classes/Enrollment/NewEnroll";
 import Enrollments from "./Father/Pages/MyAcount/StudentFather/Enrollments";
 import Rating from "./Father/Pages/MyAcount/StudentFather/Rating";
-import AddCourse from "./Employee/Pages/Setting/AddCourse";
+import AddProgram from "./Employee/Pages/Setting/AddProgram";
 import AddInstructor from "./Employee/Pages/Setting/AddInstructor";
 import AllClassesAccountFather from "./Father/Pages/Classes/AllClassesAccountFather";
 import ClassesAccountFather from "./Father/Pages/Classes/ClassesAccountFather";
@@ -122,8 +122,8 @@ const router = createBrowserRouter([
     element: <AddLane />,
   },
   {
-    path: "/addCourse",
-    element: <AddCourse />,
+    path: "/addProgram",
+    element: <AddProgram />,
   },
   {
     path: "/addInstructor",

@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import { Dialog, DialogContent, DialogTitle } from '@mui/material';
 import CancelIcon from '@mui/icons-material/Cancel';
 
-const AddCourse = () => {
+const AddProgram = () => {
     const [open, setOpen] = useState(false);
     const [courses, setCourses] = useState([]);
     const [courseCode, setCourseCode] = useState('');
@@ -17,8 +17,7 @@ const AddCourse = () => {
     const [startDate, setStartDate] = useState('');
     const [endDate, setEndDate] = useState('');
     const [daysOfWeek, setDaysOfWeek] = useState([]);
-    const [numberOfLanes, setNumberOfLanes] = useState('');
-    const [status, setStatus] = useState('');
+    const [trainingType, setTrainingType] = useState('');
 
     const handleOpen = () => {
         setOpen(true);
@@ -39,8 +38,7 @@ const AddCourse = () => {
             startDate: startDate,
             endDate: endDate,
             daysOfWeek: daysOfWeek,
-            lanes: numberOfLanes,
-            status: status
+            trainingType: trainingType
         };
         setCourses([...courses, newCourse]);
         setCourseCode('');
@@ -52,8 +50,7 @@ const AddCourse = () => {
         setStartDate('');
         setEndDate('');
         setDaysOfWeek([]);
-        setNumberOfLanes('');
-        setStatus('');
+        setTrainingType('');
         handleClose();
     };
 
@@ -76,7 +73,7 @@ const AddCourse = () => {
                 </div>
 
                 <div className='col-md-8 ml-1 d-flex justify-content-between align-items-center' style={{ justifyContent: "flex-start" }}>
-                    <h2 className='text-center text-white mr-5'>اضافة كورس</h2>
+                    <h2 className='text-center text-white mr-5'>اضافة برنامج</h2>
                 </div>
             </div>
 
@@ -86,13 +83,13 @@ const AddCourse = () => {
                         <div className="col-md-12">
                             <div className='mb-5 p-3 special-info bg-white'>
                                 <div className='d-flex justify-content-end'>
-                                    <button className='btn btn-edit' onClick={handleOpen}>اضافة كورس</button>
+                                    <button className='btn btn-edit' onClick={handleOpen}>اضافة برنامج</button>
                                 </div>
 
                                 <Dialog open={open} onClose={handleClose} fullWidth maxWidth="md">
                                     <div className="white-div p-1" style={{ backgroundColor: "#94F0FF" }}></div>
                                     <DialogTitle style={{ marginBottom: "15px", direction: "rtl", textAlign: "center" }}>
-                                        اضافة كورس
+                                        اضافة برنامج
                                         <CancelIcon style={{ position: "absolute", left: "15px", cursor: "pointer" }} onClick={handleClose} />
                                     </DialogTitle>
                                     <DialogContent style={{ direction: "rtl" }}>
@@ -103,11 +100,11 @@ const AddCourse = () => {
                                                         <div className='mb-2 p-3'>
                                                             <div className="row">
                                                                 <div className="form-group col-md-6 d-flex justify-content-between align-items-center">
-                                                                    <label htmlFor="">كود الكورس</label>
+                                                                    <label htmlFor="">كود البرنامج</label>
                                                                     <input type="text" className="form-control w-75" value={courseCode} onChange={(e) => setCourseCode(e.target.value)} />
                                                                 </div>
                                                                 <div className="form-group col-md-6 d-flex justify-content-between align-items-center">
-                                                                    <label htmlFor="">اسم الكورس</label>
+                                                                    <label htmlFor="">اسم البرنامج</label>
                                                                     <input type="text" className="form-control w-75" value={courseName} onChange={(e) => setCourseName(e.target.value)} />
                                                                 </div>
                                                             </div>
@@ -118,7 +115,7 @@ const AddCourse = () => {
                                                                     <input type="number" className="form-control w-75" value={numberOfStudents} onChange={(e) => setNumberOfStudents(e.target.value)} />
                                                                 </div>
                                                                 <div className="form-group col-md-6 d-flex justify-content-between align-items-center">
-                                                                    <label htmlFor="bathroom">اختر اسم الحمام</label>
+                                                                    <label htmlFor="bathroom">اسم الحمام</label>
                                                                     <select name="bathroom" className='form-control w-75' value={bathroomName} onChange={(e) => setBathroomName(e.target.value)}>
                                                                         <option value="">اختر حمام</option>
                                                                         <option value="حمام 1">حمام 1</option>
@@ -130,7 +127,7 @@ const AddCourse = () => {
 
                                                             <div className="row">
                                                                 <div className="form-group col-md-6 d-flex justify-content-between align-items-center">
-                                                                    <label htmlFor="trainer">اختر اسم المدرب</label>
+                                                                    <label htmlFor="trainer">اسم المدرب</label>
                                                                     <select name="trainer" className='form-control w-75' value={trainerName} onChange={(e) => setTrainerName(e.target.value)}>
                                                                         <option value="">اختر المدرب</option>
                                                                         <option value="احمد علي">احمد علي</option>
@@ -160,6 +157,15 @@ const AddCourse = () => {
                                                                 </div>
                                                             </div>
 
+                                                            <div className="form-group col-md-6 d-flex justify-content-between align-items-center">
+                                                                <label htmlFor="trainingType">نوع التدريب</label>
+                                                                <select name="trainingType" className='form-control w-75' value={trainingType} onChange={(e) => setTrainingType(e.target.value)}>
+                                                                    <option value="">اختر نوع التدريب</option>
+                                                                    <option value="خاص">خاص</option>
+                                                                    <option value="جماعي">جماعي</option>
+                                                                </select>
+                                                            </div>
+
                                                             <div className="row my-3">
                                                                 <div className="form-group col-md-12 d-flex justify-content-between align-items-center">
                                                                     <label htmlFor="daysOfWeek">اختر أيام الأسبوع</label>
@@ -180,23 +186,6 @@ const AddCourse = () => {
                                                                     </div>
                                                                 </div>
                                                             </div>
-
-                                                            <div className="row">
-                                                                <div className="form-group col-md-6 d-flex justify-content-between align-items-center col-md-6">
-                                                                    <label htmlFor="lanes">عدد الحارات</label>
-                                                                    <input type="number" className="form-control w-75" value={numberOfLanes} onChange={(e) => setNumberOfLanes(e.target.value)} />
-                                                                </div>
-                                                            <div className="form-group d-flex justify-content-start align-items-center col-md-6">
-                                                                <label htmlFor="" className='ml-2'>الحالة :</label>
-                                                                <div className="input-group-prepend">
-                                                                    <div className=" d-flex justify-content-center align-items-center">
-                                                                        <input type="radio" className='ml-2' value='مغلق' name='condition-health' onChange={(e) => setStatus(e.target.value)} /> مغلق
-                                                                        <input type="radio" className='mr-2 ml-2' value='مفتوح' name='condition-health' onChange={(e) => setStatus(e.target.value)} /> مفتوح
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            </div>
-
                                                         </div>
                                                         <button type="button" className='btn ml-2 mb-3 w-100 btn-edit' onClick={handleSave}>حفظ</button>
                                                     </form>
@@ -206,24 +195,23 @@ const AddCourse = () => {
                                     </DialogContent>
                                 </Dialog>
 
-                                <h4 className='my-5'>الكورسات المضافة مسبقا</h4>
+                                <h4 className='my-5'>البرامج المضافة مسبقا</h4>
 
                                 <div className="table-responsive text-center">
                                     <table className="table">
                                         <thead>
                                             <tr>
                                                 <th scope="col">#</th>
-                                                <th scope="col">كود الكورس</th>
-                                                <th scope="col">اسم الكورس</th>
+                                                <th scope="col">كود البرنامج</th>
+                                                <th scope="col">اسم البرنامج</th>
                                                 <th scope="col">المستوى</th>
                                                 <th scope="col">اسم الحمام</th>
                                                 <th scope="col">اسم المدرب</th>
                                                 <th scope="col">عدد الطلاب</th>
+                                                <th scope="col">الأيام</th>
+                                                <th scope="col">نوع التدريب</th>
                                                 <th scope="col">بداية التاريخ</th>
                                                 <th scope="col">انتهاء التاريخ</th>
-                                                <th scope="col">الأيام</th>
-                                                <th scope="col">عدد الحارات</th>
-                                                <th scope="col">الحالة</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -236,11 +224,10 @@ const AddCourse = () => {
                                                     <td>{course.bathroom}</td>
                                                     <td>{course.trainer}</td>
                                                     <td>{course.students}</td>
+                                                    <td>{course.trainingType}</td>
+                                                    <td>{course.daysOfWeek.join(', ')}</td>
                                                     <td>{course.startDate}</td>
                                                     <td>{course.endDate}</td>
-                                                    <td>{course.daysOfWeek.join(', ')}</td>
-                                                    <td>{course.lanes}</td>
-                                                    <td>{course.status}</td>
                                                 </tr>
                                             ))}
                                         </tbody>
@@ -255,4 +242,4 @@ const AddCourse = () => {
     );
 };
 
-export default AddCourse;
+export default AddProgram;

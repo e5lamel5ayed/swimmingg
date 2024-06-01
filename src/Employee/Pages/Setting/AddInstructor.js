@@ -13,7 +13,6 @@ const AddInstructor = () => {
     const [rating, setRating] = useState('');
     const [salary, setSalary] = useState('');
     const [percentage, setPercentage] = useState('');
-    const [ClassName, setClassName] = useState('');
     const [level, setLevel] = useState('');
     const [trainingType, setTrainingType] = useState('');
 
@@ -32,7 +31,6 @@ const AddInstructor = () => {
             rating: rating,
             salary: salary,
             percentage: percentage,
-            class: ClassName,
             level: level,
             trainingType: trainingType
         };
@@ -42,7 +40,6 @@ const AddInstructor = () => {
         setRating('');
         setSalary('');
         setPercentage('');
-        setClassName('');
         setLevel('');
         setTrainingType('');
         handleClose();
@@ -114,23 +111,6 @@ const AddInstructor = () => {
                                                                     </div>
 
                                                                     <div className="form-group">
-                                                                        <label htmlFor="class"> اسم الكلاس : </label>
-                                                                        <select name="class" className='form-control' value={ClassName} onChange={(e) => setClassName(e.target.value)}>
-                                                                            <option>اختر كلاس</option>
-                                                                            <option value="صيف 2024 (1 يوليو 2024 - 25 أغسطس 2024) (مفتوح)">
-                                                                                صيف 2024 (1 يوليو 2024 - 25 أغسطس 2024) (مفتوح)
-                                                                            </option>
-                                                                            <option value="صيف 2025 (1 يوليو 2025 - 25 أغسطس 2025) (مفتوح)">
-                                                                                صيف 2025 (1 يوليو 2025 - 25 أغسطس 2025) (مفتوح)
-                                                                            </option>
-                                                                            <option value="صيف 2026 (1 يوليو 2026 - 25 أغسطس 2026) (مغلق)">
-                                                                                صيف 2026 (1 يوليو 2026 - 25 أغسطس 2026) (مغلق)
-                                                                            </option>
-                                                                            {/* أضف المزيد من الخيارات هنا إذا لزم الأمر */}
-                                                                        </select>
-                                                                    </div>
-
-                                                                    <div className="form-group">
                                                                         <label htmlFor="level">المستويات :</label>
                                                                         <select name="level" className='form-control' value={level} onChange={(e) => setLevel(e.target.value)}>
                                                                             <option>اختر مستوي</option>
@@ -173,7 +153,6 @@ const AddInstructor = () => {
                                                 <th scope="col">تقييم المدرب</th>
                                                 <th scope="col">قيمة المرتب</th>
                                                 <th scope="col">نسبة المدرب</th>
-                                                <th scope="col">اسم الكلاس</th>
                                                 <th scope="col">المستوى</th>
                                                 <th scope="col">نوع التدريبات</th>
                                             </tr>
@@ -187,7 +166,6 @@ const AddInstructor = () => {
                                                     <td>{lane.rating}</td>
                                                     <td>{lane.salary}</td>
                                                     <td>{lane.percentage}</td>
-                                                    <td>{lane.class}</td>
                                                     <td>{lane.level}</td>
                                                     <td>{lane.trainingType}</td>
                                                 </tr>
