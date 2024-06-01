@@ -43,6 +43,7 @@ import AddProgram from "./Employee/Pages/Setting/AddProgram";
 import AddInstructor from "./Employee/Pages/Setting/AddInstructor";
 import AllClassesAccountFather from "./Father/Pages/Classes/AllClassesAccountFather";
 import ClassesAccountFather from "./Father/Pages/Classes/ClassesAccountFather";
+import AddGuardian from "./Father/Pages/MyAcount/AccountInfo/AddGuardian";
 
 const router = createBrowserRouter([
   {
@@ -189,6 +190,10 @@ const router = createBrowserRouter([
   {
     path: "/Rating",
     element: <Rating />,
+  },
+  {
+    path: "/AddGuardian",
+    element: <AddGuardian />,
   },
 ]);
 
