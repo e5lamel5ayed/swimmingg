@@ -216,6 +216,24 @@ const AddProgram = () => {
                                                                             ))}
                                                                         </select>
                                                                     </div>
+                                                                    <div className="form-group col-md-6 d-flex justify-content-between align-items-center">
+                                                                        <label >اختر  الحارة </label>
+                                                                        <select
+                                                                            name={`available-time-${day}`}
+                                                                            className='form-control w-75'
+                                                                            value={selectedTimes[day] || ''}
+                                                                            onChange={(e) => handleTimeChange(e, day)}
+                                                                        >
+                                                                            <option value="">اختر الحارة </option>
+                                                                            
+                                                                                <option >حارة 1</option>
+                                                                                <option >حارة 2</option>
+                                                                                <option >حارة 3</option>
+                                                                                <option >حارة 4</option>
+                                                                                <option >حارة 5</option>
+                                                                           
+                                                                        </select>
+                                                                    </div>
                                                                 </div>
                                                             ))}
 
