@@ -43,6 +43,15 @@ a {
     --transition: ;
 }
 
+.loader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #004C6D;
+    color: #fff !important;
+}
+
 /* End global  */
 
 /* start login  */
@@ -123,7 +132,7 @@ ol {
 }
 
 .menu-bars:hover {
-    background-color: #000;
+    background-color: #004C6D;
     border-radius: 50%;
     color: #fff;
 }
@@ -163,7 +172,7 @@ ol {
 }
 
 .nav-text a:hover {
-    background-color: #504e4e !important;
+    background-color: #004C6D !important;
     color: #fff !important;
     border-radius: 0 !important;
 }
@@ -189,7 +198,7 @@ ol {
     inset: 0px auto auto 0px;
     /* transform: translate(58%, 27%) !important; */
     box-shadow: none;
-    background-color: #007bff;
+    background-color: #004C6D;
 }
 
 .nav-menu-items {
@@ -222,6 +231,7 @@ ol {
     }
 
 }
+
 /* @media(min-width:1180px) and (max-width:1700px) {
 
     .dropdown-menu.show{

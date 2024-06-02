@@ -106,6 +106,12 @@ const AddPath = () => {
             alert('يرجى إدخال الوقت.');
             return;
         }
+
+        if (!trainingDuration[day] || trainingDuration[day] <= 0) {
+            alert('يرجى إدخال مدة التدريب.');
+            return;
+        }
+
         const calculatedIntervals = calculateIntervals(daysAndHours[day]?.from, daysAndHours[day]?.to, trainingDuration[day]);
         setIntervals({
             ...intervals,
@@ -116,6 +122,7 @@ const AddPath = () => {
         setOpenHourDialog(true);
     };
 
+
     const handleTotalLanesChange = (day, intervalIndex, value) => {
         const newTotalLanes = { ...totalLanes };
         const numLanes = parseInt(value);
@@ -125,11 +132,18 @@ const AddPath = () => {
     };
 
     const handleLaneDistributionChange = (day, intervalIndex, level, value) => {
-        const newLanesDistribution = { ...lanesDistribution };
         const numLanes = parseInt(value);
+
+        if (!totalLanes[day] || !totalLanes[day][intervalIndex]) {
+            alert('يرجى إدخال عدد الحارات الكلي أولاً.');
+            return;
+        }
+
+        const newLanesDistribution = { ...lanesDistribution };
 
         if (!newLanesDistribution[day]) newLanesDistribution[day] = {};
         if (!newLanesDistribution[day][intervalIndex]) newLanesDistribution[day][intervalIndex] = { beginner: 0, intermediate: 0, advanced: 0 };
+
         newLanesDistribution[day][intervalIndex][level] = numLanes;
 
         const totalLanesForInterval = Object.values(newLanesDistribution[day][intervalIndex]).reduce((a, b) => a + b, 0);
@@ -142,8 +156,9 @@ const AddPath = () => {
         setLanesDistribution(newLanesDistribution);
     };
 
+
     const handleSaveHours = () => {
-        // تحديث حمام السباحة الحالي بالبيانات الجديدة
+        // Update the current bathroom with the new data
         const updatedBathrooms = bathrooms.map(bathroom => {
             if (bathroom.code === bathroomCode) {
                 return {
@@ -161,10 +176,10 @@ const AddPath = () => {
             return bathroom;
         });
 
-        // تحديث حالة الحمامات في الحالة العامة للتطبيق
+        // Update the bathrooms state
         setBathrooms(updatedBathrooms);
 
-        // إغلاق الديالوج بعد حفظ البيانات
+        // Close the dialog after saving the data
         setOpenHourDialog(false);
     };
 
@@ -292,26 +307,28 @@ const AddPath = () => {
                                                 ))}
                                             </td>
                                             <td>
-                                                <p>السبت</p>
-                                                <p>10 حارات </p>
-                                                <hr />
-                                                <p>السبت</p>
-                                                <p>10 حارات </p>
+                                                {Object.entries(bathroom.totalLanes).map(([day, dayLanes], idx) => (
+                                                    <div key={idx}>
+                                                        {day}: {Object.values(dayLanes).join(' حارات ')}
+                                                    </div>
+                                                ))}
                                             </td>
                                             <td>
-                                                <div>
-                                                    <div>السبت</div>
-                                                    <div>مبتدأ: 3</div>
-                                                    <div>متوسط: 2</div>
-                                                    <div>محترف: 5</div>
-                                                    <hr />
-                                                    <div>مبتدأ: 3</div>
-                                                    <div>متوسط: 2</div>
-                                                    <div>محترف: 5</div>
-                                                </div>
+                                                {Object.entries(bathroom.lanesDistribution).map(([day, dayLanes], idx) => (
+                                                    <div key={idx}>
+                                                        <div>{day}</div>
+                                                        {Object.entries(dayLanes).map(([interval, levels], intIdx) => (
+                                                            <div key={intIdx}>
+                                                                <div>الفترة {parseInt(interval) + 1}:</div>
+                                                                <div>مبتدأ: {levels.beginner}</div>
+                                                                <div>متوسط: {levels.intermediate}</div>
+                                                                <div>محترف: {levels.advanced}</div>
+                                                                <hr />
+                                                            </div>
+                                                        ))}
+                                                    </div>
+                                                ))}
                                             </td>
-
-
                                         </tr>
                                     ))}
                                 </tbody>
@@ -391,28 +408,47 @@ const AddPath = () => {
                         <div key={index}>
                             <div className="row border px-3 pt-3 m-auto mb-3">
                                 <div className='col-md-6'>
-                                    <p>بداية وانتهاء التدريب </p>
-                                    <p className='fw-bold'>{interval.from} - {interval.to}</p>
+                                    <p>بداية الفترة: {interval.from}</p>
+                                    <p>نهاية الفترة: {interval.to}</p>
                                 </div>
-                                <div className="form-group col-md-6 d-flex">
-                                    <label> عدد الحارات الكلي :  </label>
-                                    <input type="number" className="form-control" value={totalLanes[currentDay]?.[index]} onChange={(e) => handleTotalLanesChange(currentDay, index, e.target.value)} />
+                                <div className="form-group col-md-6">
+                                    <label>عدد الحارات للفترة:</label>
+                                    <input
+                                        type="number"
+                                        className="form-control"
+                                        value={totalLanes[currentDay]?.[index] || ""}
+                                        onChange={(e) => handleTotalLanesChange(currentDay, index, e.target.value)}
+                                    />
                                 </div>
-                                <div className="row">
-                                    {levels.map(level => (
-                                        <div className="form-group col-md-4 d-flex" key={level.value}>
-                                            <label>عدد الحارات لـ{level.label}</label>
-                                            <input
-                                                type="number"
-                                                className="form-control"
-                                                value={lanesDistribution[currentDay]?.[index]?.[level.value] || 0}
-                                                onChange={(e) => handleLaneDistributionChange(currentDay, index, level.value, e.target.value)}
-                                            />
-                                        </div>
-                                    ))}
+
+                                <div className="form-group col-md-4">
+                                    <label>مبتدأ:</label>
+                                    <input
+                                        type="number"
+                                        className="form-control"
+                                        value={lanesDistribution[currentDay]?.[index]?.beginner || ""}
+                                        onChange={(e) => handleLaneDistributionChange(currentDay, index, 'beginner', e.target.value)}
+                                    />
+                                </div>
+                                <div className="form-group col-md-4">
+                                    <label>متوسط:</label>
+                                    <input
+                                        type="number"
+                                        className="form-control"
+                                        value={lanesDistribution[currentDay]?.[index]?.intermediate || ""}
+                                        onChange={(e) => handleLaneDistributionChange(currentDay, index, 'intermediate', e.target.value)}
+                                    />
+                                </div>
+                                <div className="form-group col-md-4">
+                                    <label>محترف:</label>
+                                    <input
+                                        type="number"
+                                        className="form-control"
+                                        value={lanesDistribution[currentDay]?.[index]?.advanced || ""}
+                                        onChange={(e) => handleLaneDistributionChange(currentDay, index, 'advanced', e.target.value)}
+                                    />
                                 </div>
                             </div>
-
                         </div>
                     ))}
                     <button className="btn btn-primary" onClick={handleSaveHours}>حفظ</button>
@@ -420,6 +456,7 @@ const AddPath = () => {
             </Dialog>
         </div>
     );
+
 };
 
 export default AddPath;

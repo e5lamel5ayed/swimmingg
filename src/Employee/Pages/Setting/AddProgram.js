@@ -18,6 +18,9 @@ const AddProgram = () => {
     const [endDate, setEndDate] = useState('');
     const [daysOfWeek, setDaysOfWeek] = useState([]);
     const [trainingType, setTrainingType] = useState('');
+    const [selectedTimes, setSelectedTimes] = useState({});
+
+    const availableTimes = ["من 9.00ص - 9.45 ص", "من 10.00ص - 10.45 ص", "من 11.00ص - 11.45 ص", "من 12.00ص - 12.45 ص"];
 
     const handleOpen = () => {
         setOpen(true);
@@ -38,7 +41,8 @@ const AddProgram = () => {
             startDate: startDate,
             endDate: endDate,
             daysOfWeek: daysOfWeek,
-            trainingType: trainingType
+            trainingType: trainingType,
+            times: selectedTimes
         };
         setCourses([...courses, newCourse]);
         setCourseCode('');
@@ -51,6 +55,7 @@ const AddProgram = () => {
         setEndDate('');
         setDaysOfWeek([]);
         setTrainingType('');
+        setSelectedTimes({});
         handleClose();
     };
 
@@ -59,6 +64,14 @@ const AddProgram = () => {
         setDaysOfWeek(prev =>
             prev.includes(value) ? prev.filter(day => day !== value) : [...prev, value]
         );
+    };
+
+    const handleTimeChange = (e, day) => {
+        const value = e.target.value;
+        setSelectedTimes(prev => ({
+            ...prev,
+            [day]: value
+        }));
     };
 
     return (
@@ -186,6 +199,26 @@ const AddProgram = () => {
                                                                     </div>
                                                                 </div>
                                                             </div>
+
+                                                            {daysOfWeek.map((day, index) => (
+                                                                <div className="row" key={index}>
+                                                                    <div className="form-group col-md-6 d-flex justify-content-between align-items-center">
+                                                                        <label htmlFor={`available-time-${day}`}>اختر الوقت المتاح ({day})</label>
+                                                                        <select
+                                                                            name={`available-time-${day}`}
+                                                                            className='form-control w-75'
+                                                                            value={selectedTimes[day] || ''}
+                                                                            onChange={(e) => handleTimeChange(e, day)}
+                                                                        >
+                                                                            <option value="">اختر الساعة المناسبة</option>
+                                                                            {availableTimes.map((time, idx) => (
+                                                                                <option key={idx} value={time}>{time}</option>
+                                                                            ))}
+                                                                        </select>
+                                                                    </div>
+                                                                </div>
+                                                            ))}
+
                                                         </div>
                                                         <button type="button" className='btn ml-2 mb-3 w-100 btn-edit' onClick={handleSave}>حفظ</button>
                                                     </form>
@@ -212,6 +245,7 @@ const AddProgram = () => {
                                                 <th scope="col">نوع التدريب</th>
                                                 <th scope="col">بداية التاريخ</th>
                                                 <th scope="col">انتهاء التاريخ</th>
+                                                <th scope="col">الأوقات</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -224,10 +258,15 @@ const AddProgram = () => {
                                                     <td>{course.bathroom}</td>
                                                     <td>{course.trainer}</td>
                                                     <td>{course.students}</td>
-                                                    <td>{course.trainingType}</td>
                                                     <td>{course.daysOfWeek.join(', ')}</td>
+                                                    <td>{course.trainingType}</td>
                                                     <td>{course.startDate}</td>
                                                     <td>{course.endDate}</td>
+                                                    <td>
+                                                        {Object.entries(course.times).map(([day, time], idx) => (
+                                                            <div key={idx}>{`${day}: ${time}`}</div>
+                                                        ))}
+                                                    </td>
                                                 </tr>
                                             ))}
                                         </tbody>

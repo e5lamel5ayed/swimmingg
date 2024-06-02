@@ -39,7 +39,7 @@ const NavBar = () => {
                           {item.subMenu.map((subItem, subIndex) => (
                             <Dropdown.Item key={subIndex} as={Link} to={subItem.path} className={item.cName}>
                               <div className={item.ccName}>
-
+                              {subItem.icon}
                                 {subItem.title}
                               </div>
                             </Dropdown.Item>
