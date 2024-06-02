@@ -309,7 +309,7 @@ const AddPath = () => {
                                             <td>
                                                 {Object.entries(bathroom.totalLanes).map(([day, dayLanes], idx) => (
                                                     <div key={idx}>
-                                                        {day}: {Object.values(dayLanes).join(' حارات ')}
+                                                        {day}: {Object.values(dayLanes).join(' حارات ')} حارة
                                                     </div>
                                                 ))}
                                             </td>
