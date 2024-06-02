@@ -201,6 +201,10 @@ ol {
     background-color: #004C6D;
 }
 
+.dropdown-menu.show a:hover {
+    background-color: #026d9b !important;
+}
+
 .nav-menu-items {
     width: 100%;
 }

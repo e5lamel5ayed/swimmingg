@@ -5,6 +5,7 @@ import PersonIcon from '@mui/icons-material/Person';
 import AdminPanelSettingsIcon from '@mui/icons-material/AdminPanelSettings';
 import SettingsIcon from '@mui/icons-material/Settings';
 import AddIcon from '@mui/icons-material/Add';
+import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
 
 export const SidebarData = [
     {
@@ -16,7 +17,7 @@ export const SidebarData = [
     {
         title: "الرئيسية",
         path: "/",
-        icon: <HomeIcon  className='ml-3' />,
+        icon: <HomeIcon className='ml-3' />,
         cName: "nav-text"
     },
     {
@@ -56,6 +57,11 @@ export const SidebarData = [
                 title: 'اضافة مدرب',
                 icon: <AddIcon className='ml-3' />,
                 path: '/addInstructor',
+            },
+            {
+                title: 'جدول اليوم',
+                icon: <CalendarMonthIcon className='ml-3' />,
+                path: '/dayTable',
             },
             // {
             //     title: 'اضافة حارة',

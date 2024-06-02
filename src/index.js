@@ -44,6 +44,7 @@ import AddInstructor from "./Employee/Pages/Setting/AddInstructor";
 import AllClassesAccountFather from "./Father/Pages/Classes/AllClassesAccountFather";
 import ClassesAccountFather from "./Father/Pages/Classes/ClassesAccountFather";
 import AddGuardian from "./Father/Pages/MyAcount/AccountInfo/AddGuardian";
+import DayTable from "./Employee/Pages/Setting/DayTable";
 
 const router = createBrowserRouter([
   {
@@ -129,6 +130,10 @@ const router = createBrowserRouter([
   {
     path: "/addInstructor",
     element: <AddInstructor />,
+  },
+  {
+    path: "/dayTable",
+    element: <DayTable />,
   },
   {
     path: "/AllclassesFather",
