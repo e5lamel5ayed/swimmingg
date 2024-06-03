@@ -8,8 +8,6 @@ import CancelIcon from '@mui/icons-material/Cancel';
 
 const AddPlace = () => {
     const [open, setOpen] = useState(false);
-    const [selectedDays, setSelectedDays] = useState([]);
-
     const handleOpen = () => {
         setOpen(true);
     };
@@ -18,17 +16,6 @@ const AddPlace = () => {
         setOpen(false);
     };
 
-    const handleDayClick = (day) => {
-        setSelectedDays((prevSelectedDays) =>
-            prevSelectedDays.includes(day)
-                ? prevSelectedDays.filter((d) => d !== day)
-                : [...prevSelectedDays, day]
-        );
-    };
-
-    const handleClear = () => {
-        setSelectedDays([]);
-    };
 
     return (
         <div>

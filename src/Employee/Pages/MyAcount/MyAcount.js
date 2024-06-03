@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import NavBar from '../../Components/NavBar/NavBar'
 import { CardContent, CardMedia, Typography } from '@mui/material'
 import { Card } from 'react-bootstrap'

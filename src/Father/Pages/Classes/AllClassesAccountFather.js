@@ -9,7 +9,6 @@ import ClassesAccountFather from './ClassesAccountFather'
 const AllClassesAccountFather = () => {
 
     const [open, setOpen] = useState(false);
-    const [selectedDays, setSelectedDays] = useState([]);
 
     const handleOpen = () => {
         setOpen(true);
@@ -18,20 +17,7 @@ const AllClassesAccountFather = () => {
     const handleClose = () => {
         setOpen(false);
     };
-
-    const handleDayClick = (day) => {
-        setSelectedDays((prevSelectedDays) =>
-            prevSelectedDays.includes(day)
-                ? prevSelectedDays.filter((d) => d !== day)
-                : [...prevSelectedDays, day]
-        );
-    };
-
-    const handleClear = () => {
-        setSelectedDays([]);
-    };
-
-
+    
     return (
         <div>
 

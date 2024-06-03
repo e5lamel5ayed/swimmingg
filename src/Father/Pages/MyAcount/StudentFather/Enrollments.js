@@ -1,37 +1,11 @@
-import { CardContent, CardMedia, CircularProgress, Dialog, DialogContent, DialogTitle, Typography } from '@mui/material'
-import React, { useState } from 'react'
+import { CardContent, CardMedia, Typography } from '@mui/material'
+import React from 'react'
 import { Card } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
-import CancelIcon from '@mui/icons-material/Cancel';
 import NavBarFather from '../../../Components/NavBar/NavBarFather';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 
-
 const Enrollments = () => {
-
-    const [open, setOpen] = useState(false);
-    const [selectedDays, setSelectedDays] = useState([]);
-
-    const handleOpen = () => {
-        setOpen(true);
-    };
-
-    const handleClose = () => {
-        setOpen(false);
-    };
-
-    const handleDayClick = (day) => {
-        setSelectedDays((prevSelectedDays) =>
-            prevSelectedDays.includes(day)
-                ? prevSelectedDays.filter((d) => d !== day)
-                : [...prevSelectedDays, day]
-        );
-    };
-
-    const handleClear = () => {
-        setSelectedDays([]);
-    };
-
 
     return (
         <div>

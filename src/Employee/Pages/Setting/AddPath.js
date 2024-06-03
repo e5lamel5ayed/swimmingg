@@ -16,12 +16,6 @@ const daysOfWeek = [
     { value: 'الجمعة', label: 'الجمعة' }
 ];
 
-const levels = [
-    { value: 'مبتدأ', label: 'مبتدأ' },
-    { value: 'متوسط', label: 'متوسط' },
-    { value: 'محترف', label: 'محترف' }
-];
-
 const AddPath = () => {
     const [open, setOpen] = useState(false);
     const [bathrooms, setBathrooms] = useState([]);

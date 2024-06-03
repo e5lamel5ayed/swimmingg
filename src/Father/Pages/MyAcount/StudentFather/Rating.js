@@ -10,28 +10,9 @@ import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 const Rating = () => {
 
     const [open, setOpen] = useState(false);
-    const [selectedDays, setSelectedDays] = useState([]);
-
-    const handleOpen = () => {
-        setOpen(true);
-    };
-
     const handleClose = () => {
         setOpen(false);
     };
-
-    const handleDayClick = (day) => {
-        setSelectedDays((prevSelectedDays) =>
-            prevSelectedDays.includes(day)
-                ? prevSelectedDays.filter((d) => d !== day)
-                : [...prevSelectedDays, day]
-        );
-    };
-
-    const handleClear = () => {
-        setSelectedDays([]);
-    };
-
 
     return (
         <div>

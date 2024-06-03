@@ -1,7 +1,5 @@
-import { Link } from 'react-router-dom';
-import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import React, { useState } from 'react';
-import { Chip, Button, Dialog, DialogActions, DialogContent, DialogTitle, TextField, FormLabel, RadioGroup, Radio, FormControlLabel, Stack } from '@mui/material';
+import { Chip, Dialog, DialogActions, DialogContent, DialogTitle } from '@mui/material';
 
 import CancelIcon from '@mui/icons-material/Cancel';
 
@@ -9,17 +7,6 @@ import CancelIcon from '@mui/icons-material/Cancel';
 const Age = () => {
 
     const [open, setOpen] = useState(false);
-    const [formData, setFormData] = useState({
-        name: '',
-        address: '',
-        period: '',
-        startHour: '',
-        numberOfHours: '',
-        endDepartureTime: '',
-        startArrivalTime: ''
-    });
-    const [dataTable, setDataTable] = useState([]);
-
     const handleOpen = () => {
         setOpen(true);
     };
@@ -27,33 +14,6 @@ const Age = () => {
     const handleClose = () => {
         setOpen(false);
     };
-
-    const handleSave = () => {
-        setDataTable([...dataTable, formData]);
-        setOpen(false);
-        setFormData({
-            name: '',
-            address: '',
-            period: '',
-            startHour: '',
-            numberOfHours: '',
-            endDepartureTime: '',
-            startArrivalTime: ''
-        });
-    };
-
-    const handleInputChange = (e) => {
-        const { name, value } = e.target;
-        setFormData({ ...formData, [name]: value });
-    };
-
-    const handlePeriodChange = (e) => {
-        setFormData({ ...formData, period: e.target.value });
-    };
-
-
-
-
 
     return (
         <div>
@@ -69,7 +29,7 @@ const Age = () => {
 
             <Dialog open={open} onClose={handleClose} fullWidth maxWidth="sm">
 
-                <div className='white-div p-1' style={{backgroundColor:"#94F0FF"}}></div>
+                <div className='white-div p-1' style={{ backgroundColor: "#94F0FF" }}></div>
                 <DialogTitle
                     style={{
                         marginBottom: "15px",
@@ -125,11 +85,11 @@ const Age = () => {
                                         </label>
                                     </div>
                                 </div>
-                               
+
                             </div>
                             <div className='col-md-12  mt-2' style={{ display: "flex", justifyContent: "center" }}>
 
-                            <div className='col-md-2'>
+                                <div className='col-md-2'>
                                     <div class="form-group form-check">
                                         <label class="number-checkbox">
                                             <input type="checkbox" id="exampleCheck1" />

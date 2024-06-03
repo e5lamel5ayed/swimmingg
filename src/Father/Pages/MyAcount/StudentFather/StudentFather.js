@@ -6,7 +6,7 @@ import StarIcon from '@mui/icons-material/Star';
 import Typography from '@mui/material/Typography';
 import CheckIcon from '@mui/icons-material/Check';
 import HighlightOffIcon from '@mui/icons-material/HighlightOff';
-import { Button, CardActionArea, CardActions } from '@mui/material';
+import { Button, CardActionArea } from '@mui/material';
 import { Link } from 'react-router-dom';
 
 export default function MultiActionAreaCard() {

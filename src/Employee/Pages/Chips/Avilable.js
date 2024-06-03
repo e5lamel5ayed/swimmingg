@@ -1,6 +1,3 @@
-import NavBar from '../../Components/NavBar/NavBar';
-import { Link } from 'react-router-dom';
-import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import React, { useState } from 'react';
 import { Chip, Dialog, DialogActions, DialogContent, DialogTitle } from '@mui/material';
 import CancelIcon from '@mui/icons-material/Cancel';

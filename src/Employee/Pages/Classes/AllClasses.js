@@ -8,8 +8,6 @@ import Classes from './Classes';
 export default function MediaCard() {
 
     const [open, setOpen] = useState(false);
-    const [selectedDays, setSelectedDays] = useState([]);
-
     const handleOpen = () => {
         setOpen(true);
     };
@@ -17,19 +15,6 @@ export default function MediaCard() {
     const handleClose = () => {
         setOpen(false);
     };
-
-    const handleDayClick = (day) => {
-        setSelectedDays((prevSelectedDays) =>
-            prevSelectedDays.includes(day)
-                ? prevSelectedDays.filter((d) => d !== day)
-                : [...prevSelectedDays, day]
-        );
-    };
-
-    const handleClear = () => {
-        setSelectedDays([]);
-    };
-
 
     return (
         <div>

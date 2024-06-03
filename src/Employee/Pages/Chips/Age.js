@@ -1,26 +1,10 @@
-import NavBar from '../../Components/NavBar/NavBar';
-import { Link } from 'react-router-dom';
-import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import React, { useState } from 'react';
-import { Chip, Button, Dialog, DialogActions, DialogContent, DialogTitle, TextField, FormLabel, RadioGroup, Radio, FormControlLabel, Stack } from '@mui/material';
-
+import { Chip, Dialog, DialogActions, DialogContent, DialogTitle } from '@mui/material';
 import CancelIcon from '@mui/icons-material/Cancel';
-
 
 const Age = () => {
 
     const [open, setOpen] = useState(false);
-    const [formData, setFormData] = useState({
-        name: '',
-        address: '',
-        period: '',
-        startHour: '',
-        numberOfHours: '',
-        endDepartureTime: '',
-        startArrivalTime: ''
-    });
-    const [dataTable, setDataTable] = useState([]);
-
     const handleOpen = () => {
         setOpen(true);
     };
@@ -28,33 +12,6 @@ const Age = () => {
     const handleClose = () => {
         setOpen(false);
     };
-
-    const handleSave = () => {
-        setDataTable([...dataTable, formData]);
-        setOpen(false);
-        setFormData({
-            name: '',
-            address: '',
-            period: '',
-            startHour: '',
-            numberOfHours: '',
-            endDepartureTime: '',
-            startArrivalTime: ''
-        });
-    };
-
-    const handleInputChange = (e) => {
-        const { name, value } = e.target;
-        setFormData({ ...formData, [name]: value });
-    };
-
-    const handlePeriodChange = (e) => {
-        setFormData({ ...formData, period: e.target.value });
-    };
-
-
-
-
 
     return (
         <div>

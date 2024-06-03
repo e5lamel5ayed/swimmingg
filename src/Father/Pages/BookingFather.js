@@ -1,9 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { FiUsers } from "react-icons/fi";
-import { FaSwimmer } from "react-icons/fa";
 import NavBar from '../Components/NavBar/NavBarFather';
-
 
 const ClassHome = () => {
     return (
