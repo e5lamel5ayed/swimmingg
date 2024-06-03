@@ -1,24 +1,20 @@
-import { useEffect, useState } from 'react';
-import { SyncLoader } from 'react-spinners';
-import './App.css';
+import React, { useEffect, useState } from 'react';
 import Home from './Employee/Empolee';
+import Loading from './Loading';
 
 function App() {
-  const [loading, setLoading] = useState([false]);
+  const [loading, setLoading] = useState(true);
+
   useEffect(() => {
-    setLoading(true)
     setTimeout(() => {
-      setLoading(false)
-    }, 1800)
-  }, [])
+      setLoading(false);
+    }, 1800);
+  }, []);
+
   return (
     <div>
-      {loading ?
-        <div className="loader">
-          <SyncLoader  color={'#fff'} size={20} speedMultiplier={1} margin={4} />
-        </div> :
-        <Home />
-      }    </div>
+      {loading ? <Loading /> : <Home />}
+    </div>
   );
 }
 

@@ -48,8 +48,7 @@ a {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background-color: #004C6D;
-    color: #fff !important;
+    background-color: #156195;
 }
 
 /* End global  */
@@ -748,7 +747,7 @@ form select {
     padding-bottom: 25%;
 }
 
-.btn-add-program{
+.btn-add-program {
     background-color: #004c;
     font-size: 16px;
     padding: 5px 15px;

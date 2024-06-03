@@ -1,18 +1,14 @@
+// src/index.js
 import * as React from "react";
 import { createRoot } from "react-dom/client";
-import { createBrowserRouter, RouterProvider, } from "react-router-dom";
-
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Login from "./Login/Login";
 import Register from "./Login/Register";
 import App from "./App";
-
-
 import MyAcount from "./Employee/Pages/MyAcount/MyAcount";
 import Booking from "./Employee/Pages/Booking";
 import AllClasses from "./Employee/Pages/Classes/AllClasses";
 import Emploee from "./Employee/Empolee";
-
-
 import Father from "./Father/Father";
 import MyAcountFather from "./Father/Pages/MyAcount/MyAcountFather";
 import BookingFather from "./Father/Pages/BookingFather";
@@ -34,7 +30,6 @@ import Setting from "./Employee/Pages/Setting/Setting";
 import AddPlace from "./Employee/Pages/Setting/AddPlace";
 import AddPath from "./Employee/Pages/Setting/AddPath";
 import AddLane from "./Employee/Pages/Setting/AddLane";
-// import ClassDetailsFather from "./Father/Pages/Classes/ClassDetailsFather";
 import EnrollNow from "./Father/Pages/Classes/Enrollment/EnrollNow";
 import NewEnroll from "./Father/Pages/Classes/Enrollment/NewEnroll";
 import Enrollments from "./Father/Pages/MyAcount/StudentFather/Enrollments";
@@ -45,6 +40,7 @@ import AllClassesAccountFather from "./Father/Pages/Classes/AllClassesAccountFat
 import ClassesAccountFather from "./Father/Pages/Classes/ClassesAccountFather";
 import AddGuardian from "./Father/Pages/MyAcount/AccountInfo/AddGuardian";
 import DayTable from "./Employee/Pages/Setting/DayTable";
+import Loading from "./Loading";
 
 const router = createBrowserRouter([
   {
@@ -153,9 +149,8 @@ const router = createBrowserRouter([
   },
   {
     path: "/addstudentFather2",
-    element: <AddStudentFather2/>,
+    element: <AddStudentFather2 />,
   },
- 
   {
     path: "/classDetailsFather",
     element: <ClassDetailsFather />,
@@ -202,6 +197,17 @@ const router = createBrowserRouter([
   },
 ]);
 
-createRoot(document.getElementById("root")).render(
-  <RouterProvider router={router} />
-);
+const Root = () => {
+  const [loading, setLoading] = React.useState(true);
+
+  React.useEffect(() => {
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 1800);
+    return () => clearTimeout(timer);
+  }, []);
+
+  return loading ? <Loading /> : <RouterProvider router={router} />;
+};
+
+createRoot(document.getElementById("root")).render(<Root />);
