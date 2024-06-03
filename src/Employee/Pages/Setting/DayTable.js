@@ -147,16 +147,16 @@ const DayTable = () => {
                                                         ))}
                                                     </select>
                                                 </td>
-                                                <td className=''>
-                                                    {entry.lanes.map(lane => (
+                                                <td>
+                                                    {entry.hour && entry.lanes.map(lane => (
                                                         <div key={lane.number} className='d-flex align-items-center mb-3'>
                                                             <CheckCircleIcon sx={{ color: lane.status === 'مفتوح' ? 'green' : 'red', fontSize: '24px', marginRight: '8px' }} />
                                                             <span>حارة {lane.number}</span>
                                                         </div>
                                                     ))}
                                                 </td>
-                                                <td className=''>
-                                                    {entry.lanes.map(lane => (
+                                                <td>
+                                                    {entry.hour && entry.lanes.map(lane => (
                                                         <div key={lane.number} className='d-flex align-items-center mb-3'>
                                                             {lane.status === 'مفتوح' ? (
                                                                 <button className='btn btn-add-program ml-3' style={{ padding: "2px 6px", fontSize: "14px" }} onClick={() => { setOpenProgramDialog(true); setCurrentLane(lane.number); setCurrentEntryIndex(index); }}>
