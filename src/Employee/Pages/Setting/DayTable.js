@@ -116,8 +116,13 @@ function DayTable() {
                         <ArrowForwardIcon sx={{ color: "#fff", fontSize: "38px" }} />
                     </Link>
                 </div>
+
                 <div className='col-md-7 ml-1 d-flex justify-content-between align-items-center' style={{ justifyContent: "flex-start" }}>
-                    <h2 className='text-center text-white mr-5'>جدول اليوم</h2>
+
+                    <div className="d-flex justify-content-between align-items-center">
+                        <i className="fas fa-calendar-days"></i>
+                        <h2 className='text-center text-white mr-3'>جدول اليوم</h2>
+                    </div>
                 </div>
             </div>
 
@@ -126,7 +131,7 @@ function DayTable() {
                     <div className="row">
                         <div className="d-flex justify-content-center align-items-center mb-5">
                             <div className="ml-3">
-                                <select className="mt-1" onChange={handlePoolChange} value={selectedPool}>
+                                <select className="mt-1 select-day-table" onChange={handlePoolChange} value={selectedPool}>
                                     <option value="">اختر الحمام</option>
                                     <option value="حمام 1">حمام 1</option>
                                     <option value="حمام 2">حمام 2</option>
@@ -134,7 +139,7 @@ function DayTable() {
                                 </select>
                             </div>
                             <div className="">
-                                <select className="mt-1" onChange={handleTimeChange} value={selectedTime} disabled={!selectedPool}>
+                                <select className="mt-1 select-day-table" onChange={handleTimeChange} value={selectedTime} disabled={!selectedPool}>
                                     <option value="">اختر الساعة</option>
                                     <option value="9.00 - 10.00 ص">9.00 - 10.00 ص</option>
                                     <option value="10.00 - 11.00 ص">10.00 - 11.00 ص</option>
