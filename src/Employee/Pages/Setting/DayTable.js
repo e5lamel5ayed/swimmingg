@@ -112,21 +112,25 @@ function DayTable() {
                             <div className="d-flex">
 
                                 <div className="box-info border p-1">
-                                    <div className="bg-danger p-1 text-white">
+                                    <div className="">
                                         <span className="mx-0 fw-light">حارة 1</span>
+                                        <i className="fas fa-check text-danger mr-2"></i>
                                         <br />
                                         <p className="m-0 fw-light">برنامج 1</p>
                                     </div>
-                                    <hr className="m-0" />
-                                    <div className="bg-success p-1 text-white d-flex justify-content-between align-items-center">
+                                    <hr className="m-1" />
+                                    <div className=" d-flex justify-content-between align-items-center">
                                         <span className="mx-0 fw-light">حارة 2</span>
+                                        <i className="fas fa-check text-success m2-1"></i>
                                         <i className="fas fa-plus text-dark rounded-circle bg-info p-1 add-btn" title="اضافة برنامج"></i>
                                     </div>
-                                    <hr className="m-0" />
-                                    <div className="bg-success p-1 text-white d-flex justify-content-between align-items-center">
-                                        <span className="mx-0 fw-light">حارة 3</span>
+                                    <hr className="m-1" />
+                                    <div className=" d-flex justify-content-between align-items-center">
+                                        <span className="mx-0 fw-light">حارة 2</span>
+                                        <i className="fas fa-check text-success m2-1"></i>
                                         <i className="fas fa-plus text-dark rounded-circle bg-info p-1 add-btn" title="اضافة برنامج"></i>
                                     </div>
+                                    
                                 </div>
 
                                 <div className="box-info border p-1">
