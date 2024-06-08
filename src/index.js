@@ -203,7 +203,7 @@ const Root = () => {
   React.useEffect(() => {
     const timer = setTimeout(() => {
       setLoading(false);
-    }, 1800);
+    }, 10);
     return () => clearTimeout(timer);
   }, []);
 

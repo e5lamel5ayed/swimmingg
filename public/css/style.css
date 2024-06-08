@@ -754,3 +754,37 @@ form select {
     /* margin-bottom: 10px; */
     color: #fff;
 }
+
+.box-day {
+    width: 200px;
+    height: 50px;
+    text-align: center;
+    font-weight: 600;
+}
+
+.box-info {
+    width: 200px;
+    /* height: 120px; */
+    font-weight: 600;
+}
+
+.box-time {
+    height: 150px;
+}
+
+.time {
+    padding-top: 90px;
+
+}
+
+.time-box {
+    text-align: center;
+    font-weight: 600;
+}
+
+.add-btn {
+    cursor: pointer;
+}
+.status-lane {
+    font-size: 10px;
+}
