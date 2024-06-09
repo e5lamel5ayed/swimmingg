@@ -3,7 +3,7 @@ import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import { Link } from "react-router-dom";
 import NavBar from "../../Components/NavBar/NavBar";
 import TrainingProgramDialog from "./TrainingProgramDialog";
-import StudentDialog from "./StudentDialog";  // Import the new component
+import StudentDialog from "./StudentDialog";
 
 const poolData = {
     'حمام 1': {
@@ -59,27 +59,26 @@ const poolData = {
     },
 };
 
-function DayTable() {
+function WeekTable() {
     const [selectedPool, setSelectedPool] = useState('');
-    const [selectedDay, setSelectedDay] = useState('');
+    const [selectedTime, setSelectedTime] = useState('');
     const [openDialog, setOpenDialog] = useState(false);
-    const [openStudentDialog, setOpenStudentDialog] = useState(false);  // State for StudentDialog
     const [currentLane, setCurrentLane] = useState(null);
+    const [openStudentDialog, setOpenStudentDialog] = useState(false);  // State for StudentDialog
 
     const handlePoolChange = (e) => {
         setSelectedPool(e.target.value);
-        setSelectedDay('');  // Reset day selection when pool changes
+        setSelectedTime('');  // Reset time selection when pool changes
     };
 
-    const handleDayChange = (e) => {
-        setSelectedDay(e.target.value);
+    const handleTimeChange = (e) => {
+        setSelectedTime(e.target.value);
     };
 
     const handleAddProgramClick = (lane) => {
         setCurrentLane(lane);
         setOpenDialog(true);
     };
-
     const handleAddStudentClick = (lane) => {
         setCurrentLane(lane);
         setOpenStudentDialog(true);  // Open StudentDialog
@@ -91,20 +90,6 @@ function DayTable() {
 
     const handleStudentDialogClose = () => {
         setOpenStudentDialog(false);  // Close StudentDialog
-    };
-
-    const handleProgramSubmit = (programName) => {
-        if (selectedPool && currentLane && programName) {
-            Object.keys(poolData[selectedPool]).forEach(time => {
-                poolData[selectedPool][time] = poolData[selectedPool][time].map(item => {
-                    if (item.lane === currentLane.lane) {
-                        return { ...item, program: programName, status: 'مغلق' };
-                    }
-                    return item;
-                });
-            });
-        }
-        setOpenDialog(false);
     };
 
     const handleStudentSubmit = (studentName) => {
@@ -121,18 +106,29 @@ function DayTable() {
         setOpenStudentDialog(false);
     };
 
+    const handleProgramSubmit = (programName) => {
+        if (selectedPool && selectedTime && currentLane && programName) {
+            // Update the data with the new program
+            poolData[selectedPool][selectedTime] = poolData[selectedPool][selectedTime].map(item => {
+                if (item.lane === currentLane.lane) {
+                    return { ...item, program: programName, status: 'مغلق' };
+                }
+                return item;
+            });
+        }
+    };
+
     const renderData = () => {
-        if (!selectedPool || !selectedDay) return null;
-        const times = Object.keys(poolData[selectedPool]) || [];
+        if (!selectedPool || !selectedTime) return null;
+        const data = poolData[selectedPool][selectedTime] || [];
 
         return (
             <div className="d-flex flex-column">
-                <h3 className="text-center mb-4">يوم {selectedDay}</h3>
-                {times.map(time => (
-                    <div key={time} className="mb-3">
-                        <h4>{time}</h4>
+                {['السبت', 'الاحد', 'الاثنين', 'الثلاثاء', 'الابعاء', 'الخميس', 'الجمعه'].map(day => (
+                    <div key={day} className="mb-3">
+                        <h4>{day}</h4>
                         <div className="d-flex">
-                            {poolData[selectedPool][time].map((item, index) => (
+                            {data.map((item, index) => (
                                 <div key={index} className="box-info border p-1">
                                     <span className="my-0 fw-light ml-5 lane-name">{item.lane}</span>
                                     <span className={item.status === 'مفتوح' ? 'status-lane' : 'status-lane-close'}>
@@ -175,7 +171,7 @@ function DayTable() {
 
                     <div className="d-flex justify-content-between align-items-center">
                         <i className="fas fa-calendar-days"></i>
-                        <h2 className='text-center text-white mr-3'>جدول اليوم</h2>
+                        <h2 className='text-center text-white mr-3'>جدول الاسبوع</h2>
                     </div>
                 </div>
             </div>
@@ -183,32 +179,45 @@ function DayTable() {
             <div className='bg-white add-setting'>
                 <div className="container pt-5">
                     <div className="row">
-                        <div className='d-flex justify-content-center align-items-center mb-5' style={{ alignItems: "center" }}>
-                            <select onChange={handlePoolChange} value={selectedPool} className="mt-1 select-day-table">
-                                <option value="">اختر الحمام</option>
-                                {Object.keys(poolData).map(pool => (
-                                    <option key={pool} value={pool}>{pool}</option>
-                                ))}
-                            </select>
-                            <select className="mt-1 mr-3 select-day-table" onChange={handleDayChange} value={selectedDay}>
-                                <option value="">اختر اليوم</option>
-                                <option value="السبت">السبت</option>
-                                <option value="الأحد">الأحد</option>
-                                <option value="الاثنين">الاثنين</option>
-                                <option value="الثلاثاء">الثلاثاء</option>
-                                <option value="الأربعاء">الأربعاء</option>
-                                <option value="الخميس">الخميس</option>
-                                <option value="الجمعة">الجمعة</option>
-                            </select>
+                        <div className="d-flex justify-content-center align-items-center mb-5">
+                            <div className="ml-3">
+                                <select className="mt-1 select-day-table" onChange={handlePoolChange} value={selectedPool}>
+                                    <option value="">اختر الحمام</option>
+                                    <option value="حمام 1">حمام 1</option>
+                                    <option value="حمام 2">حمام 2</option>
+                                    <option value="حمام 3">حمام 3</option>
+                                </select>
+                            </div>
+                            <div className="">
+                                <select className="mt-1 select-day-table" onChange={handleTimeChange} value={selectedTime} disabled={!selectedPool}>
+                                    <option value="">اختر الساعة</option>
+                                    <option value="9.00 - 10.00 ص">9.00 - 10.00 ص</option>
+                                    <option value="10.00 - 11.00 ص">10.00 - 11.00 ص</option>
+                                    <option value="11.00 - 12.00 م">11.00 - 12.00 م</option>
+                                    <option value="12.00 - 1.00 م">12.00 - 1.00 م</option>
+                                    <option value="1.00 - 2.00 م">1.00 - 2.00 م</option>
+                                    <option value="2.00 - 3.00 م">2.00 - 3.00 م</option>
+                                    <option value="3.00 - 4.00 م">3.00 - 4.00 م</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div className="col-md-12">
+                            {renderData()}
                         </div>
                     </div>
-                    {renderData()}
-                    <TrainingProgramDialog open={openDialog} onClose={handleDialogClose} onSubmit={handleProgramSubmit} />
-                    <StudentDialog open={openStudentDialog} onClose={handleStudentDialogClose} onSubmit={handleStudentSubmit} />
                 </div>
             </div>
+
+            <TrainingProgramDialog
+                open={openDialog}
+                onClose={handleDialogClose}
+                onSubmit={handleProgramSubmit}
+            />
+            <StudentDialog open={openStudentDialog} onClose={handleStudentDialogClose} onSubmit={handleStudentSubmit} />
+
         </div>
     );
 }
 
-export default DayTable;
+export default WeekTable;
+

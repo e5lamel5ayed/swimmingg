@@ -59,9 +59,14 @@ export const SidebarData = [
                 path: '/addInstructor',
             },
             {
+                title: 'جدول الاسبوع',
+                icon: <CalendarMonthIcon className='ml-3' />,
+                path: '/WeekTable',
+            },
+            {
                 title: 'جدول اليوم',
                 icon: <CalendarMonthIcon className='ml-3' />,
-                path: '/dayTable',
+                path: '/DayTable',
             },
             // {
             //     title: 'اضافة حارة',
