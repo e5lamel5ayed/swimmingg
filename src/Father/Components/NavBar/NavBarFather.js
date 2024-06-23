@@ -2,7 +2,8 @@ import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
-import { SidebarDataFather } from './../SideBar/SideBarData';
+import { SidebarData } from './../SideBar/SideBarData';
+import { Dropdown } from 'react-bootstrap';
 
 const NavBarFather = () => {
   const [sidebar, setSidebar] = useState(false)
@@ -25,14 +26,39 @@ const NavBarFather = () => {
                   <CloseIcon />
                 </Link>
               </li>
-              {SidebarDataFather.map((item, index) => (
-                <li key={index} className={item.cName}>
-                  <Link to={item.path}>
-                    {item.icon}
-                    <span>{item.title}</span>
-                  </Link>
-                </li>
-              ))}
+              {SidebarData.map((item, index) => {
+                if (item.subMenu) {
+                  return (
+                    <li key={index} className={item.cName}>
+                      <Dropdown>
+                        <Dropdown.Toggle as="a" className="nav-text ">
+                          {item.icon}
+                          <span>{item.title}</span>
+                        </Dropdown.Toggle>
+                        <Dropdown.Menu>
+                          {item.subMenu.map((subItem, subIndex) => (
+                            <Dropdown.Item key={subIndex} as={Link} to={subItem.path} className={item.cName}>
+                              <div className={item.ccName}>
+                              {subItem.icon}
+                                {subItem.title}
+                              </div>
+                            </Dropdown.Item>
+                          ))}
+                        </Dropdown.Menu>
+                      </Dropdown>
+                    </li>
+                  );
+                } else {
+                  return (
+                    <li key={index} className={item.cName}>
+                      <Link to={item.path}>
+                        {item.icon}
+                        <span>{item.title}</span>
+                      </Link>
+                    </li>
+                  );
+                }
+              })}
             </ul>
           </nav>
 

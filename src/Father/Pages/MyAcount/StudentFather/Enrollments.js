@@ -19,7 +19,7 @@ const Enrollments = () => {
                     </div>
                     <div className='col-md-7 ml-1 d-flex' style={{ justifyContent: "flex-start" }}>
 
-                        <h2 className='text-center text-white mr-5'>الصفوف المحجوزه</h2>
+                        <h2 className='text-center text-white mr-5'>البرامج المحجوزه</h2>
                     </div>
                 </div>
             </div>
@@ -46,7 +46,7 @@ const Enrollments = () => {
                                 />
                                 <CardContent>
                                     <Typography gutterBottom variant="h5" component="div" className='text-muted fw-bold'>
-                                        مجموعة 1
+                                        برنامج 1
                                     </Typography>
 
                                     <Typography variant="body2" color="text.secondary">
@@ -90,7 +90,7 @@ const Enrollments = () => {
                                 />
                                 <CardContent>
                                     <Typography gutterBottom variant="h5" component="div" className='text-muted fw-bold'>
-                                        مجموعة 2
+                                        برنامج 2
                                     </Typography>
 
                                     <Typography variant="body2" color="text.secondary">

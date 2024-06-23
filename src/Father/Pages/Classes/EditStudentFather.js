@@ -3,7 +3,7 @@ import NavBar from '../../Components/NavBar/NavBarFather'
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import { Link } from 'react-router-dom';
 
-const AddStudentFather2 = () => {
+const EditStudentFather = () => {
     return (
         <div>
             <NavBar />
@@ -16,7 +16,7 @@ const AddStudentFather2 = () => {
                 </div>
 
                 <div className='col-md-8 ml-1 d-flex justify-content-between align-items-center' style={{ justifyContent: "flex-start" }}>
-                    <h2 className='text-center text-white mr-5'>اضافة طالب جديد</h2>
+                    <h2 className='text-center text-white mr-5'>تعديل الطالب </h2>
                 </div>
             </div>
 
@@ -28,15 +28,18 @@ const AddStudentFather2 = () => {
                             <form action="" className=' mt-5' method='get'>
 
                                 <div className='mb-5 p-3 special-info bg-white'>
-                                    <h4 className='my-5'>معلومات عامة</h4>
-
                                     <div className="form-group d-flex justify-content-between align-items-center">
-                                        <label htmlFor=""> الاسم الاول :</label>
+                                        <label htmlFor=""> اسم الطالب :</label>
                                         <input type="text" className="form-control w-75" />
                                     </div>
 
                                     <div className="form-group d-flex justify-content-between align-items-center">
-                                        <label htmlFor=""> الاسم الثاني :</label>
+                                        <label htmlFor=""> اسم الاب :</label>
+                                        <input type="text" className="form-control w-75" />
+                                    </div>
+
+                                    <div className="form-group d-flex justify-content-between align-items-center">
+                                        <label htmlFor=""> اسم الام :</label>
                                         <input type="text" className="form-control w-75" />
                                     </div>
 
@@ -65,56 +68,6 @@ const AddStudentFather2 = () => {
                                         </div>
                                     </div>
 
-                                    <div className="form-group d-flex justify-content-between align-items-center">
-                                        <label htmlFor="class">اختر صف : </label>
-                                        <select name="class" className='form-control w-75'>
-                                            <option value="class">
-                                                صيف 2024 (1 يوليو 2024 - 25 أغسطس 2024) (مفتوح)
-                                            </option>
-                                            <option value="class">
-                                                صيف 2024 (1 يوليو 2024 - 25 أغسطس 2024) (مفتوح)
-                                            </option>
-                                            <option value="class">
-                                                صيف 2024 (1 يوليو 2024 - 25 أغسطس 2024) (مفتوح)
-                                            </option>
-                                            <option value="class">
-                                                صيف 2024 (1 يوليو 2024 - 25 أغسطس 2024) (مفتوح)
-                                            </option>
-                                            <option value="class">
-                                                صيف 2024 (1 يوليو 2024 - 25 أغسطس 2024) (مفتوح)
-                                            </option>
-                                        </select>
-                                    </div>
-
-                                </div>
-
-                                <div className='mb-5 p-3 special-info bg-white'>
-                                    <h4 className='my-5'>المعلومات الصحية للطالب</h4>
-
-                                    <div className="form-group d-flex justify-content-between align-items-center">
-                                        <label htmlFor=""> المستشفي :</label>
-                                        <input type="text" className="form-control w-75" />
-                                    </div>
-
-                                    <div className="form-group d-flex justify-content-between align-items-center">
-                                        <label htmlFor=""> شركة التأمين :</label>
-                                        <input type="text" className="form-control w-75" />
-                                    </div>
-
-                                    <div className="form-group d-flex justify-content-between align-items-center">
-                                        <label htmlFor=""> رقم الوثيقة :</label>
-                                        <input type="text" className="form-control w-75" />
-                                    </div>
-
-                                    <div className="form-group d-flex justify-content-between align-items-center">
-                                        <label htmlFor="">الاسم الأول للطبيب :</label>
-                                        <input type="text" className="form-control w-75" />
-                                    </div>
-
-                                    <div className="form-group d-flex justify-content-between align-items-center">
-                                        <label htmlFor=""> رقم للطبيب :</label>
-                                        <input type="text" className="form-control w-75" />
-                                    </div>
                                 </div>
                                 <div className='add-student-btn d-flex justify-content-end align-items-center my-5 '>
                                     <button className='btn ml-2 mb-3 w-100 btn-edit'>حفظ</button>
@@ -130,4 +83,4 @@ const AddStudentFather2 = () => {
     )
 }
 
-export default AddStudentFather2
+export default EditStudentFather

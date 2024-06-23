@@ -1,17 +1,17 @@
 import React from 'react'
-import NavBar from '../../Components/NavBar/NavBarFather';
 import { Link } from 'react-router-dom';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
+import NavBarFather from '../../../Father/Components/NavBar/NavBarFather';
 
-const ClassDetailsFather = () => {
+const ProgramDetailsDayTable = () => {
     return (
         <div>
 
-            <NavBar />
+            <NavBarFather />
 
             <div className='title-class d-flex'>
                 <div className='col-md-5 d-flex' style={{ alignItems: "center" }} >
-                    <Link to="/AllclassesFather">
+                    <Link to="/dayTable">
                         <ArrowForwardIcon sx={{ color: "#fff", fontSize: "38px" }} />
                     </Link>
                 </div>
@@ -102,4 +102,4 @@ const ClassDetailsFather = () => {
     )
 }
 
-export default ClassDetailsFather
+export default ProgramDetailsDayTable

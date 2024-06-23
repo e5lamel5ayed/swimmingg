@@ -25,7 +25,7 @@ export const MyAcount = () => {
                                 />
                                 <CardContent>
                                     <Typography gutterBottom variant="h5" component="div" className='text-muted fw-bold'>
-                                        مجموعة 1
+                                        برنامج 1
                                     </Typography>
 
                                     <p className='mt-3'>
@@ -54,7 +54,7 @@ export const MyAcount = () => {
                                 />
                                 <CardContent>
                                     <Typography gutterBottom variant="h5" component="div" className='text-muted fw-bold'>
-                                        مجموعة 1
+                                        برنامج 1
                                     </Typography>
 
                                     <p className='mt-3'>
@@ -83,7 +83,7 @@ export const MyAcount = () => {
                                 />
                                 <CardContent>
                                     <Typography gutterBottom variant="h5" component="div" className='text-muted fw-bold'>
-                                        مجموعة 1
+                                        برنامج 1
                                     </Typography>
 
                                     <p className='mt-3'>
@@ -112,7 +112,7 @@ export const MyAcount = () => {
                                 />
                                 <CardContent>
                                     <Typography gutterBottom variant="h5" component="div" className='text-muted fw-bold'>
-                                        مجموعة 1
+                                        برنامج 1
                                     </Typography>
 
                                     <p className='mt-3'>
@@ -141,7 +141,7 @@ export const MyAcount = () => {
                                 />
                                 <CardContent>
                                     <Typography gutterBottom variant="h5" component="div" className='text-muted fw-bold'>
-                                        مجموعة 1
+                                        برنامج 1
                                     </Typography>
 
                                     <p className='mt-3'>
@@ -170,7 +170,7 @@ export const MyAcount = () => {
                                 />
                                 <CardContent>
                                     <Typography gutterBottom variant="h5" component="div" className='text-muted fw-bold'>
-                                        مجموعة 1
+                                        برنامج 1
                                     </Typography>
 
                                     <p className='mt-3'>
@@ -199,7 +199,7 @@ export const MyAcount = () => {
                                 />
                                 <CardContent>
                                     <Typography gutterBottom variant="h5" component="div" className='text-muted fw-bold'>
-                                        مجموعة 1
+                                        برنامج 1
                                     </Typography>
 
                                     <p className='mt-3'>

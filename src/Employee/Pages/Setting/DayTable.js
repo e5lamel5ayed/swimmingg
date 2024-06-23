@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import { Link } from "react-router-dom";
 import NavBar from "../../Components/NavBar/NavBar";
-import TrainingProgramDialog from "./TrainingProgramDialog";
-import StudentDialog from "./StudentDialog";  // Import the new component
+import StudentDialog from "./StudentDialogDay";
+import TrainingProgramDialogDay from "./TrainingProgramDialogDay";
 
 const poolData = {
     'حمام 1': {
@@ -166,7 +166,7 @@ function DayTable() {
             <NavBar />
             <div className='title-class d-flex justify-content-between align-items-center'>
                 <div className='col-md-4 d-flex justify-content-between align-items-center' style={{ alignItems: "center" }}>
-                    <Link to="/Employee">
+                    <Link to="/Emploee">
                         <ArrowForwardIcon sx={{ color: "#fff", fontSize: "38px" }} />
                     </Link>
                 </div>
@@ -203,7 +203,7 @@ function DayTable() {
                         </div>
                     </div>
                     {renderData()}
-                    <TrainingProgramDialog open={openDialog} onClose={handleDialogClose} onSubmit={handleProgramSubmit} />
+                    <TrainingProgramDialogDay open={openDialog} onClose={handleDialogClose} onSubmit={handleProgramSubmit} />
                     <StudentDialog open={openStudentDialog} onClose={handleStudentDialogClose} onSubmit={handleStudentSubmit} />
                 </div>
             </div>

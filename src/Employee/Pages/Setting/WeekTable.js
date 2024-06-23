@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import { Link } from "react-router-dom";
 import NavBar from "../../Components/NavBar/NavBar";
-import TrainingProgramDialog from "./TrainingProgramDialog";
-import StudentDialog from "./StudentDialog";
+import StudentDialogWeek from "./StudentDialogWeek";
+import TrainingProgramDialogWeek from "./TrainingProgramDialogWeek";
 
 const poolData = {
     'حمام 1': {
@@ -208,12 +208,12 @@ function WeekTable() {
                 </div>
             </div>
 
-            <TrainingProgramDialog
+            <TrainingProgramDialogWeek
                 open={openDialog}
                 onClose={handleDialogClose}
                 onSubmit={handleProgramSubmit}
             />
-            <StudentDialog open={openStudentDialog} onClose={handleStudentDialogClose} onSubmit={handleStudentSubmit} />
+            <StudentDialogWeek open={openStudentDialog} onClose={handleStudentDialogClose} onSubmit={handleStudentSubmit} />
 
         </div>
     );

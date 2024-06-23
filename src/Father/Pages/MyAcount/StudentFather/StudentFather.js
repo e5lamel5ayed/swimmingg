@@ -71,7 +71,7 @@ export default function MultiActionAreaCard() {
                                 </div>
                             </CardContent>
                         </CardActionArea>
-                        <Link to='/addstudentFather2'>
+                        <Link to='/editStudentFather'>
                             <Button
                                 style={{
                                     backgroundColor: "rgb(237 236 236)",
@@ -145,7 +145,7 @@ export default function MultiActionAreaCard() {
                                 </div>
                             </CardContent>
                         </CardActionArea>
-                        <Link to='/addstudentFather2'>
+                        <Link to='/editStudentFather'>
                             <Button
                                 style={{
                                     backgroundColor: "rgb(237 236 236)",
@@ -220,7 +220,7 @@ export default function MultiActionAreaCard() {
                                 </div>
                             </CardContent>
                         </CardActionArea>
-                        <Link to='/addstudentFather2'>
+                        <Link to='/editStudentFather'>
                             <Button
                                 style={{
                                     backgroundColor: "rgb(237 236 236)",

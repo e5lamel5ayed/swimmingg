@@ -23,7 +23,7 @@ export const ClassesFather = () => {
                     </div>
                     <div className='col-md-7 ml-1 d-flex' style={{ justifyContent: "flex-start" }}>
 
-                        <h2 className='text-center text-white mr-5'>الصفوف</h2>
+                        <h2 className='text-center text-white mr-5'>البرامج</h2>
                     </div>
                 </div>
                 <div className='container'>

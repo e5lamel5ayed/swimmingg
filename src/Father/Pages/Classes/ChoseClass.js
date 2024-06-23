@@ -24,7 +24,7 @@ const ChoseClass = () => {
                     </div>
                     <div className='col-md-7 ml-1 d-flex' style={{ justifyContent: "flex-start" }}>
 
-                        <h2 className='text-center text-white mr-5'>الصفوف</h2>
+                        <h2 className='text-center text-white mr-5'>البرامج</h2>
                     </div>
                 </div>
                 <div className='text-center mt-3'>
@@ -175,7 +175,7 @@ const ChoseClass = () => {
 
                         <div className='col-md-12 text-center mt-4 '>
                             <Link to="/AllclassesFather">
-                                <button className='btn btn-edit w-50'>عرض الصفوف</button>
+                                <button className='btn btn-edit w-50'>عرض البرامج</button>
                             </Link>
 
                         </div>

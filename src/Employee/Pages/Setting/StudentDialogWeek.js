@@ -8,17 +8,19 @@ import MenuItem from '@mui/material/MenuItem';
 import Select from '@mui/material/Select';
 import FormControl from '@mui/material/FormControl';
 import InputLabel from '@mui/material/InputLabel';
+import { useNavigate } from 'react-router';
 
 const students = [
-    'طالب 1',
-    'طالب 2',
-    'طالب 3',
-    'طالب 4',
-    'طالب 5',
+    'السيد اسامة',
+    'اسلام السيد',
+    'احمد علي',
+    'يونس محمد',
+    'ندا السيد',
 ];
 
-function StudentDialog({ open, onClose, onSubmit }) {
+function StudentDialogWeek({ open, onClose, onSubmit }) {
     const [selectedStudent, setSelectedStudent] = useState('');
+    const navigate = useNavigate();
 
     const handleStudentChange = (event) => {
         setSelectedStudent(event.target.value);
@@ -28,6 +30,11 @@ function StudentDialog({ open, onClose, onSubmit }) {
         onSubmit(selectedStudent);
         setSelectedStudent('');
     };
+
+    const handleDetails = () => {
+        navigate('/StudentDetailsWeekTable');
+    };
+
 
     return (
         <Dialog open={open} onClose={onClose} fullWidth maxWidth="sm">
@@ -51,9 +58,10 @@ function StudentDialog({ open, onClose, onSubmit }) {
             <DialogActions>
                 <Button onClick={onClose}>إلغاء</Button>
                 <Button onClick={handleSubmit} disabled={!selectedStudent}>إضافة</Button>
+                <Button onClick={handleDetails} disabled={!selectedStudent}>تفاصيل الطالب</Button>
             </DialogActions>
         </Dialog>
     );
 }
 
-export default StudentDialog;
+export default StudentDialogWeek;

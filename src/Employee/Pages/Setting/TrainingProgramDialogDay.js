@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import { Dialog, DialogActions, DialogContent, DialogTitle, Button, Select, MenuItem, InputLabel, FormControl } from "@mui/material";
+import { useNavigate } from 'react-router';
 
-function TrainingProgramDialog({ open, onClose, onSubmit }) {
+function TrainingProgramDialogDay({ open, onClose, onSubmit }) {
     const [programName, setProgramName] = useState('');
+    const navigate = useNavigate();
 
     const handleProgramChange = (event) => {
         setProgramName(event.target.value);
@@ -11,6 +13,12 @@ function TrainingProgramDialog({ open, onClose, onSubmit }) {
     const handleSave = () => {
         onSubmit(programName);
         onClose();
+    };
+        
+    const handleDetails = () => {
+        navigate('/ProgramDetailsDayTable');
+        onSubmit(programName);
+        setProgramName('');
     };
 
     return (
@@ -37,9 +45,12 @@ function TrainingProgramDialog({ open, onClose, onSubmit }) {
                 <Button onClick={handleSave} color="primary">
                     حفظ
                 </Button>
+                <Button onClick={handleDetails} disabled={!programName} color="primary">
+                    تفاصيل البرنامج
+                </Button>
             </DialogActions>
         </Dialog>
     );
 }
 
-export default TrainingProgramDialog;
+export default TrainingProgramDialogDay;

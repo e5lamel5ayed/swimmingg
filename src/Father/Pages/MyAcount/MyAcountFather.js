@@ -11,7 +11,7 @@ import FamilyCustomFields from './FamilyCustomFields';
 import ChangePassword from './ChangePassword';
 
 
-export const MyAcount = () => {
+export const MyAcountFather = () => {
     const [tabValue, setTabValue] = useState(0);
 
     const handleTabChange = (event, newValue) => {
@@ -95,4 +95,4 @@ export const MyAcount = () => {
         </div>
     )
 }
-export default MyAcount
+export default MyAcountFather

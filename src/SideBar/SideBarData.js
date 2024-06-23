@@ -68,9 +68,5 @@ export const SidebarData = [
                 icon: <CalendarMonthIcon className='ml-3' />,
                 path: '/DayTable',
             },
-            // {
-            //     title: 'اضافة حارة',
-            //     path: '/addLane',
-            // },
         ]
     }]

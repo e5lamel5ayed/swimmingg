@@ -19,7 +19,7 @@ const ClassHome = () => {
                         <Link to='/ChoseClass' className='text-decoration-none'>
                             <div className='box px-4'>
                                 <h4 className='text-info'>
-                                    بحث عن الصف
+                                    بحث عن برنامج
                                 </h4>
                                 <div>
                                     <FiUsers size={60} className='icon' />

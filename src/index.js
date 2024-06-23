@@ -25,8 +25,6 @@ import EditPhone from "./Father/Pages/MyAcount/AccountInfo/EditPhone";
 import AddEmail from "./Father/Pages/MyAcount/AccountInfo/AddEmail";
 import UpdateFamily from "./Father/Pages/MyAcount/Update/UpdateFamily";
 import UpdatePassword from "./Father/Pages/MyAcount/Update/UpdatePassword";
-import AddStudentFather2 from "./Father/Pages/Classes/AddStudentFather2";
-import Setting from "./Employee/Pages/Setting/Setting";
 import AddPlace from "./Employee/Pages/Setting/AddPlace";
 import AddPath from "./Employee/Pages/Setting/AddPath";
 import AddLane from "./Employee/Pages/Setting/AddLane";
@@ -42,6 +40,11 @@ import AddGuardian from "./Father/Pages/MyAcount/AccountInfo/AddGuardian";
 import WeekTable from "./Employee/Pages/Setting/WeekTable";
 import Loading from "./Loading";
 import DayTable from "./Employee/Pages/Setting/DayTable";
+import StudentDetailsDayTable from "./Employee/Pages/Setting/StudentDetailsDayTable";
+import ProgramDetailsDayTable from "./Employee/Pages/Setting/ProgramDetailsDayTable";
+import StudentDetailsWeekTable from "./Employee/Pages/Setting/StudentDetailsWeekTable";
+import ProgramDetailsWeekTable from "./Employee/Pages/Setting/ProgramDetailsWeekTable";
+import EditStudentFather from "./Father/Pages/Classes/EditStudentFather";
 
 const router = createBrowserRouter([
   {
@@ -105,10 +108,6 @@ const router = createBrowserRouter([
     element: <ChoseClass />,
   },
   {
-    path: "/setting",
-    element: <Setting />,
-  },
-  {
     path: "/addPlace",
     element: <AddPlace />,
   },
@@ -137,6 +136,22 @@ const router = createBrowserRouter([
     element: <DayTable />,
   },
   {
+    path: "/StudentDetailsDayTable",
+    element: <StudentDetailsDayTable />,
+  },
+  {
+    path: "/ProgramDetailsDayTable",
+    element: <ProgramDetailsDayTable />,
+  },
+  {
+    path: "/StudentDetailsWeekTable",
+    element: <StudentDetailsWeekTable />,
+  },
+  {
+    path: "/ProgramDetailsWeekTable",
+    element: <ProgramDetailsWeekTable />,
+  },
+  {
     path: "/AllclassesFather",
     element: <AllClassesFather />,
   },
@@ -153,8 +168,8 @@ const router = createBrowserRouter([
     element: <AddStudentFather />,
   },
   {
-    path: "/addstudentFather2",
-    element: <AddStudentFather2 />,
+    path: "/editStudentFather",
+    element: <EditStudentFather />,
   },
   {
     path: "/classDetailsFather",

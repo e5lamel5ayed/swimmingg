@@ -49,7 +49,7 @@ const NewEnroll = () => {
                                     </div>
 
                                     <div className="form-group d-flex justify-content-between align-items-center">
-                                        <label htmlFor="class"> الجلسه </label>
+                                        <label htmlFor="class"> البرنامج </label>
                                         <select name="class" className='form-control w-75'>
                                             <option value="class">
                                                 صيف 2024 (1 يوليو 2024 - 25 أغسطس 2024) (مفتوح)

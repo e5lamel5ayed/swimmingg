@@ -51,7 +51,7 @@ const Rating = () => {
                                 <CardContent>
 
                                     <Typography gutterBottom variant="h5" component="div" className='text-muted fw-bold'>
-                                        مجموعة 3
+                                        برنامج 3
                                     </Typography>
 
 
@@ -79,7 +79,7 @@ const Rating = () => {
                                 <CardContent>
 
                                     <Typography gutterBottom variant="h5" component="div" className='text-muted fw-bold'>
-                                        مجموعة 2
+                                        برنامج 2
                                     </Typography>
 
 
@@ -106,7 +106,7 @@ const Rating = () => {
             <Dialog open={open} onClose={handleClose} fullWidth maxWidth="sm">
                 <div className="white-div p-1" style={{ backgroundColor: "#94F0FF" }}></div>
                 <DialogTitle style={{ marginBottom: "15px", direction: "rtl", textAlign: "center" }}>
-                    الجلسات
+                البرامج
                     <CancelIcon style={{ position: "absolute", left: "15px", cursor: "pointer" }} onClick={handleClose} />
                 </DialogTitle>
                 <DialogContent style={{ direction: "rtl" }}>

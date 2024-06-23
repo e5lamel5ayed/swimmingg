@@ -35,7 +35,7 @@ export default function MediaCard() {
                                     <CardContent>
 
                                         <Typography gutterBottom variant="h5" component="div" className='text-muted fw-bold'>
-                                            مجموعة 1
+                                            برنامج 1
                                         </Typography>
 
                                         <Typography variant="body2" color="text.secondary">
@@ -90,7 +90,7 @@ export default function MediaCard() {
                                     <CardContent>
 
                                         <Typography gutterBottom variant="h5" component="div" className='text-muted fw-bold'>
-                                            مجموعة 2
+                                            برنامج 2
                                         </Typography>
 
                                         <Typography variant="body2" color="text.secondary">
@@ -145,7 +145,7 @@ export default function MediaCard() {
                                     <CardContent>
 
                                         <Typography gutterBottom variant="h5" component="div" className='text-muted fw-bold'>
-                                            مجموعة 3
+                                            برنامج 3
                                         </Typography>
 
                                         <Typography variant="body2" color="text.secondary">
@@ -200,7 +200,7 @@ export default function MediaCard() {
                                     <CardContent>
 
                                         <Typography gutterBottom variant="h5" component="div" className='text-muted fw-bold'>
-                                            مجموعة 4
+                                            برنامج 4
                                         </Typography>
 
                                         <Typography variant="body2" color="text.secondary">
@@ -255,7 +255,7 @@ export default function MediaCard() {
                                     <CardContent>
 
                                         <Typography gutterBottom variant="h5" component="div" className='text-muted fw-bold'>
-                                            مجموعة 5
+                                            برنامج 5
                                         </Typography>
 
                                         <Typography variant="body2" color="text.secondary">
@@ -310,7 +310,7 @@ export default function MediaCard() {
                                     <CardContent>
 
                                         <Typography gutterBottom variant="h5" component="div" className='text-muted fw-bold'>
-                                            مجموعة 6
+                                            برنامج 6
                                         </Typography>
 
                                         <Typography variant="body2" color="text.secondary">
@@ -361,7 +361,7 @@ export default function MediaCard() {
             <Dialog open={open} onClose={handleClose} fullWidth maxWidth="sm">
                 <div className="white-div p-1" style={{ backgroundColor: "#94F0FF" }}></div>
                 <DialogTitle style={{ marginBottom: "15px", direction: "rtl", textAlign: "center" }}>
-                    الجلسات
+                    البرنامج
                     <CancelIcon style={{ position: "absolute", left: "15px", cursor: "pointer" }} onClick={handleClose} />
                 </DialogTitle>
                 <DialogContent style={{ direction: "rtl" }}>

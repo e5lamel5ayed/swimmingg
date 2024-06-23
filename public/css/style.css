@@ -810,7 +810,8 @@ form select {
     font-size: 15px;
 }
 
-.fa-calendar-days {
+.fa-calendar-days,
+.fa-address-card {
     font-size: 25px;
 }
 
