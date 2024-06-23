@@ -19,7 +19,7 @@ const Home = () => {
                             <div className="box box_hover text-white border bg-white text-center">
                                 <h4 className='bg-white text-info text-center py-2'>الاخبار</h4>
                                 <img className='img-fluid' src="/images/home/speaker.jpg" alt="" />
-                                <h6 className='text-white'>لمشاهده الجدول والتسجيل</h6>
+                                <h6 className='text-white'>لمشاهده الاخبار</h6>
                                 <div className='p-2'></div>
                             </div>
                         </Link>
@@ -28,9 +28,9 @@ const Home = () => {
                     <div className="col-md-4 mb-4">
                         <Link to='/MyAcount' className='text-decoration-none'>
                             <div className="box box_hover text-white border bg-white text-center">
-                                <h4 className='bg-white text-info text-center py-2'>حسابي</h4>
+                                <h4 className='bg-white text-info text-center py-2'>الاخبار</h4>
                                 <img className='img-fluid' src="/images/home/my-account.png" alt="" />
-                                <h6 className='text-white'>لمشاهده الجدول والتسجيل</h6>
+                                <h6 className='text-white'>لمشاهده الاخبار</h6>
                                 <div className='p-2'></div>
                             </div>
                         </Link>
@@ -41,7 +41,7 @@ const Home = () => {
                             <div className="box box_hover text-white border bg-white text-center">
                                 <h4 className='bg-white text-info text-center py-2'>الحجز</h4>
                                 <img className='img-fluid' src="/images/home/booking.png" alt="" />
-                                <h6 className='text-white'>لمشاهده الجدول والتسجيل</h6>
+                                <h6 className='text-white'>لمشاهده الحجز</h6>
                                 <div className='p-2'></div>
                             </div>
                         </Link>

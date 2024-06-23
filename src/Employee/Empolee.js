@@ -19,7 +19,7 @@ const Empolee = () => {
               <div className="box box_hover text-white border bg-white text-center">
                 <h4 className='bg-white text-info text-center py-2'>الاخبار</h4>
                 <img className='img-fluid' src="/images/home/speaker.jpg" alt="" />
-                <h6 className='text-white'>لمشاهده الجدول والتسجيل</h6>
+                <h6 className='text-white'>لمشاهده الاخبار</h6>
                 <div className='p-2'></div>
               </div>
             </Link>
@@ -30,7 +30,7 @@ const Empolee = () => {
               <div className="box box_hover text-white border bg-white text-center">
                 <h4 className='bg-white text-info text-center py-2'>حسابي</h4>
                 <img className='img-fluid' src="/images/home/my-account.png" alt="" />
-                <h6 className='text-white'>لمشاهده الجدول والتسجيل</h6>
+                <h6 className='text-white'>لمشاهده حسابي</h6>
                 <div className='p-2'></div>
               </div>
             </Link>
@@ -41,13 +41,13 @@ const Empolee = () => {
               <div className="box box_hover text-white border bg-white text-center">
                 <h4 className='bg-white text-info text-center py-2'>الحجز</h4>
                 <img className='img-fluid' src="/images/home/booking.png" alt="" />
-                <h6 className='text-white'>لمشاهده الجدول والتسجيل</h6>
+                <h6 className='text-white'>لمشاهده الحجز </h6>
                 <div className='p-2'></div>
               </div>
             </Link>
           </div>
 
-          <div className="col-md 6 text-white home-login ml-3 mb-4">
+          {/* <div className="col-md 6 text-white home-login ml-3 mb-4">
             <Link to='/login' className='text-decoration-none'>
               <div className='d-flex justify-content-between align-items-center box_hover'>
                 <i className='fa fa-user text-dark'></i>
@@ -69,7 +69,7 @@ const Empolee = () => {
                 </div>
               </div>
             </Link>
-          </div>
+          </div> */}
 
 
 

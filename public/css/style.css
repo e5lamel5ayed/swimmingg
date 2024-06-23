@@ -159,6 +159,14 @@ ol {
     overflow-x: hidden;
 }
 
+.nav-menu::-webkit-scrollbar {
+    background-color: #4f4f4f;
+    width: 5px;
+}
+.nav-menu::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 255, 255, 0.438);
+}
+
 .nav-menu.active {
     right: 0;
     transition: all .5s ease;

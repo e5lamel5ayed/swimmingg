@@ -1,5 +1,5 @@
 import React from 'react'
-import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+// import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import HomeIcon from '@mui/icons-material/Home';
 import PersonIcon from '@mui/icons-material/Person';
 import AdminPanelSettingsIcon from '@mui/icons-material/AdminPanelSettings';
@@ -8,12 +8,12 @@ import AddIcon from '@mui/icons-material/Add';
 import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
 
 export const SidebarData = [
-    {
-        title: "مرحبا بك",
-        path: "/",
-        icon: <AccountCircleIcon className='ml-3' />,
-        cName: "nav-text"
-    },
+    // {
+    //     title: "مرحبا بك",
+    //     path: "/",
+    //     icon: <AccountCircleIcon className='ml-3' />,
+    //     cName: "nav-text"
+    // },
     {
         title: "الرئيسية",
         path: "/",
